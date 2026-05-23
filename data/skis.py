@@ -1,19 +1,22 @@
 # ============================================================
-#  gear_data.py — MountainFit Product Database
+#  Skis.py is a database for Sports Basement Fitter
 # ============================================================
-# 26/27 skis and snowboards, but if images are not found
-# resolving by using 25/26 images.
+# 26/27 skis, but if images are not found using 25/26 season images
+# also adding what we carried last season since im sure we are going to get
+# the same product.
+# 
 # ============================================================
  
 import json
  
 # ────────────────────────────────────────────────────────────
 #  SKIS
-#  styles options : "all-mountain" | "groomer" | "powder" | "park" | "mogul"
+#  styles options : "all-mountain", "groomer" , "powder", "park", "mogul"
 #  skill options  : "beginner" | "intermediate" | "advanced"
 # ────────────────────────────────────────────────────────────
 
 # TO-DO 1: Add all the skis we sell in store, if images are not found for 26/27 using 25/26 images.
+# TO-DO 2: Add terrain preference to skis, as for what they are good for.
 
 SKIS = [
     # Blizard (26/27 images)
