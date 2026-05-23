@@ -14,7 +14,7 @@ SNOWBOARDS = [
     {
         "name": "Hometown Hero",
         "brand": "Burton",
-        "styles": ["all-mountain", "freeride"],
+        "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
         "shape": "dircetional",
         "flex": 7, 
@@ -66,7 +66,7 @@ SNOWBOARDS = [
     {
         "name": "Team",
         "brand": "Nitro",
-        "styles": ["all-mountain", "freestyle", "freeride"],
+        "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 7,
@@ -78,7 +78,7 @@ SNOWBOARDS = [
     {
         "name": "T1",
         "brand": "Nitro",
-        "styles": ["all-mountain", "freestyle"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 7,
@@ -90,7 +90,7 @@ SNOWBOARDS = [
     {
         "name": "Alternator",
         "brand": "Nitro",
-        "styles": ["all-mountain", "freeride"],
+        "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional",
         "flex": 8,
@@ -106,7 +106,7 @@ SNOWBOARDS = [
     {
         "name": "Whatever",
         "brand": "Bataleon",
-        "styles": ["freeride", "freestyle", "all-mountain"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 5,
@@ -142,7 +142,7 @@ SNOWBOARDS = [
     {
         "name": "Goliath+",
         "brand": "Bataleon",
-        "styles": ["freeride", "all-mountain"],
+        "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 7,
@@ -152,7 +152,7 @@ SNOWBOARDS = [
         "notes": "This is going to be their all mountain option that can run down the hill."
     },   
     # Has not released 26/27 images, but it is coming!
-    # Capita
+    # Capita (25/26 images)
     #
     {
         "name": "Dark Horse",
@@ -169,7 +169,7 @@ SNOWBOARDS = [
     {
         "name": "Mercury",
         "brand": "Capita",
-        "styles": ["freeride", "all-mountain"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 6.5,
@@ -205,7 +205,7 @@ SNOWBOARDS = [
     {
         "name": "D.O.A.",
         "brand": "Capita",
-        "styles": ["freestyle", "all-mountain"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 5.5,
@@ -216,13 +216,13 @@ SNOWBOARDS = [
     },
 
     #
-    # United Shapes
+    # United Shapes (25/26 images)
     #
 
     {
         "name": "Horizon",
         "brand": "United Shapes",
-        "styles": ["all-mountain", "freeride", "freestyle"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 5,
@@ -252,8 +252,8 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
+        "price": "$749.00",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100295815_1.png?crop=center&height=800&v=1766421876&width=800",
         "notes": "The Deep Reach is amazing at holding edges, and carving really fun on those powder days."
     },
     {
@@ -271,13 +271,13 @@ SNOWBOARDS = [
     },
 
     #
-    # Lib Tech
+    # Lib Tech (26/27 images)
     #
     
     {
         "name": "Orca",
         "brand": "Lib Tech",
-        "styles": ["freeride", "all-mountain"],
+        "styles": ["freeride"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional",
         "flex": 7,
@@ -289,7 +289,7 @@ SNOWBOARDS = [
     {
         "name": "DPR",
         "brand": "Lib Tech",
-        "styles": ["all-mountain", "freeride", "freestyle"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 6,
@@ -300,7 +300,7 @@ SNOWBOARDS = [
     },
     
     #
-    # Salomon
+    # Salomon (26/27 images)
     #
 
     {
@@ -354,7 +354,7 @@ SNOWBOARDS = [
     {
         "name": "Assasin",
         "brand": "Salomon",
-        "styles": ["all-mountain", "freeride", "freestyle"],
+        "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 4,
@@ -366,7 +366,7 @@ SNOWBOARDS = [
     {
         "name": "Assasin Pro",
         "brand": "Salomon",
-        "styles": ["all-mountain", "freeride", "freestyle"],
+        "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 4,
@@ -401,94 +401,150 @@ SNOWBOARDS = [
     },
 
     #
-    # Jones
-    #
-
-    {
-        "name": "Tweaker",
-        "brand": "Jones",
-        "styles": ["freestyle"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
-    },
+    # Jones (26/27 images)
+    # 
     {
         "name": "Rally Cat",
         "brand": "Jones",
-        "styles": ["freestyle", "all-mountain", "freeride"],
-        "skill": ["beginner", "intermediate", "advanced"],
+        "styles": ["freestyle", "all-mountain"],
+        "skill": ["beginner", "intermediate"],
         "shape": "directional-twin",
         "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
+        "lengths": [151, 154, 156, 158, 161],
+        "price": "$499.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308722_1.png?crop=center&height=800&v=1779469529&width=800",
+        "notes": "."
     },
     {
         "name": "Frontier 2.0",
         "brand": "Jones",
         "styles": ["freeride"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
+        "skill": ["beginner", "intermediate"],
+        "shape": "directional",
         "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
+        "lengths": [150, 153, 156, 159, 162, 165],
+        "price": "$549.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308719_1.png?crop=center&height=800&v=1779463769&width=800",
+        "notes": "."
     },
     {
         "name": "Storm Wolf",
         "brand": "Jones",
-        "styles": ["freestyle"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
+        "styles": ["freeride"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 8,
+        "lengths": [154, 158, 162],
+        "price": "$699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
+        "notes": "."
     },
     {
-        "name": "Free Carver",
-        "brand": "United Shapes",
-        "styles": ["freestyle"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
+        "name": "Storm Chaser",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 6,
+        "lengths": [142, 147, 152, 157],
+        "price": "$729.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
+        "notes": "."
+    },
+    {
+        "name": "Free Carver 6000",
+        "brand": "Jones",
+        "styles": ["carving"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 6,
+        "lengths": [150, 154, 156, 162],
+        "price": "$699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308715_1.png?v=1779405784",
+        "notes": "."
+    },
+    {
+        "name": "Free Carver 9000",
+        "brand": "Jones",
+        "styles": ["carving"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 8,
+        "lengths": [152, 156, 160, 164],
+        "price": "$699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308733_1.png?v=1779406817",
+        "notes": "."
     },
     {
         "name": "Howler",
         "brand": "Jones",
-        "styles": ["freestyle"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 4,
-        "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
-    },    
+        "styles": ["freeride", "freestyle"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 8,
+        "lengths": [152, 155, 158, 161, 164],
+        "price": "$699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308718_1.png?v=1779462047",
+        "notes": "."
+    },
+    {
+        "name": "Mountain Twin Pro",
+        "brand": "Jones",
+        "styles": ["all-mountain"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional-twin",
+        "flex": 8,
+        "lengths": [154, 157, 160, 163],
+        "price": "$729.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308720_1.png?v=1779466234",
+        "notes": "."
+    },
+    {
+        "name": "Hovercraft 2.0",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 6,
+        "lengths": [144, 148, 152, 156, 160, 164],
+        "price": "$649.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100291901.Hovercraft2.0.1.png?v=1766013699",
+        "notes": "."
+    },
+    {
+        "name": "Stratos",
+        "brand": "Jones",
+        "styles": ["freeride", "all-mountain"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 6,
+        "lengths": [149, 153, 156, 159, 162],
+        "price": "$679.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100291897.Stratos.1.png?v=1766000848",
+        "notes": "."
+    },
+    {
+        "name": "Flagship",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["intermediate", "advanced"],
+        "shape": "directional",
+        "flex": 8,
+        "lengths": [151, 154, 158, 161, 164, 167, 172],
+        "price": "$749.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308717_1.png?v=1779458790",
+        "notes": "."
+    },
+    {
+        "name": "Flagship pro",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "$949.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308716_1.png?v=1779460684",
+        "notes": "."
+    }
 ]
- 
- 
-# ── DO NOT EDIT BELOW ───────────────────────────────────────
- 
-def export():
-    data = {"skis": SKIS, "snowboards": SNOWBOARDS}
-    js = "// Auto-generated by gear_data.py — do not edit manually\n"
-    js += "const GEAR_DATA = " + json.dumps(data, indent=2) + ";\n"
-    with open("gear_data.js", "w") as f:
-        f.write(js)
-    print(f"✅  Exported {len(SKIS)} skis and {len(SNOWBOARDS)} snowboards → gear_data.js")
-    print("    Put gear_data.js in the same folder as mountainfit.html")
- 
-if __name__ == "__main__":
-    export()

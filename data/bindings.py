@@ -8,7 +8,9 @@ import json
 # ────────────────────────────────────────────────────────────
 
 SB_BINDINGS = [
+    #
     # Union Bindings
+    # 25/26 images
     {
         "name":     "Strata",
         "brand":    "Union",
@@ -67,7 +69,9 @@ SB_BINDINGS = [
 ]
 
 SKI_BINDINGS = [
+    #
     # Pivots
+    # 25/26 images
     {
         "name": "Pivot 11",
         "brand": "Look",

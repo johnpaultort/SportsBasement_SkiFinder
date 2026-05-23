@@ -24,7 +24,7 @@ SKIS = [
         "skill": ["intermediate", "advanced"],
         "waist_mm": 118, 
         "lengths": [172, 180, 186],
-        "price": 649,
+        "price": "649",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100305170_WHT_1.png?crop=center&height=800&v=1779319612&width=800",
         "notes": "Replace with your real product. Great all-rounder for mixed terrain."
     },
