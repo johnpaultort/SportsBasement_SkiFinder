@@ -7,16 +7,16 @@ import json
 #  flex           : 1 (softest) – 10 (stiffest)
 # ────────────────────────────────────────────────────────────
 
-Snowboard_Bindings = [
+SB_BINDINGS = [
     # Union Bindings
     {
         "name":     "Strata",
         "brand":    "Union",
-        "style":   ["all-mountain" "freestyle"],
-        "skill":   ["beginnner", "intermediate", "advanced"],
+        "style":   ["all-mountain", "freestyle"],
+        "skill":   ["beginner", "intermediate", "advanced"],
         "flex":     5,
         "pattern": ["4x2", "channel"],
-        "price":    "279.95",
+        "price":    279.95,
         "image":    "https://unionbindingcompany.com/cdn/shop/files/UN25_STRATA_BLACK_1024x.jpg?v=1753686597",
         "notes":    "The Strata has a mini disk that allows the binding to carry a soft surfy feeling. Smaller contact point and allows your board to flex naturally."
     },
@@ -27,18 +27,18 @@ Snowboard_Bindings = [
         "skill":    ["beginner", "intermediate", "advanced"],
         "flex":      7, 
         "pattern":  ["4x4", "4x2", "channel"],
-        "price":     "349.95",
+        "price":     349.95,
         "image":     "https://unionbindingcompany.com/cdn/shop/files/UN25_FORCE_BLACK_db5dd6ad-dca0-4136-982f-dfaf63159e12_1024x.jpg?v=1753861019",
         "notes":      "."
     },
     {
         "name":     "Falcor",
         "brand":    "Union",
-        "style":    ["freeride"]
+        "style":    ["freeride"],
         "skill":    ["intermediate", "advanced"],
         "flex":     7,
         "pattern":  ["4x2", "channel"],
-        "price":    "439.95"
+        "price":    439.95,
         "image":    "https://unionbindingcompany.com/cdn/shop/files/UN25_FALCOR_BLACK_1024x.jpg?v=1753276224",
         "notes":    "."
     },
@@ -49,7 +49,7 @@ Snowboard_Bindings = [
         "skill":    ["intermediate", "advanced"],
         "flex":     8,
         "pattern":  ["4x4", "4x2", "channel"],
-        "price":    "399.95",
+        "price":    399.95,
         "image":    "https://unionbindingcompany.com/cdn/shop/files/UN25_ATLAS_CHROME_1024x.jpg?v=1757931696",
         "notes":    "."
     },
@@ -57,38 +57,38 @@ Snowboard_Bindings = [
         "name":     "Ultra",
         "brand":    "Union",
         "style":    ["freestyle", "all-mountain"],
-        "skill":    ["beginner", "intermediate", "advanced"]
+        "skill":    ["beginner", "intermediate", "advanced"],
         "flex":     6, 
         "pattern":  ["4x2", "channel"],
-        "price":    "329.95",
+        "price":    329.95,
         "image":    "https://unionbindingcompany.com/cdn/shop/files/UN25_ULTRA_BLACK_1024x.jpg?v=1753276418",
         "notes":    "."
     }            
 ]
 
-Ski_Bindings = [
+SKI_BINDINGS = [
     # Pivots
     {
         "name": "Pivot 11",
         "brand": "Look",
-        "ski w":    [95, 105, 115],
-        "price": "279.95",
+        "widths":    [95, 105, 115],
+        "price":    279.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100288955_WHBK_1.png?v=1754107554",
         "notes": ""
     },
     {
         "name": "Pivot 13",
         "brand": "Look",
-        "ski w": [95, 105, 115]
-        "price": "379.95",
+        "widths": [95, 105, 115],
+        "price": 379.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100288954_ORGM_1.png?crop=center&height=800&v=1754107555&width=800",
         "notes": ""
     },
     {
         "name": "Pivot 15",
         "brand": "Look",
-        "ski w": [95, 105, 115],
-        "price": "479.95",
+        "widths": [95, 105, 115],
+        "price": 479.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100270601_ORMT_1.png?crop=center&height=800&v=1754107675&width=800",
         "notes": ""
     },
@@ -96,32 +96,32 @@ Ski_Bindings = [
     {
         "name": "Squire 11",
         "brand": "Marker",
-        "ski w": [90, 100, 110, 120]
-        "price": "249.99",
+        "widths": [90, 100, 110, 120],
+        "price": 249.99,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100224158_BLK_1.png?crop=center&height=800&v=1754107711&width=800",
         "notes": ""
     },
     {
         "name": "Jester 16 x MWerks",
         "brand": "Marker",
-        "ski w": [90, 100, 110, 120],
-        "price": "489.99",
+        "widths": [90, 100, 110, 120],
+        "price": 489.99,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100293342_BKOR_1.png?v=1754107226",
         "notes": ""
     }, 
     {
         "name": "Griffon 13",
         "brand": "Marker",
-        "ski w": [90, 100, 110, 120],
-        "price": "299.99",
+        "widths": [90, 100, 110, 120],
+        "price": 299.99,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100266735_BLK_1.png?crop=center&height=800&v=1750620997&width=800",
         "notes": ""
     }, 
     {
         "name": "Griffon 13 X",
         "brand": "Marker",
-        "ski w": [90, 100, 110, 120],
-        "price": "429.99",
+        "widths": [90, 100, 110, 120],
+        "price": 429.99,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100293343_BKGP_1.png?v=1754107225",
         "notes": ""
     },
@@ -129,41 +129,33 @@ Ski_Bindings = [
     {
         "name": "Strive 10 GW",
         "brand": "Salomon",
-        "ski w": [80, 90, 100],
-        "price": "169.95",
+        "widths": [80, 90, 100],
+        "price": 169.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/L47320500__0c5a9dbca60d4437c35d372eec9fb188.png?crop=center&height=800&v=1754107708&width=800",
         "notes": "."
     },
     {
         "name": "Strive 12 GW",
         "brand": "Salomon",
-        "ski w": [90, 100, 115],
-        "price": "239.95",
+        "widths": [90, 100, 115],
+        "price": 239.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/L47322700__7b8bea2180fdecdd09906e0759d0434b.png?crop=center&height=800&v=1754107706&width=800",
         "notes": "."
     },  
     {
         "name": "Strive 14 GW",
         "brand": "Salomon",
-        "ski w": [90, 100, 115, 130],
-        "price": "279.95",
+        "widths": [90, 100, 115, 130],
+        "price": 279.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100248134_BLK_1.png?v=1746656803",
         "notes": "."
     },  
     {
         "name": "Strive 16 MN",
         "brand": "Salomon",
-        "ski w": [90, 100, 115, 130],
-        "price": "399.95",
+        "widths": [90, 100, 115, 130],
+        "price": 399.95,
         "image": "https://www.sportsbasement.com/cdn/shop/files/100248133-BLK-1.png?crop=center&height=800&v=1683821506&width=800",
         "notes": "."
-    },  
-    {
-        "name": "",
-        "brand": "",
-        "ski w": [],
-        "price": "",
-        "image": "",
-        "notes": "."
-    }    
+    }  
 ]
