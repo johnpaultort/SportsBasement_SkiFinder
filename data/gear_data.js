@@ -1437,7 +1437,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 379.95,
+      "price": "379.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303347_BLK_1.png?crop=center&height=800&v=1778544478&width=800",
       "notes": "One of the best boots for 25/26 season, was impossible to keep in stock. This boot gives one of the best heelholds in the game, can run a mile in these boots maybe more."
     },
@@ -1467,7 +1467,7 @@ const GEAR_DATA = {
       "lacing": [
         "single-boa"
       ],
-      "price": 289.95,
+      "price": "289.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303348_BLK_1.png?crop=center&height=800&v=1778545677&width=800",
       "notes": "."
     },
@@ -1498,7 +1498,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 289.95,
+      "price": "459.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303345_BLK_1.png?crop=center&height=800&v=1778277477&width=800",
       "notes": "."
     },
@@ -1528,7 +1528,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 289.95,
+      "price": "409.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303346_BLK_1.png?crop=center&height=800&v=1778543319&width=800",
       "notes": "."
     },
@@ -1558,7 +1558,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 289.95,
+      "price": "489.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303343_BLK_1.png?crop=center&height=800&v=1778275313&width=800",
       "notes": "."
     },
@@ -1585,7 +1585,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 379.95,
+      "price": "379.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303471_BLK_1.png?v=1775852175",
       "notes": "."
     },
@@ -1615,7 +1615,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 409.95,
+      "price": "409.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303465_BLK_1.png?v=1775850369",
       "notes": "."
     },
@@ -1640,7 +1640,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 489.95,
+      "price": "489.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303464_BLK_1.png?v=1775848403",
       "notes": "."
     },
@@ -1667,7 +1667,7 @@ const GEAR_DATA = {
       "lacing": [
         "single-boa"
       ],
-      "price": 279.95,
+      "price": "279.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303468_GRY_1.png?v=1775856349",
       "notes": "."
     },
@@ -1695,7 +1695,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 429.95,
+      "price": "429.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303316_BLK_1.png?v=1779123852",
       "notes": "."
     },
@@ -1722,7 +1722,7 @@ const GEAR_DATA = {
       "lacing": [
         "double-boa"
       ],
-      "price": 279.95,
+      "price": "279.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303320_BLK_1.png?v=1779130003",
       "notes": "."
     },
@@ -1745,7 +1745,7 @@ const GEAR_DATA = {
       "lacing": [
         "lace"
       ],
-      "price": 399.95,
+      "price": "399.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303318_RED_1.png?v=1779124475",
       "notes": "."
     },
@@ -1768,7 +1768,7 @@ const GEAR_DATA = {
       "lacing": [
         "lace"
       ],
-      "price": 349.95,
+      "price": "349.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303316_BLK_1.png?v=1779123852",
       "notes": "."
     }
