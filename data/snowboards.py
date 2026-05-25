@@ -393,9 +393,9 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 4,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "",
+        "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303300_1.png?v=1778689126",
-        "notes": "699.95"
+        "notes": "."
     },
     {
         "name": "Craft",

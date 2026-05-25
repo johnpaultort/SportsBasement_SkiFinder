@@ -121,6 +121,42 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .info-box{background:rgba(79,195,247,.07);border:1px solid rgba(79,195,247,.2);border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;font-size:.83rem;color:var(--accent);line-height:1.6;}
 .section-sep{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
  
+
+/* CART */
+#gear-cart{
+  max-width:1200px;
+  margin:1rem auto 0;
+  padding:0 1.5rem;
+}
+
+.add-cart-btn{
+  width:100%;
+  margin-top:.75rem;
+  background:var(--accent);
+  color:#08111d;
+  border:none;
+  border-radius:8px;
+  padding:.65rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.add-cart-btn:hover{
+  background:var(--accent2);
+}
+
+.product-card button{
+  width:100%;
+  margin-top:.75rem;
+  background:var(--danger);
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:.6rem;
+  cursor:pointer;
+}
+
 @media(max-width:520px){.form-row{grid-template-columns:1fr;}.sport-cards{flex-direction:column;align-items:center;}.hero h1{font-size:3rem;}}
 .page{animation:fadeIn .25s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
@@ -137,6 +173,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
     snowboard_boots: [],
     bindings: []
   };
+  // Shopping list to show employees
+  let gearCart = [];
 </script>
  
 <nav id="nav">
@@ -145,6 +183,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
   <button class="nav-back" id="backBtn" style="display:none" onclick="goBack()">← Back</button>
 </nav>
  
+<div id="gear-cart"></div>
+
 <div id="app"></div>
  
 <script>
@@ -264,12 +304,88 @@ function renderProducts(products, type = '') {
             ? `<div class="product-notes">${p.notes}</div>`
             : ''}
 
+          <button
+            class="add-cart-btn"
+            onclick='addToCart(${JSON.stringify(p)})'
+          >
+            Add To List
+          </button>
+
         </div>
       `).join('')}
     </div>
   `;
 }
- 
+
+// ADD TO CART
+function addToCart(product) {
+  gearCart.push(product);
+
+  renderCart();
+}
+
+// RENDER CART
+function renderCart() {
+  const cart = document.getElementById('gear-cart');
+
+  if (!cart) return;
+
+  if (gearCart.length === 0) {
+    cart.innerHTML = '<p>No items added yet.</p>';
+    return;
+  }
+
+  cart.innerHTML = `
+    <div class="result-card">
+
+      <div class="result-title">
+        Gear List
+      </div>
+
+      <div class="product-grid">
+
+        ${gearCart.map((item, index) => `
+          <div class="product-card">
+
+            <img
+              src="${item.image || ''}"
+              class="product-image"
+            >
+
+            <div class="product-brand">
+              ${item.brand || ''}
+            </div>
+
+            <div class="product-name">
+              ${item.name || ''}
+            </div>
+
+            <div class="product-price">
+              ${item.price || ''}
+            </div>
+
+            <button
+              onclick="removeFromCart(${index})"
+            >
+              Remove
+            </button>
+
+          </div>
+        `).join('')}
+
+      </div>
+
+    </div>
+  `;
+}
+
+// REMOVE FROM CART
+function removeFromCart(index) {
+  gearCart.splice(index, 1);
+
+  renderCart();
+}
+
 // ── LANDING ────────────────────────────────────────────────
 function landingHTML() {
   return `<div class="hero page">
@@ -356,7 +472,7 @@ function skiRecommenderHTML() {
       ${checkOpt('preferences','trees','Trees')}
       ${checkOpt('preferences','moguls','Moguls')}
       ${checkOpt('preferences','steeps','Steeps')}
-      ${checkOpt('preferences','jumps/playful','Jumps/Playful')}
+      ${checkOpt('preferences','playful','Jumps/Playful')}
       ${checkOpt('preferences','high speed','High Speed')}
       ${checkOpt('preferences', 'charger', 'Charger')}
       ${checkOpt('preferences', 'powder', 'Powder')}
@@ -946,13 +1062,14 @@ function sbBindingsHTML() {
     </select>
   </div>
   <div class="form-group">
-    <div class="form-label">Lacing Preference</div>
+    <div class="form-label">Binding Preference</div>
     <div class="radio-grid">
       ${radioOpt('binding','traditional','Traditional 2 Strap')}
       ${radioOpt('binding','step-on','Step On')}
       ${radioOpt('binding', 'fase', 'FASE')}
       ${radioOpt('binding', 'supermatic', 'Supermatic')}
     </div>
+  </div>
   <button class="btn snow" onclick="calcSbBindings()">Find Bindings →</button>
   <div id="sb-bind-result"></div>
 </div>`;
@@ -978,6 +1095,7 @@ function calcSbBindings() {
  
 // ── INIT ───────────────────────────────────────────────────
 renderPage('landing');
+renderCart();
 </script>
 </body>
 </html>

@@ -14,14 +14,13 @@ def export():
         "snowboards": SNOWBOARDS,
         "ski_boots": SKI_BOOTS,
         "snowboard_boots": BOOTS,
-        "bindings": SKI_BINDINGS,
-        "bindings": SB_BINDINGS
+        "bindings": SKI_BINDINGS + SB_BINDINGS
     }
 
     js = "// Auto-generated file — do not edit manually\n"
-    js += "const GEAR_DATA = " + json.dumps(data, indent=2) + ";\n"
+    js += "window.GEAR_DATA = " + json.dumps(data, indent=2) + ";\n"
 
-    with open("gear_data.js", "w", encoding="utf-8") as f:
+    with open("../gear_data.js", "w", encoding="utf-8") as f:
         f.write(js)
 
     print("✅ Exported gear_data.js successfully")

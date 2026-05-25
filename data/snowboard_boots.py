@@ -18,7 +18,7 @@ BOOTS = [
     {
         "name": "Anthem",
         "brand": "Ride",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 3,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15],
         "lacing": ["single-boa"],
@@ -29,7 +29,7 @@ BOOTS = [
     {
         "name": "Lasso Pro",
         "brand": "Ride",
-        "styles": ["all-mmountain", "freeride"],
+        "styles": ["all-mountain", "freeride"],
         "flex": 8,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15],
         "lacing": ["double-boa"],
@@ -40,7 +40,7 @@ BOOTS = [
     {
         "name": "Deadbolt Zonal",
         "brand": "Ride",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 7,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15],
         "lacing": ["double-boa"],
@@ -51,7 +51,7 @@ BOOTS = [
     {
         "name": "Insano",
         "brand": "Ride",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 10,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15],
         "lacing": ["double-boa"],
@@ -65,7 +65,7 @@ BOOTS = [
     {
         "name": "Maysis",
         "brand": "K2",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 7,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
         "lacing": ["double-boa"],
@@ -76,7 +76,7 @@ BOOTS = [
     {
         "name": "Theory",
         "brand": "K2",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 7,
         "sizes": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13],
         "lacing": ["double-boa"],
@@ -87,7 +87,7 @@ BOOTS = [
     {
         "name": "Orton",
         "brand": "K2",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 8,
         "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
         "lacing": ["double-boa"],
@@ -98,7 +98,7 @@ BOOTS = [
     {
         "name": "Raider",
         "brand": "K2",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 4,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
         "lacing": ["single-boa"],
@@ -112,7 +112,7 @@ BOOTS = [
     {
         "name": "Dialogue",
         "brand": "Salomon",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 6,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5],
         "lacing": ["double-boa"],
@@ -123,7 +123,7 @@ BOOTS = [
     {
         "name": "Faction",
         "brand": "Salomon",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 4,
         "sizes": [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12],
         "lacing": ["double-boa"],
@@ -134,7 +134,7 @@ BOOTS = [
     {
         "name": "Dialogue Lace",
         "brand": "Salomon",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 5,
         "sizes": [9, 9.5, 10, 10.5, 11, 11.5, 12],
         "lacing": ["lace"],
@@ -145,7 +145,7 @@ BOOTS = [
     {
         "name": "X Approach Lace",
         "brand": "Salomon",
-        "styles": ["all-mmountain"],
+        "styles": ["all-mountain"],
         "flex": 4,
         "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11],
         "lacing": ["lace"],
