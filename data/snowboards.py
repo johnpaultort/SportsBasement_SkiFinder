@@ -2,8 +2,15 @@ import json
 
 # ────────────────────────────────────────────────────────────
 #  SNOWBOARDS
-#  styles options : "all-mountain" | "freeride" | "freestyle" | "carving" | "jib"
+#  name           : "x"
+#  brand          : "y"
+#  styles options : "all-mountain" | "freeride" | "park" | "carving"
 #  shape options  : "directional" | "directional-twin" | "true-twin"
+#  wide           :  true         |  false
+#  TD: strengths      : x, y, z
+#  TD: weakness       : x, y, z
+#  TD: style-rating   : 1-10
+#  TD: profile        : Camber Rocker, Rocker, Camber, Triple Camber
 #  flex           : 1 (softest) – 10 (stiffest)
 # ────────────────────────────────────────────────────────────
  
@@ -14,11 +21,26 @@ SNOWBOARDS = [
     {
         "name": "Hometown Hero",
         "brand": "Burton",
+
         "styles": ["all-mountain"],
+
         "skill": ["intermediate", "advanced"],
-        "shape": "dircetional",
+
+        "shape": "directional",
+        "profile": "",
+        "strengths": [],
+        "weakness": [],
         "flex": 7, 
-        "lengths": [144, 148, 152, 156, 160],
+        "lengths": [
+            {"size": 144, "width": "regular" },
+            {"size": 148, "width": "regular"},
+            {"size": 152, "width": "regular"},
+            {"size": 156, "width": "regular"},
+            {"size": 156, "width": "wide"},
+            {"size": 160, "width": "wide"},
+            {"size": 160, "width": "wide"},
+        ],
+
         "price": "679.95",
         "image": "https://www.burton.com/static/product/W26/2224513E1QRG_1.png?impolicy=bglt&imwidth=943",
         "notes": "This is a great All Mountain board, it feels stable at high speed. This pairs great with their channel system bindings"
@@ -26,7 +48,7 @@ SNOWBOARDS = [
     {
         "name": "Good Company",
         "brand": "Burton",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 4,
@@ -118,7 +140,7 @@ SNOWBOARDS = [
     {
         "name": "Evil Twin",
         "brand": "Bataleon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 5,
@@ -130,7 +152,7 @@ SNOWBOARDS = [
     {
         "name": "Disaster",
         "brand": "Bataleon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 3,
@@ -157,7 +179,7 @@ SNOWBOARDS = [
     {
         "name": "Dark Horse",
         "brand": "Capita",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 6,
@@ -227,20 +249,20 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 5,
         "lengths": [143, 147, 151, 155, 159],
-        "price": "$649",
+        "price": "649",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100295818_1.png?v=1766423862",
-        "notes": "For those who like simple. Any board from the United Shapes line comes with matte top sheet. This board is for those who want to do everything, this board has no limits."
+        "notes": "For those who like simple. Any board from the United Shapes line comes with matte top sheet. This board is for those who want to do everything, this board has no limits. "
                  "Not to mention the tortional flex this board has allows for quick response."
     },
     {
         "name": "Object",
         "brand": "United Shapes",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 4,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
+        "price": "599",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
         "notes": "The object is a really niche park board that is not spotted on the regular, this board is really flexy for those who enjoy presses and butters."
     },
@@ -252,7 +274,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$749.00",
+        "price": "749.00",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100295815_1.png?crop=center&height=800&v=1766421876&width=800",
         "notes": "The Deep Reach is amazing at holding edges, and carving really fun on those powder days."
     },
@@ -264,9 +286,9 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$599",
+        "price": "599",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-        "notes": "This board is so amazing at everything, looking for something that does everything this is the one (We had a customer heli ride in this). The stiffness on this board"
+        "notes": "This board is so amazing at everything, looking for something that does everything this is the one (We had a customer heli ride in this). The stiffness on this board "
                  "allows it to be stable at high speeds, the edge control is instant this board wants to move."
     },
 
@@ -282,7 +304,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 7,
         "lengths": [144, 147, 150, 153, 156, 159, 162],
-        "price": "$749",
+        "price": "749",
         "image": "https://www.lib-tech.com/media/catalog/product/cache/bd322120d976889db2881a06b8dbba23/2/0/2026-2027-Lib-Tech-Trice-ORCA-II-Snowboard-2400x2400.jpg",
         "notes": "Directonal board that does everything from groomers down to powder, this is an everday board that you cannot get enough from."
     },
@@ -294,7 +316,7 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 6,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$499",
+        "price": "499",
         "image": "https://www.lib-tech.com/media/catalog/product/cache/bd322120d976889db2881a06b8dbba23/2/0/2025-2026-Lib-Tech-dPr-Snowboard.jpg",
         "notes": "The price tag this has is insane for a board that can do anything the price justifies it. There are boards that feel the exact same for way more."
     },
@@ -306,48 +328,48 @@ SNOWBOARDS = [
     {
         "name": "Sleepwalker",
         "brand": "Salomon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 5,
         "lengths": [148, 151, 153, 155, 158],
-        "price": "$449",
+        "price": "449",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100287400_1.png?v=1746804963",
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
         "name": "Huck Knife",
         "brand": "Salomon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 6,
         "lengths": [148, 151, 153, 155, 158],
-        "price": "$579.95",
+        "price": "579.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303307_1.png?v=1778699861",
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
         "name": "Huck Knife Pro",
         "brand": "Salomon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 7,
         "lengths": [138, 143, 147, 151, 153, 155, 158],
-        "price": "$679.95",
+        "price": "679.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303306_1.png?v=1778699095",
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
         "name": "Abstract",
         "brand": "Salomon",
-        "styles": ["freestyle"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 5,
         "lengths": [138, 143, 147, 151, 153, 155, 158],
-        "price": "$549.95",
+        "price": "549.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303308_1.png?v=1778710493",
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
@@ -359,7 +381,7 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 4,
         "lengths": [144, 148, 152, 156, 160],
-        "price": "$649.95",
+        "price": "649.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303301_1.png?v=1778690327",
         "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
     },
@@ -383,7 +405,7 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 4,
         "lengths": [150, 153, 155, 157, 158, 160, 162],
-        "price": "$479.95",
+        "price": "479.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303303_1.png?v=1778697728",
         "notes": "."
     },
@@ -406,12 +428,12 @@ SNOWBOARDS = [
     {
         "name": "Rally Cat",
         "brand": "Jones",
-        "styles": ["freestyle", "all-mountain"],
+        "styles": ["park", "all-mountain"],
         "skill": ["beginner", "intermediate"],
         "shape": "directional-twin",
         "flex": 4,
         "lengths": [151, 154, 156, 158, 161],
-        "price": "$499.95",
+        "price": "499.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308722_1.png?crop=center&height=800&v=1779469529&width=800",
         "notes": "."
     },
@@ -423,7 +445,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 4,
         "lengths": [150, 153, 156, 159, 162, 165],
-        "price": "$549.95",
+        "price": "549.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308719_1.png?crop=center&height=800&v=1779463769&width=800",
         "notes": "."
     },
@@ -435,7 +457,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [154, 158, 162],
-        "price": "$699.95",
+        "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
         "notes": "."
     },
@@ -447,7 +469,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6,
         "lengths": [142, 147, 152, 157],
-        "price": "$729.95",
+        "price": "729.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
         "notes": "."
     },
@@ -459,7 +481,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6,
         "lengths": [150, 154, 156, 162],
-        "price": "$699.95",
+        "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308715_1.png?v=1779405784",
         "notes": "."
     },
@@ -471,19 +493,19 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [152, 156, 160, 164],
-        "price": "$699.95",
+        "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308733_1.png?v=1779406817",
         "notes": "."
     },
     {
         "name": "Howler",
         "brand": "Jones",
-        "styles": ["freeride", "freestyle"],
+        "styles": ["freeride", "park"],
         "skill": ["intermediate", "advanced"],
         "shape": "directional",
         "flex": 8,
         "lengths": [152, 155, 158, 161, 164],
-        "price": "$699.95",
+        "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308718_1.png?v=1779462047",
         "notes": "."
     },
@@ -495,7 +517,7 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 8,
         "lengths": [154, 157, 160, 163],
-        "price": "$729.95",
+        "price": "729.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308720_1.png?v=1779466234",
         "notes": "."
     },
@@ -507,7 +529,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6,
         "lengths": [144, 148, 152, 156, 160, 164],
-        "price": "$649.95",
+        "price": "649.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100291901.Hovercraft2.0.1.png?v=1766013699",
         "notes": "."
     },
@@ -519,7 +541,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6,
         "lengths": [149, 153, 156, 159, 162],
-        "price": "$679.95",
+        "price": "679.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100291897.Stratos.1.png?v=1766000848",
         "notes": "."
     },
@@ -531,7 +553,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 8,
         "lengths": [151, 154, 158, 161, 164, 167, 172],
-        "price": "$749.95",
+        "price": "749.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308717_1.png?v=1779458790",
         "notes": "."
     },
@@ -543,7 +565,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 10,
         "lengths": [154, 158, 161, 164],
-        "price": "$949.95",
+        "price": "949.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308716_1.png?v=1779460684",
         "notes": "."
     }

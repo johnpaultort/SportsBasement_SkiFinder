@@ -11,6 +11,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 118,
       "lengths": [
         172,
@@ -19,7 +21,7 @@ const GEAR_DATA = {
       ],
       "price": "649",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100305170_WHT_1.png?crop=center&height=800&v=1779319612&width=800",
-      "notes": "Replace with your real product. Great all-rounder for mixed terrain."
+      "notes": "."
     },
     {
       "name": "Canvas 108",
@@ -31,6 +33,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 108,
       "lengths": [
         168,
@@ -53,6 +57,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "prefererences": [],
       "waist_mm": 100,
       "lengths": [
         162,
@@ -75,6 +81,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 102,
       "lengths": [
         168,
@@ -92,13 +100,14 @@ const GEAR_DATA = {
       "brand": "Armada",
       "styles": [
         "groomer",
-        "park",
-        "all-mountain"
+        "park"
       ],
       "skill": [
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 94,
       "lengths": [
         164,
@@ -115,13 +124,14 @@ const GEAR_DATA = {
       "brand": "Armada",
       "styles": [
         "groomer",
-        "park",
-        "all-mountain"
+        "freeride"
       ],
       "skill": [
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 100,
       "lengths": [
         165,
@@ -137,14 +147,14 @@ const GEAR_DATA = {
       "name": "ARV",
       "brand": "Armada",
       "styles": [
-        "groomer",
-        "park",
-        "all-mountain"
+        "freeride"
       ],
       "skill": [
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 106,
       "lengths": [
         164,
@@ -160,7 +170,6 @@ const GEAR_DATA = {
       "name": "Enforcer",
       "brand": "Nordica",
       "styles": [
-        "mogul",
         "groomer",
         "all-mountain"
       ],
@@ -168,6 +177,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 94,
       "lengths": [
         167,
@@ -184,7 +195,6 @@ const GEAR_DATA = {
       "name": "Enforcer",
       "brand": "Nordica",
       "styles": [
-        "mogul",
         "groomer",
         "all-mountain"
       ],
@@ -192,6 +202,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 99,
       "lengths": [
         167,
@@ -208,12 +220,14 @@ const GEAR_DATA = {
       "name": "Bent Chetler 90",
       "brand": "Atomic",
       "styles": [
-        "all-mountain"
+        "park"
       ],
       "skill": [
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 90,
       "lengths": [
         176,
@@ -235,6 +249,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 100,
       "lengths": [
         176,
@@ -255,6 +271,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 110,
       "lengths": [
         176,
@@ -275,6 +293,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 120,
       "lengths": [
         176,
@@ -295,11 +315,19 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [
+        "so-cal",
+        "rockies"
+      ],
+      "preferences": [
+        ""
+      ],
       "waist_mm": 96,
       "lengths": [
-        176,
-        184,
-        192
+        165,
+        172,
+        179,
+        186
       ],
       "price": 799.95,
       "image": "https://www.sportsbasement.com/cdn/shop/files/100306674-ONE-5.png?crop=center&height=800&v=1775578590&width=800",
@@ -309,14 +337,15 @@ const GEAR_DATA = {
       "name": "Sender 100",
       "brand": "Rossignol",
       "styles": [
-        "groomer",
-        "carving"
+        "freeride"
       ],
       "skill": [
-        "beginner",
-        "intermediate"
+        "intermediate",
+        "advanced"
       ],
-      "waist_mm": 78,
+      "terrain": [],
+      "preferences": [],
+      "waist_mm": 100,
       "lengths": [
         170,
         178,
@@ -328,16 +357,18 @@ const GEAR_DATA = {
       "notes": "This is the ski for the person that is getting off of rentals wanting their own pairs of skis for someone that doesnt go as often a season, this is a groomer friendly ski that is amazing for that and carving."
     },
     {
-      "name": "Sender 100",
+      "name": "Sender 110",
       "brand": "Rossignol",
       "styles": [
         "freeride"
       ],
       "skill": [
-        "beginner",
-        "intermediate"
+        "intermediate",
+        "advanced"
       ],
-      "waist_mm": 78,
+      "terrain": [],
+      "preferences": [],
+      "waist_mm": 110,
       "lengths": [
         168,
         176,
@@ -358,6 +389,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 98,
       "lengths": [
         165,
@@ -378,6 +411,8 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
+      "terrain": [],
+      "preferences": [],
       "waist_mm": 88,
       "lengths": [
         164,
@@ -401,7 +436,10 @@ const GEAR_DATA = {
         "intermediate",
         "advanced"
       ],
-      "shape": "dircetional",
+      "shape": "directional",
+      "profile": "",
+      "strengths": [],
+      "weakness": [],
       "flex": 7,
       "lengths": [
         144,
@@ -418,7 +456,7 @@ const GEAR_DATA = {
       "name": "Good Company",
       "brand": "Burton",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "intermediate",
@@ -581,7 +619,7 @@ const GEAR_DATA = {
       "name": "Evil Twin",
       "brand": "Bataleon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -604,7 +642,7 @@ const GEAR_DATA = {
       "name": "Disaster",
       "brand": "Bataleon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -649,7 +687,7 @@ const GEAR_DATA = {
       "name": "Dark Horse",
       "brand": "Capita",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "intermediate",
@@ -790,15 +828,15 @@ const GEAR_DATA = {
         155,
         159
       ],
-      "price": "$649",
+      "price": "649",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100295818_1.png?v=1766423862",
-      "notes": "For those who like simple. Any board from the United Shapes line comes with matte top sheet. This board is for those who want to do everything, this board has no limits.Not to mention the tortional flex this board has allows for quick response."
+      "notes": "For those who like simple. Any board from the United Shapes line comes with matte top sheet. This board is for those who want to do everything, this board has no limits. Not to mention the tortional flex this board has allows for quick response."
     },
     {
       "name": "Object",
       "brand": "United Shapes",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -814,7 +852,7 @@ const GEAR_DATA = {
         156,
         160
       ],
-      "price": "$599",
+      "price": "599",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
       "notes": "The object is a really niche park board that is not spotted on the regular, this board is really flexy for those who enjoy presses and butters."
     },
@@ -837,7 +875,7 @@ const GEAR_DATA = {
         156,
         160
       ],
-      "price": "$749.00",
+      "price": "749.00",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100295815_1.png?crop=center&height=800&v=1766421876&width=800",
       "notes": "The Deep Reach is amazing at holding edges, and carving really fun on those powder days."
     },
@@ -862,9 +900,9 @@ const GEAR_DATA = {
         156,
         160
       ],
-      "price": "$599",
+      "price": "599",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100295816_1.png?v=1766425330",
-      "notes": "This board is so amazing at everything, looking for something that does everything this is the one (We had a customer heli ride in this). The stiffness on this boardallows it to be stable at high speeds, the edge control is instant this board wants to move."
+      "notes": "This board is so amazing at everything, looking for something that does everything this is the one (We had a customer heli ride in this). The stiffness on this board allows it to be stable at high speeds, the edge control is instant this board wants to move."
     },
     {
       "name": "Orca",
@@ -887,7 +925,7 @@ const GEAR_DATA = {
         159,
         162
       ],
-      "price": "$749",
+      "price": "749",
       "image": "https://www.lib-tech.com/media/catalog/product/cache/bd322120d976889db2881a06b8dbba23/2/0/2026-2027-Lib-Tech-Trice-ORCA-II-Snowboard-2400x2400.jpg",
       "notes": "Directonal board that does everything from groomers down to powder, this is an everday board that you cannot get enough from."
     },
@@ -911,7 +949,7 @@ const GEAR_DATA = {
         156,
         160
       ],
-      "price": "$499",
+      "price": "499",
       "image": "https://www.lib-tech.com/media/catalog/product/cache/bd322120d976889db2881a06b8dbba23/2/0/2025-2026-Lib-Tech-dPr-Snowboard.jpg",
       "notes": "The price tag this has is insane for a board that can do anything the price justifies it. There are boards that feel the exact same for way more."
     },
@@ -919,7 +957,7 @@ const GEAR_DATA = {
       "name": "Sleepwalker",
       "brand": "Salomon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -935,7 +973,7 @@ const GEAR_DATA = {
         155,
         158
       ],
-      "price": "$449",
+      "price": "449",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100287400_1.png?v=1746804963",
       "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
@@ -943,7 +981,7 @@ const GEAR_DATA = {
       "name": "Huck Knife",
       "brand": "Salomon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "intermediate",
@@ -958,7 +996,7 @@ const GEAR_DATA = {
         155,
         158
       ],
-      "price": "$579.95",
+      "price": "579.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303307_1.png?v=1778699861",
       "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
@@ -966,7 +1004,7 @@ const GEAR_DATA = {
       "name": "Huck Knife Pro",
       "brand": "Salomon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -984,7 +1022,7 @@ const GEAR_DATA = {
         155,
         158
       ],
-      "price": "$679.95",
+      "price": "679.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303306_1.png?v=1778699095",
       "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
@@ -992,7 +1030,7 @@ const GEAR_DATA = {
       "name": "Abstract",
       "brand": "Salomon",
       "styles": [
-        "freestyle"
+        "park"
       ],
       "skill": [
         "beginner",
@@ -1010,7 +1048,7 @@ const GEAR_DATA = {
         155,
         158
       ],
-      "price": "$549.95",
+      "price": "549.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303308_1.png?v=1778710493",
       "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
@@ -1034,7 +1072,7 @@ const GEAR_DATA = {
         156,
         160
       ],
-      "price": "$649.95",
+      "price": "649.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303301_1.png?v=1778690327",
       "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
     },
@@ -1083,7 +1121,7 @@ const GEAR_DATA = {
         160,
         162
       ],
-      "price": "$479.95",
+      "price": "479.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100303303_1.png?v=1778697728",
       "notes": "."
     },
@@ -1114,7 +1152,7 @@ const GEAR_DATA = {
       "name": "Rally Cat",
       "brand": "Jones",
       "styles": [
-        "freestyle",
+        "park",
         "all-mountain"
       ],
       "skill": [
@@ -1130,7 +1168,7 @@ const GEAR_DATA = {
         158,
         161
       ],
-      "price": "$499.95",
+      "price": "499.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308722_1.png?crop=center&height=800&v=1779469529&width=800",
       "notes": "."
     },
@@ -1154,7 +1192,7 @@ const GEAR_DATA = {
         162,
         165
       ],
-      "price": "$549.95",
+      "price": "549.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308719_1.png?crop=center&height=800&v=1779463769&width=800",
       "notes": "."
     },
@@ -1175,7 +1213,7 @@ const GEAR_DATA = {
         158,
         162
       ],
-      "price": "$699.95",
+      "price": "699.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
       "notes": "."
     },
@@ -1196,7 +1234,7 @@ const GEAR_DATA = {
         152,
         157
       ],
-      "price": "$729.95",
+      "price": "729.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308712_1.png?crop=center&height=800&v=1779401974&width=800",
       "notes": "."
     },
@@ -1218,7 +1256,7 @@ const GEAR_DATA = {
         156,
         162
       ],
-      "price": "$699.95",
+      "price": "699.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308715_1.png?v=1779405784",
       "notes": "."
     },
@@ -1240,7 +1278,7 @@ const GEAR_DATA = {
         160,
         164
       ],
-      "price": "$699.95",
+      "price": "699.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308733_1.png?v=1779406817",
       "notes": "."
     },
@@ -1249,7 +1287,7 @@ const GEAR_DATA = {
       "brand": "Jones",
       "styles": [
         "freeride",
-        "freestyle"
+        "park"
       ],
       "skill": [
         "intermediate",
@@ -1264,7 +1302,7 @@ const GEAR_DATA = {
         161,
         164
       ],
-      "price": "$699.95",
+      "price": "699.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308718_1.png?v=1779462047",
       "notes": "."
     },
@@ -1286,7 +1324,7 @@ const GEAR_DATA = {
         160,
         163
       ],
-      "price": "$729.95",
+      "price": "729.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308720_1.png?v=1779466234",
       "notes": "."
     },
@@ -1310,7 +1348,7 @@ const GEAR_DATA = {
         160,
         164
       ],
-      "price": "$649.95",
+      "price": "649.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100291901.Hovercraft2.0.1.png?v=1766013699",
       "notes": "."
     },
@@ -1334,7 +1372,7 @@ const GEAR_DATA = {
         159,
         162
       ],
-      "price": "$679.95",
+      "price": "679.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100291897.Stratos.1.png?v=1766000848",
       "notes": "."
     },
@@ -1359,7 +1397,7 @@ const GEAR_DATA = {
         167,
         172
       ],
-      "price": "$749.95",
+      "price": "749.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308717_1.png?v=1779458790",
       "notes": "."
     },
@@ -1380,7 +1418,7 @@ const GEAR_DATA = {
         161,
         164
       ],
-      "price": "$949.95",
+      "price": "949.95",
       "image": "https://www.sportsbasement.com/cdn/shop/files/100308716_1.png?v=1779460684",
       "notes": "."
     }
@@ -1791,7 +1829,7 @@ const GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": 279.95,
+      "price": "279.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_STRATA_BLACK_1024x.jpg?v=1753686597",
       "notes": "The Strata has a mini disk that allows the binding to carry a soft surfy feeling. Smaller contact point and allows your board to flex naturally."
     },
@@ -1812,7 +1850,7 @@ const GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": 349.95,
+      "price": "349.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_FORCE_BLACK_db5dd6ad-dca0-4136-982f-dfaf63159e12_1024x.jpg?v=1753861019",
       "notes": "."
     },
@@ -1831,7 +1869,7 @@ const GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": 439.95,
+      "price": "439.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_FALCOR_BLACK_1024x.jpg?v=1753276224",
       "notes": "."
     },
@@ -1852,7 +1890,7 @@ const GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": 399.95,
+      "price": "399.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_ATLAS_CHROME_1024x.jpg?v=1757931696",
       "notes": "."
     },
@@ -1873,7 +1911,7 @@ const GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": 329.95,
+      "price": "329.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_ULTRA_BLACK_1024x.jpg?v=1753276418",
       "notes": "."
     }

@@ -16,14 +16,13 @@
 }
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
 h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.05em;}
-
+ 
 nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem;}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--accent);letter-spacing:.1em;}
 .nav-breadcrumb{font-size:.8rem;color:var(--muted);display:flex;gap:.4rem;align-items:center;}
 .nav-back{margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--muted);padding:.35rem .8rem;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;transition:all .2s;}
 .nav-back:hover{border-color:var(--accent);color:var(--accent);}
-
-/* HERO */
+ 
 .hero{min-height:calc(100vh - 52px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(79,195,247,.07),transparent 70%);pointer-events:none;}
 .mountain-svg{position:absolute;bottom:0;left:0;right:0;opacity:.18;pointer-events:none;}
@@ -48,8 +47,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .sport-card p{font-size:.82rem;color:var(--muted);line-height:1.6;}
 .sport-arrow{display:inline-block;margin-top:1.2rem;color:var(--muted);font-size:.8rem;transition:all .2s;}
 .sport-card:hover .sport-arrow{color:var(--text);transform:translateX(4px);}
-
-/* HUB */
+ 
 .hub{padding:2rem 1.5rem;max-width:900px;margin:0 auto;}
 .hub-header{margin-bottom:2.5rem;text-align:center;}
 .hub-header h2{font-size:3.5rem;}
@@ -60,13 +58,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .tool-icon{font-size:1.8rem;margin-bottom:.3rem;}
 .tool-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.05em;color:var(--accent);}
 .tool-card p{font-size:.8rem;color:var(--muted);line-height:1.6;}
-
-/* TOOL PAGE */
+ 
 .tool-page{padding:2rem 1.5rem;max-width:700px;margin:0 auto;}
 .tool-title{font-size:3rem;margin-bottom:.3rem;}
 .tool-desc{color:var(--muted);font-size:.9rem;margin-bottom:2rem;line-height:1.6;}
-
-/* FORMS */
+ 
 .form-group{margin-bottom:1.25rem;}
 .form-label{display:block;font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
 .form-input,.form-select{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.65rem 1rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s;outline:none;}
@@ -74,22 +70,22 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .form-select option{background:var(--bg2);}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .form-hint{font-size:.75rem;color:var(--muted);margin-top:.35rem;}
-
+ 
 .radio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-bottom:1.25rem;}
+/* FIX: checkbox-grid uses same layout as radio-grid */
+.checkbox-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-bottom:1.25rem;}
 .radio-opt{cursor:pointer;}
 .radio-opt input{display:none;}
 .radio-label{display:block;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.65rem .9rem;font-size:.82rem;text-align:center;transition:all .18s;color:var(--muted);line-height:1.4;}
 .radio-opt input:checked + .radio-label{border-color:var(--accent);color:var(--text);background:rgba(79,195,247,.1);}
-
-/* BUTTONS */
+ 
 .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#0a0e1a;border:none;padding:.75rem 1.75rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;}
 .btn:hover{background:var(--accent2);transform:translateY(-1px);}
 .btn.ski{background:var(--ski);color:#0a1a0a;}
 .btn.ski:hover{filter:brightness(1.1);}
 .btn.snow{background:var(--snow);color:#0a0a1a;}
 .btn.snow:hover{filter:brightness(1.1);}
-
-/* RESULTS */
+ 
 .result-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1.5rem;}
 .result-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:1rem;}
 .result-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
@@ -104,116 +100,59 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .badge-blue{background:rgba(79,195,247,.15);color:var(--accent);border:1px solid rgba(79,195,247,.3);}
 .badge-purple{background:rgba(167,139,250,.15);color:var(--snow);border:1px solid rgba(167,139,250,.3);}
 .badge-warn{background:rgba(251,191,36,.15);color:var(--warn);border:1px solid rgba(251,191,36,.3);}
-
+ 
 .rec-list{list-style:none;margin-top:.5rem;}
 .rec-list li{padding:.5rem 0;border-bottom:1px solid rgba(45,61,90,.4);font-size:.86rem;color:var(--muted);display:flex;gap:.5rem;align-items:flex-start;}
 .rec-list li::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:.05rem;}
 .rec-list li strong{color:var(--text);}
-
-/* PRODUCT CARDS */
+ 
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-top:1rem;}
-.product-card{
-  background:var(--bg3);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:1rem;
-  overflow:hidden;
-  transition:all .2s;
-}
-
-.product-card:hover{
-  transform:translateY(-3px);
-  border-color:var(--accent);
-}
-
-.product-image{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:8px;
-  margin-bottom:.75rem;
-  background:#111;
-  transition:transform .3s;
-}
-
-.product-image:hover{
-  transform:scale(1.03);
-}
-
-.product-name{
-  font-weight:600;
-  font-size:.9rem;
-  margin-bottom:.25rem;
-}
-
-.product-brand{
-  font-size:.75rem;
-  color:var(--muted);
-  margin-bottom:.5rem;
-}
-
-.product-price{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.2rem;
-  color:var(--accent);
-  margin-bottom:.4rem;
-}
-
-.product-lengths{
-  font-size:.75rem;
-  color:var(--muted);
-}
-
-.product-notes{
-  font-size:.78rem;
-  color:var(--muted);
-  margin-top:.4rem;
-  line-height:1.5;
-  border-top:1px solid var(--border);
-  padding-top:.4rem;
-}
-
+.product-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1rem;overflow:hidden;transition:all .2s;}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);}
+.product-image{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:.75rem;background:#111;transition:transform .3s;}
+.product-image:hover{transform:scale(1.03);}
+.product-name{font-weight:600;font-size:.9rem;margin-bottom:.25rem;}
+.product-brand{font-size:.75rem;color:var(--muted);margin-bottom:.5rem;}
+.product-price{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--accent);margin-bottom:.4rem;}
+.product-lengths{font-size:.75rem;color:var(--muted);}
+.product-notes{font-size:.78rem;color:var(--muted);margin-top:.4rem;line-height:1.5;border-top:1px solid var(--border);padding-top:.4rem;}
 .no-products{font-size:.85rem;color:var(--muted);padding:.75rem 0;font-style:italic;}
-
 .warning-box{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;font-size:.83rem;color:var(--warn);line-height:1.6;}
 .info-box{background:rgba(79,195,247,.07);border:1px solid rgba(79,195,247,.2);border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;font-size:.83rem;color:var(--accent);line-height:1.6;}
 .section-sep{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
-
+ 
 @media(max-width:520px){.form-row{grid-template-columns:1fr;}.sport-cards{flex-direction:column;align-items:center;}.hero h1{font-size:3rem;}}
 .page{animation:fadeIn .25s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 </style>
 </head>
 <body>
-
-<!-- Load product data — generated by gear_data.py -->
-<!-- If gear_data.js is missing, products section just shows "none on file" -->
+ 
 <script src="gear_data.js"></script>
 <script>
-  // safe fallback ONLY (does NOT overwrite real data)
-  window.GEAR_DATA = window.GEAR_DATA || { 
-    skis: [], 
+  window.GEAR_DATA = window.GEAR_DATA || {
+    skis: [],
     snowboards: [],
     ski_boots: [],
     snowboard_boots: [],
     bindings: []
-    };
+  };
 </script>
-
+ 
 <nav id="nav">
   <span class="nav-logo">Sports Basement Fitter</span>
   <div class="nav-breadcrumb" id="breadcrumb"></div>
   <button class="nav-back" id="backBtn" style="display:none" onclick="goBack()">← Back</button>
 </nav>
-
+ 
 <div id="app"></div>
-
+ 
 <script>
 const $ = id => document.getElementById(id);
 let historyStack = [];
 let state = { sport: null, tool: null };
 let currentPage = 'landing';
-
+ 
 function goBack() {
   if (historyStack.length > 0) {
     const prev = historyStack.pop();
@@ -237,39 +176,46 @@ function updateNav() {
   back.style.display = historyStack.length > 0 ? 'block' : 'none';
 }
 function toolLabel(t) {
-  return {'ski-recommender':'Ski Finder','ski-boots':'Boot Fitter','din-calc':'DIN Calculator','sb-board':'Board Finder','sb-boots':'Boot Fitter'}[t] || t;
+  return {
+    'ski-recommender':'Ski Finder',
+    'ski-boots':'Boot Fitter',
+    'din-calc':'DIN Calculator',
+    'ski-bindings':'Binding Recommender',
+    'sb-board':'Board Finder',
+    'sb-boots':'Boot Fitter',
+    'sb-bindings':'Binding Recommender'
+  }[t] || t;
 }
 function renderPage(page) {
   updateNav();
   const app = $('app');
   const map = {
-    landing: landingHTML, 'ski-hub': skiHubHTML, 'sb-hub': sbHubHTML,
-    'ski-recommender': skiRecommenderHTML, 'ski-boots': skiBootsHTML,
-    'din-calc': dinCalcHTML, 'sb-board': sbBoardHTML, 'sb-boots': sbBootsHTML
+    landing: landingHTML,
+    'ski-hub': skiHubHTML,
+    'sb-hub': sbHubHTML,
+    'ski-recommender': skiRecommenderHTML,
+    'ski-boots': skiBootsHTML,
+    'din-calc': dinCalcHTML,
+    'ski-bindings': skiBindingsHTML,
+    'sb-board': sbBoardHTML,
+    'sb-boots': sbBootsHTML,
+    'sb-bindings': sbBindingsHTML
   };
   if (page === 'landing') { state = { sport: null, tool: null }; updateNav(); }
   app.innerHTML = (map[page] || landingHTML)();
 }
-
+ 
 // ── UTILS ──────────────────────────────────────────────────
 function radioOpt(name, value, label) {
   return `<label class="radio-opt"><input type="radio" name="${name}" value="${value}"><div class="radio-label">${label.replace('\n','<br>')}</div></label>`;
 }
-
 function checkOpt(name, value, label) {
-  return `
-    <label class="radio-opt">
-      <input type="checkbox" name="${name}" value="${value}">
-      <div class="radio-label">${label}</div>
-    </label>
-  `;
+  return `<label class="radio-opt"><input type="checkbox" name="${name}" value="${value}"><div class="radio-label">${label}</div></label>`;
 }
-
 function heightOpts() {
   return [["4'10\"","147"],["4'11\"","150"],["5'0\"","152"],["5'1\"","155"],["5'2\"","157"],["5'3\"","160"],["5'4\"","163"],["5'5\"","165"],["5'6\"","168"],["5'7\"","170"],["5'8\"","173"],["5'9\"","175"],["5'10\"","178"],["5'11\"","180"],["6'0\"","183"],["6'1\"","185"],["6'2\"","188"],["6'3\"","190"],["6'4\"","193"],["6'5\"","196"]]
     .map(([l,v]) => `<option value="${v}">${l} (${v}cm)</option>`).join('');
 }
-
 function renderProducts(products, type = '') {
   if (!products || products.length === 0) {
     return `<p class="no-products">No ${type} products on file yet.</p>`;
@@ -288,42 +234,42 @@ function renderProducts(products, type = '') {
 
           <div class="product-price">${p.price || ''}</div>
 
-          ${
-            p.lengths
-              ? `<div class="product-lengths">
-                  Available: ${p.lengths.join(', ')}
-                </div>`
-              : ''
-          }
+          ${p.lengths ? `
+            <div class="product-lengths">
+              Available:
+              ${p.lengths.map(l => {
+                if (typeof l === 'number') return l;
 
-          ${
-            p.sizes
-              ? `<div class="product-lengths">
-                  Sizes: ${p.sizes.join(', ')}
-                </div>`
-              : ''
-          }
+                return l.width === 'wide'
+                  ? `${l.size}W`
+                  : `${l.size}`;
+              }).join(', ')}
+            </div>
+          ` : ''}
 
-          ${
-            p.flex
-              ? `<div class="product-lengths">
-                  Flex: ${p.flex}
-                </div>`
-              : ''
-          }
+          ${p.sizes ? `
+            <div class="product-lengths">
+              Sizes:
+              ${p.sizes.map(s =>
+                `${s.size} (${s.boot_sizes})`
+              ).join(', ')}
+            </div>
+          ` : ''}
 
-          ${
-            p.notes
-              ? `<div class="product-notes">${p.notes}</div>`
-              : ''
-          }
+          ${p.flex
+            ? `<div class="product-lengths">Flex: ${p.flex}</div>`
+            : ''}
+
+          ${p.notes
+            ? `<div class="product-notes">${p.notes}</div>`
+            : ''}
 
         </div>
       `).join('')}
     </div>
   `;
 }
-
+ 
 // ── LANDING ────────────────────────────────────────────────
 function landingHTML() {
   return `<div class="hero page">
@@ -356,8 +302,8 @@ function chooseSport(sport) {
   state.sport = sport;
   navigate(sport === 'ski' ? 'ski-hub' : 'sb-hub');
 }
-
-// ── SKI HUB ────────────────────────────────────────────────
+ 
+// Ski Tools
 function skiHubHTML() {
   return `<div class="hub page">
   <div class="hub-header">
@@ -378,11 +324,15 @@ function skiHubHTML() {
       <div class="tool-icon">⚙️</div><h3>DIN Calculator</h3>
       <p>Calculate your binding release setting for safety and performance.</p>
     </div>
+    <div class="tool-card" onclick="navigate('ski-bindings',{tool:'ski-bindings'})">
+      <div class="tool-icon">🔗</div><h3>Binding Recommender</h3>
+      <p>Find the right bindings to match your DIN setting.</p>
+    </div>
   </div>
 </div>`;
 }
-
-// ── SKI RECOMMENDER ────────────────────────────────────────
+ 
+// SKI RECOMMENDER TOOL
 function skiRecommenderHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SKI RECOMMENDER</h2>
@@ -396,11 +346,22 @@ function skiRecommenderHTML() {
     <div class="radio-grid">
       ${radioOpt('style','all-mountain','All Mountain')}
       ${radioOpt('style','groomer','Groomed Runs')}
-      ${radioOpt('style','powder','Powder / Off-Piste')}
+      ${radioOpt('style', 'freeride', 'Off-Piste/freeride')}
       ${radioOpt('style','park','Park')}
-      ${radioOpt('style','mogul','Moguls / Trees')}
     </div>
   </div>
+  <div class="form-group">
+    <div class="form-label">Specific Traits (optional)</div>
+    <div class="checkbox-grid">
+      ${checkOpt('preferences','trees','Trees')}
+      ${checkOpt('preferences','moguls','Moguls')}
+      ${checkOpt('preferences','steeps','Steeps')}
+      ${checkOpt('preferences','jumps/playful','Jumps/Playful')}
+      ${checkOpt('preferences','high speed','High Speed')}
+      ${checkOpt('preferences', 'charger', 'Charger')}
+      ${checkOpt('preferences', 'powder', 'Powder')}
+    </div>
+  </div> 
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="skier-height">Your Height</label>
@@ -413,13 +374,31 @@ function skiRecommenderHTML() {
   </div>
   <div class="form-group">
     <div class="form-label">Terrain Preference</div>
-    <div class="radio-grid">${radioOpt('terrain','groomed','Mostly Groomed')}${radioOpt('terrain','mixed','Mixed Terrain')}${radioOpt('terrain','backcountry','Backcountry')}</div>
+    <div class="radio-grid">
+      ${radioOpt('terrain','groomed','Mostly Groomed')}
+      ${radioOpt('terrain','mixed','Mixed Terrain')}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">Where do you ride?</div>
+    <div class="radio-grid">
+      ${radioOpt('local', 'socal', 'So-Cal')}
+      ${radioOpt('local', 'sierra', 'Sierra Nevada')}
+      ${radioOpt('local', 'pnw', 'Pacific NW')}
+      ${radioOpt('local', 'rockies','Utah')} 
+      ${radioOpt('local', 'rockies', 'Colorado')}
+      ${radioOpt('local', 'northeast', 'North East')}
+      ${radioOpt('local', 'canada', 'Canada')}
+      ${radioOpt('local', 'japan', 'Japan')}
+      ${radioOpt('local', 'alps', 'Switzerland/France')}
+    </div>
   </div>
   <button class="btn ski" onclick="calcSki()">Get My Ski Recommendation →</button>
   <div id="ski-result"></div>
 </div>`;
 }
-
+ 
+// Function for Ski 
 function calcSki() {
   const skill = document.querySelector('input[name="skill"]:checked')?.value;
   const style = document.querySelector('input[name="style"]:checked')?.value;
@@ -430,9 +409,19 @@ function calcSki() {
   }
   const weightKg = Math.round(weightLbs / 2.205);
   let base = heightCm;
-  if (skill==='beginner') base-=15; else if (skill==='intermediate') base-=8; else if (skill==='advanced') base-=3; else base+=2;
-  if (style==='powder') base+=10; else if (style==='race') base+=8; else if (style==='park') base-=8; else if (style==='mogul') base-=10; else if (style==='groomer') base-=4;
-  if (weightKg>90) base+=5; else if (weightKg<60) base-=5;
+
+  //Skill Checker
+  if (skill==='beginner') base-=15; 
+  else if (skill==='intermediate') base-=8; 
+  else if (skill==='advanced') base-=3; else base+=2;
+
+  // Style Checker
+  if (style == 'freeride') base +=6; 
+  else if (style==='park') base-=8; 
+  else if (style==='groomer') base-=4;
+
+  if (weightKg>90) base+=5; 
+  else if (weightKg<60) base-=5;
   const minLen=base-3, maxLen=base+3;
   const types = {
     'all-mountain':{name:'All-Mountain Ski',width:'85–95mm',rocker:'Slight tip rocker',desc:'Versatile ski for any condition.'},
@@ -444,14 +433,7 @@ function calcSki() {
   };
   const t = types[style];
   const skillBadge={beginner:'badge-blue',intermediate:'badge-green',advanced:'badge-warn'};
-
-  // Match products from gear_data.js
-  const matched = (GEAR_DATA.skis || []).filter(s =>
-    s.styles.includes(style) && s.skill.includes(skill)
-  );
-
-  const productHTML = renderProducts(matched, 'ski');
-
+  const matched = (GEAR_DATA.skis || []).filter(s => s.styles.includes(style) && s.skill.includes(skill));
   $('ski-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -465,12 +447,12 @@ function calcSki() {
     <div class="result-row"><span class="result-key">Description</span><span class="result-val" style="max-width:55%;text-align:right;font-weight:400;color:var(--muted);font-size:.8rem;">${t.desc}</span></div>
     <hr class="section-sep"/>
     <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Products In Stock</div>
-    ${productHTML}
+    ${renderProducts(matched, 'ski')}
   </div>
   <div class="info-box">Ski lengths are guidelines. Demo before you buy! Your style may shift the ideal length by ±5cm.</div>`;
 }
-
-// ── SKI BOOTS ──────────────────────────────────────────────
+ 
+// SKI BOOTS TOOL
 function skiBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SKI BOOT FITTER</h2>
@@ -499,155 +481,85 @@ function skiBootsHTML() {
   <div class="form-group">
     <div class="form-label">Riding Level</div>
     <div class="radio-grid">
-      ${radioOpt('boot-level','beginner','Beginner\n(flex 50–70)')}
-      ${radioOpt('boot-level','intermediate','Intermediate\n(flex 80–100)')}
-      ${radioOpt('boot-level','advanced','Advanced\n(flex 100–120)')}
-      ${radioOpt('boot-level','expert','Expert\n(flex 120–140)')}
+      ${radioOpt('boot-level','beginner','Beginner')}
+      ${radioOpt('boot-level','intermediate','Intermediate')}
+      ${radioOpt('boot-level','advanced','Advanced')}
     </div>
   </div>
   <div class="form-group">
-    <div class="form-label">Foot Shape</div>
-    <div class="radio-grid">${radioOpt('foot-shape','narrow','Narrow')}${radioOpt('foot-shape','regular','Regular')}${radioOpt('foot-shape','wide','Wide')}</div>
+    <div class="form-label">Instep</div>
+    <div class="radio-grid">
+      ${radioOpt('instep','low-volume','LV')}
+      ${radioOpt('instep','regular','MV')}
+      ${radioOpt('instep','wide','HV')}</div>
   </div>
   <button class="btn ski" onclick="calcSkiBoot()">Find My Boot Size →</button>
   <div id="boot-result"></div>
 </div>`;
 }
-
+ 
 function calcSkiBoot() {
   const footLen = parseFloat($('foot-length')?.value);
   const footWidth = parseInt($('foot-width')?.value);
   const archType = $('arch-type')?.value;
   const level = document.querySelector('input[name="boot-level"]:checked')?.value;
-  const shape = document.querySelector('input[name="foot-shape"]:checked')?.value;
-
+  const shape = document.querySelector('input[name="instep"]:checked')?.value;
   if (!footLen || !footWidth || !archType || !level || !shape) {
-    $('boot-result').innerHTML =
-    '<div class="warning-box">Please fill in all fields.</div>';
-    return;
+    $('boot-result').innerHTML = '<div class="warning-box">Please fill in all fields.</div>'; return;
   }
-  const matchedBoots = (GEAR_DATA.ski_boots || []).filter(b =>
-    b.skill.includes(level) &&
-    b.width.includes(shape)
-  );
-
-  const bootHTML = renderProducts(matchedBoots, 'ski boot');
-
+  const matchedBoots = (GEAR_DATA.ski_boots || []).filter(b => b.skill.includes(level) && b.width.includes(shape));
   const usSize = Math.round((footLen - 17) / 0.845 * 10) / 10;
   const euroSize = Math.round(footLen * 1.5 + 1.5);
   const shellSize = Math.round((footLen + 1) * 10) / 10;
-  
-  let lastWidth = 
-  footWidth <= 93 
-  ? 'Narrow Last (96–98mm)' 
-  : footWidth <= 100 
-  ? 'Regular Last (100–102mm)' 
-  : 'Wide Last (104–106mm)';
-
-  const flexMap = {
-    beginner:'50–70',
-    intermediate:'80–100',
-    advanced:'100–120',
-    expert:'120–140'
-  };
-
-  const insole = 
-    archType==='high' 
-      ? 'High-arch aftermarket footbed recommended (e.g. Superfeet Carbon)'
-      : archType==='low' ? 'Supportive footbed to control pronation (e.g. Sidas Custom)'
-      : 'Stock footbed usually sufficient; aftermarket optional';
-
-
+  const lastWidth = footWidth <= 93 ? 'Narrow Last (96–98mm)' : footWidth <= 100 ? 'Regular Last (100–102mm)' : 'Wide Last (104–106mm)';
+  const flexMap = {beginner:'50–70',intermediate:'80–100',advanced:'100–120',expert:'120–140'};
+  const insole = archType==='high' ? 'High-arch aftermarket footbed recommended (e.g. Superfeet Carbon)' : archType==='low' ? 'Supportive footbed to control pronation (e.g. Sidas Custom)' : 'Stock footbed usually sufficient; aftermarket optional';
   const brands = {
     narrow:['Lange (96–98mm last)','Atomic Hawx','Tecnica Cochise narrow'],
     regular:['Salomon S/Pro','Nordica Speedmachine','Fischer RC Pro'],
     wide:['Atomic Hawx XTD Wide','Rossignol Alltrack Pro Wide','Nordica Sportmachine Wide']
   };
-
-$('boot-result').innerHTML = `
+  $('boot-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
       <div class="result-icon" style="background:rgba(79,195,247,.15);">👟</div>
-      <div>
-        <div class="result-title">Your Boot Fit Profile</div>
-        <div class="result-sub">Based on foot measurements</div>
-      </div>
+      <div><div class="result-title">Your Boot Fit Profile</div><div class="result-sub">Based on foot measurements</div></div>
     </div>
-
-    <div class="result-row">
-      <span class="result-key">Mondopoint Size</span>
-      <span class="result-val" style="color:var(--ski);">${footLen} cm</span>
-    </div>
-
-    <div class="result-row">
-      <span class="result-key">Euro Size (approx)</span>
-      <span class="result-val" style="color:var(--accent);">${euroSize}</span>
-    </div>
-
-    <div class="result-row">
-      <span class="result-key">US Men's (approx)</span>
-      <span class="result-val">${usSize.toFixed(1)}</span>
-    </div>
-
-    <div class="result-row">
-      <span class="result-key">Shell Check Target</span>
-      <span class="result-val">${shellSize} cm</span>
-    </div>
-
-    <div class="result-row">
-      <span class="result-key">Last Width</span>
-      <span class="result-val" style="color:var(--accent);">${lastWidth}</span>
-    </div>
-
-    <div class="result-row">
-      <span class="result-key">Flex Index</span>
-      <span class="result-val" style="color:var(--ski);">${flexMap[level]}</span>
-    </div>
-
+    <div class="result-row"><span class="result-key">Mondopoint Size</span><span class="result-val" style="color:var(--ski);">${footLen} cm</span></div>
+    <div class="result-row"><span class="result-key">Euro Size (approx)</span><span class="result-val" style="color:var(--accent);">${euroSize}</span></div>
+    <div class="result-row"><span class="result-key">US Men's (approx)</span><span class="result-val">${usSize.toFixed(1)}</span></div>
+    <div class="result-row"><span class="result-key">Shell Check Target</span><span class="result-val">${shellSize} cm</span></div>
+    <div class="result-row"><span class="result-key">Last Width</span><span class="result-val" style="color:var(--accent);">${lastWidth}</span></div>
+    <div class="result-row"><span class="result-key">Flex Index</span><span class="result-val" style="color:var(--ski);">${flexMap[level]}</span></div>
     <hr class="section-sep"/>
-
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">
-      Insole Recommendation
-    </div>
-
-    <p style="font-size:.84rem;color:var(--muted);line-height:1.6;">
-      ${insole}
-    </p>
-
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">Insole Recommendation</div>
+    <p style="font-size:.84rem;color:var(--muted);line-height:1.6;">${insole}</p>
     <hr class="section-sep"/>
-
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">
-      Brand Suggestions — ${shape.charAt(0).toUpperCase()+shape.slice(1)} Foot
-    </div>
-
-    <ul class="rec-list">
-      ${brands[shape].map(b => `<li><strong>${b}</strong></li>`).join('')}
-    </ul>
-
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">Brand Suggestions — ${shape.charAt(0).toUpperCase()+shape.slice(1)} Foot</div>
+    <ul class="rec-list">${brands[shape].map(b=>`<li><strong>${b}</strong></li>`).join('')}</ul>
     <hr class="section-sep"/>
-
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">
-      Matching Ski Boots
-    </div>
-
-    ${bootHTML}
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Ski Boots</div>
+    ${renderProducts(matchedBoots, 'ski boot')}
   </div>
-
-  <div class="warning-box">
-    ⚠ Always have ski boots fitted by a professional.
-    Heat molding and shell punch-outs are often needed.
-  </div>`;
+  <div class="warning-box">⚠ Always have ski boots fitted by a professional. Heat molding and shell punch-outs are often needed.</div>`;
 }
 </script>
-
+ 
 <script>
 // ── DIN CALCULATOR ─────────────────────────────────────────
-// Table source: Powder7 DIN chart (ISO 11088)
-// Rows: weight brackets, Cols: beginner / intermediate / advanced / expert
 function dinCalcHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">DIN CALCULATOR</h2>
   <p class="tool-desc">Your DIN setting controls how easily your bindings release. Too low = pre-release; too high = injury risk.</p>
+  
+  <div class="form-group">
+    <label class="form-label" for="boot-size-sb">Boot Sole Length (mm)</label>
+    <select class="form-select" id="boot-size-sb">
+      <option value="">Boot Sole Length</option>
+      ${['< 251mm', '251-270mm', '271-290mm', '291-310mm', '311-330mm', '> 330mm'].map(s=>`<option value="${s}">${s}</option>`).join('')}
+    </select>
+    <div class="form-hint">Places to look: Side of heel, inside arch area of shell, sole of boot.</div>
+  </div>
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="din-weight">Weight (lbs)</label>
@@ -668,115 +580,100 @@ function dinCalcHTML() {
       ${radioOpt('din-type','1','Type 1\nCautious / Beginner')}
       ${radioOpt('din-type','2','Type 2\nIntermediate')}
       ${radioOpt('din-type','3','Type 3\nAdvanced / Expert')}
-      ${radioOpt('din-type','4','Type 3+\nVery Aggressive')}
     </div>
   </div>
   <button class="btn ski" onclick="calcDIN()">Calculate My DIN →</button>
   <div id="din-result"></div>
 </div>`;
 }
-
+ 
 function calcDIN() {
   const weightLbs = parseInt($('din-weight')?.value);
   const age = parseInt($('din-age')?.value);
   const heightCm = parseInt($('din-height')?.value);
   const type = document.querySelector('input[name="din-type"]:checked')?.value;
-
   if (!weightLbs || !age || !heightCm || !type) {
-    $('din-result').innerHTML =
-      `<div class="warning-box">Please fill in all fields.</div>`;
-    return;
+    $('din-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
-
   const dinTable = [
-    [22,29,0.75,1.0,1.25,1.5],
-    [30,38,1.0,1.25,1.5,1.75],
-    [39,47,1.25,1.5,1.8,2.0],
-    [48,56,1.5,1.8,2.0,2.5],
-    [57,66,1.8,2.0,2.6,3.0],
-    [67,78,2.0,2.6,3.0,3.7],
-    [79,91,2.6,3.0,3.7,4.5],
-    [92,107,3.0,3.7,4.5,5.5],
-    [108,125,3.7,4.5,5.5,6.5],
-    [126,147,4.5,5.5,6.5,7.5],
-    [148,174,5.5,6.5,7.5,9.0],
-    [175,209,6.5,7.5,9.0,10.5],
+    [22,29,0.75,1.0,1.25,1.5],[30,38,1.0,1.25,1.5,1.75],[39,47,1.25,1.5,1.8,2.0],
+    [48,56,1.5,1.8,2.0,2.5],[57,66,1.8,2.0,2.6,3.0],[67,78,2.0,2.6,3.0,3.7],
+    [79,91,2.6,3.0,3.7,4.5],[92,107,3.0,3.7,4.5,5.5],[108,125,3.7,4.5,5.5,6.5],
+    [126,147,4.5,5.5,6.5,7.5],[148,174,5.5,6.5,7.5,9.0],[175,209,6.5,7.5,9.0,10.5],
     [210,999,7.5,9.0,10.5,12.0],
   ];
-
-  const row = dinTable.find(
-    r => weightLbs >= r[0] && weightLbs <= r[1]
-  );
-
-  if (!row) {
-    $('din-result').innerHTML =
-      `<div class="warning-box">Weight out of range.</div>`;
-    return;
-  }
-
+  const row = dinTable.find(r => weightLbs >= r[0] && weightLbs <= r[1]);
+  if (!row) { $('din-result').innerHTML = `<div class="warning-box">Weight out of range.</div>`; return; }
   const typeIndex = parseInt(type) - 1;
   let din = row[2 + typeIndex];
-
-  if (age <= 10 || age >= 50) {
-    const adjustedIdx = Math.max(0, typeIndex - 1);
-    din = row[2 + adjustedIdx];
-  }
-
-  if (heightCm > 193) din += 0.25;
-  else if (heightCm < 150) din -= 0.25;
-
+  if (age <= 10 || age >= 50) { const adjustedIdx = Math.max(0, typeIndex - 1); din = row[2 + adjustedIdx]; }
+  if (heightCm > 193) din += 0.25; else if (heightCm < 150) din -= 0.25;
   din = Math.round(din * 4) / 4;
-
-  const matchedBindings = (GEAR_DATA.bindings || []).filter(
-    b => din >= b.min_din && din <= b.max_din
-  );
-
-  const bindingHTML = renderProducts(matchedBindings, 'bindings');
-
+  const matchedBindings = (GEAR_DATA.bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
   $('din-result').innerHTML = `
   <div class="result-card">
-
     <div class="result-header">
-      <div class="result-icon" style="background:rgba(251,191,36,.15);">
-        ⚙️
-      </div>
-
-      <div>
-        <div class="result-title">Your DIN Setting</div>
-        <div class="result-sub">
-          Based on Powder7 / ISO 11088 chart
-        </div>
-      </div>
+      <div class="result-icon" style="background:rgba(251,191,36,.15);">⚙️</div>
+      <div><div class="result-title">Your DIN Setting</div><div class="result-sub">Based on Powder7 / ISO 11088 chart</div></div>
     </div>
-
     <div style="text-align:center;padding:1.5rem 0;">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:5rem;color:var(--warn);line-height:1;">
-        ${din.toFixed(2)}
-      </div>
-
-      <div style="color:var(--muted);font-size:.82rem;margin-top:.25rem;">
-        Recommended DIN Setting
-      </div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:5rem;color:var(--warn);line-height:1;">${din.toFixed(2)}</div>
+      <div style="color:var(--muted);font-size:.82rem;margin-top:.25rem;">Recommended DIN Setting</div>
     </div>
-
     <hr class="section-sep"/>
-
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">
-      Compatible Bindings
-    </div>
-
-    ${bindingHTML}
-
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Compatible Bindings</div>
+    ${renderProducts(matchedBindings, 'bindings')}
   </div>
-
-  <div class="warning-box">
-    ⚠ DIN settings should ALWAYS be checked and adjusted by a certified ski technician.
-  </div>`;
+  <div class="warning-box">⚠ DIN settings should ALWAYS be checked and adjusted by a certified ski technician.</div>`;
+}
+ 
+// ── SKI BINDINGS (stub page) ───────────────────────────────
+function skiBindingsHTML() {
+  return `<div class="tool-page page">
+  <h2 class="tool-title">SKI BINDING RECOMMENDER</h2>
+  <p class="tool-desc">Find a binding that matches your DIN setting and skiing style.</p>
+  <div class="form-group">
+    <label class="form-label" for="bind-din">Your DIN Setting (if known)</label>
+    <input type="number" class="form-input" id="bind-din" placeholder="e.g. 6.0" step="0.25" min="0.75" max="18" />
+    <div class="form-hint">Use the DIN Calculator if you don't know yours.</div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">Skiing Style</div>
+    <div class="radio-grid">
+      ${radioOpt('bind-style','all-mountain','All Mountain')}
+      ${radioOpt('bind-style','freeride','Freeride')}
+      ${radioOpt('bind-style','race','Race / Carving')}
+      ${radioOpt('bind-style','park','Park')}
+    </div>
+  </div>
+  <button class="btn ski" onclick="calcSkiBindings()">Find Bindings →</button>
+  <div id="ski-bind-result"></div>
+</div>`;
+}
+ 
+function calcSkiBindings() {
+  const din = parseFloat($('bind-din')?.value);
+  const style = document.querySelector('input[name="bind-style"]:checked')?.value;
+  if (!din || !style) {
+    $('ski-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
+  }
+  const matched = (GEAR_DATA.bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
+  $('ski-bind-result').innerHTML = `
+  <div class="result-card">
+    <div class="result-header">
+      <div class="result-icon" style="background:rgba(79,195,247,.15);">🔗</div>
+      <div><div class="result-title">Binding Matches</div><div class="result-sub">DIN range covers ${din.toFixed(2)}</div></div>
+    </div>
+    <hr class="section-sep"/>
+    ${renderProducts(matched, 'binding')}
+  </div>
+  <div class="warning-box">⚠ Bindings must be mounted and adjusted by a certified ski technician.</div>`;
 }
 </script>
-
+ 
 <script>
 // ── SNOWBOARD HUB ──────────────────────────────────────────
+// FIX: corrected broken div nesting
 function sbHubHTML() {
   return `<div class="hub page">
   <div class="hub-header">
@@ -793,15 +690,15 @@ function sbHubHTML() {
       <div class="tool-icon">👢</div><h3>Boot Finder</h3>
       <p>Snowboard boots are more forgiving — find your right size and flex.</p>
     </div>
-    <div class="tool-card" onclick="navigate('sb-bindings',{tool:'sb-bindigs'})">
+    <div class="tool-card" onclick="navigate('sb-bindings',{tool:'sb-bindings'})">
       <div class="tool-icon">🔗</div><h3>Binding Recommender</h3>
       <p>Find the right bindings to match your style of riding.</p>
-    <div>
+    </div>
   </div>
 </div>`;
 }
-
-// ── SNOWBOARD RECOMMENDER ──────────────────────────────────
+ 
+// Board recommender
 function sbBoardHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">BOARD RECOMMENDER</h2>
@@ -835,13 +732,13 @@ function sbBoardHTML() {
       <option value="">Select boot size</option>
       ${[6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14].map(s=>`<option value="${s}">${s}</option>`).join('')}
     </select>
-    <div class="form-hint">Used to check board width (toe/heel overhang)</div>
+    <div class="form-hint">Used to check necessary board width (toe/heel overhang)</div>
   </div>
   <button class="btn snow" onclick="calcBoard()">Get My Board →</button>
   <div id="board-result"></div>
 </div>`;
 }
-
+ 
 function calcBoard() {
   const skill = document.querySelector('input[name="sb-skill"]:checked')?.value;
   const style = document.querySelector('input[name="sb-style"]:checked')?.value;
@@ -853,57 +750,47 @@ function calcBoard() {
   }
   const weightKg = weightLbs / 2.205;
   let pct = 0.88;
-  if (skill==='beginner') pct=0.86; else if (skill==='advanced'||skill==='expert') pct=0.90;
-  if (style==='freeride') pct+=0.03; else if (style==='freestyle') pct-=0.03; else if (style==='carving') pct+=0.02;
+
+  // Skill level
+  if (skill==='beginner') pct=0.86; 
+  else if (skill==='advanced') pct=0.90;
+
+  // Riding type
+  if (style==='freeride') pct+=0.03; 
+  else if (style==='park') pct-=0.03; 
+  else if (style==='carving') pct+=0.02;
+
   let baseLen = Math.round(heightCm * pct);
-  if (weightKg>90) baseLen+=5; else if (weightKg<55) baseLen-=5;
 
-  const bootMm = bootSize * 6.35 + 190;
-  let waistWidth, widthNote;
-  if (bootMm>300) { waistWidth='Wide (256–260mm)'; widthNote='Your foot size requires a wide board to avoid toe/heel drag.' }
-  else if (bootMm>285) { waistWidth='Mid-wide (252–256mm)'; widthNote='Consider a mid-wide board for your foot size.' }
-  else { waistWidth='Regular (246–252mm)'; widthNote='Standard width board will fit your boot size well.' }
+  if (weightKg>90) baseLen+=5; 
+  else if (weightKg<55) baseLen-=5;
 
-  // TODO - Remove profile, you cannot pick or change what comes in board
+  let boardWidth;
+  let widthNote;
+
+  if (bootSize >= 11) { 
+    boardWidth = 'Wide'; 
+    widthNote = 'Your foot size requires a wide board to avoid toe/heel drag.' 
+  } 
+  else if (bootSize == 10.5) {
+    boardWidth = 'Regular or Wide';
+    widthNote = '10.5 is middle point, this is also where bindings go from M to L. Carvers will notice the difference';
+  } 
+  else {
+    boardWidth = 'Regular'; 
+    widthNote = 'Regular sized snowboard fits your foot, no need for a wide.' 
+  }
+
   const shapes = {
-    'all-mountain':{
-        shape:'Directional Twin',
-        profile:'Camber / Rocker-Camber-Rocker',
-        flex:'Medium (5–6/10)',
-        desc:'Versatile for all terrain, rides both directions with a slight directional feel.'
-    },
-
-    'freeride':{
-        shape:'Directional',
-        profile:'Directional Rocker',
-        flex:'Medium-Stiff (6–8/10)',
-        desc:'Longer and stiffer with setback stance for powder float and speed.'
-    },
-
-    'park':{
-        shape:'True Twin',
-         profile:'Flat / Rocker',
-        flex:'Soft-Medium (4–6/10)',
-        desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'
-    },
-
-    'carving':{
-        shape:'Directional',
-        profile:'Full Camber',
-        flex:'Stiff (7–9/10)',
-        desc:'Maximum edge hold for laying hard carves on groomers.'
-    }
+    'all-mountain':{shape:'Directional Twin',profile:'Camber / Rocker-Camber-Rocker',flex:'Medium (5–6/10)',desc:'Versatile for all terrain, rides both directions with a slight directional feel.'},
+    'freeride':{shape:'Directional',profile:'Directional Rocker',flex:'Medium-Stiff (6–8/10)',desc:'Longer and stiffer with setback stance for powder float and speed.'},
+    'park':{shape:'True Twin',profile:'Flat / Rocker',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
+    'carving':{shape:'Directional',profile:'Full Camber',flex:'Stiff (7–9/10)',desc:'Maximum edge hold for laying hard carves on groomers.'}
   };
+
   const s = shapes[style];
   const setback = style==='freeride' ? '2–5cm back from center' : 'Rec: 12-15 front, 0-6 back';
-
-  const matched = (GEAR_DATA.snowboards || []).filter(b =>
-    b.styles.includes(style) && b.skill.includes(skill)
-  );
-  
-  const productHTML = renderProducts(matched, 'snowboard');
-
-  // TODO - Recommended length to rec size based on comfort, waist width doesnt really matter, flex you just want to explain different flexes overall, stance is going to be optional
+  const matched = (GEAR_DATA.snowboards || []).filter(b => b.styles.includes(style) && b.skill.includes(skill));
   $('board-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -911,26 +798,33 @@ function calcBoard() {
       <div><div class="result-title">${s.shape}</div><div class="result-sub">Snowboard recommendation</div></div>
     </div>
     <div class="result-row"><span class="result-key">Recommended Length</span><span class="result-val" style="color:var(--snow);">${baseLen-2}–${baseLen+2} cm</span></div>
-    <div class="result-row"><span class="result-key">Waist Width</span><span class="result-val" style="color:var(--accent);">${waistWidth}</span></div>
+    <div class="result-row"><span class="result-key">Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
     <div class="result-row"><span class="result-key">Profile</span><span class="result-val">${s.profile}</span></div>
     <div class="result-row"><span class="result-key">Flex</span><span class="result-val" style="color:var(--ski);">${s.flex}</span></div>
     <div class="result-row"><span class="result-key">Stance</span><span class="result-val">${setback}</span></div>
     <div class="result-row"><span class="result-key">About</span><span class="result-val" style="max-width:55%;text-align:right;font-weight:400;color:var(--muted);font-size:.8rem;">${s.desc}</span></div>
     <hr class="section-sep"/>
     <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Products In Stock</div>
-    ${productHTML}
+    ${renderProducts(matched, 'snowboard')}
   </div>
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
 }
-
+ 
 // ── SNOWBOARD BOOTS ────────────────────────────────────────
+// FIX: removed stray </div> before form content; added missing sb-foot-len input;
+//      fixed calcSbBoot() validation to not require footLen when usSize is provided
 function sbBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BOOT FINDER</h2>
   <p class="tool-desc">Snowboard boots fit more like athletic shoes. The right flex and lacing system makes a big difference in control and comfort.</p>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label" for="sb-foot-len">Foot Length (Mondo Point)</label>
+      <input type="number" class="form-input" id="sb-foot-len" placeholder="e.g. 27.5" step="0.5" min="20" max="34" />
+      <div class="form-hint">Heel to longest toe, standing</div>
     </div>
     <div class="form-group">
-      <label class="form-label" for="sb-us-size">US Snowboard Boot Size (if known)</label>
+      <label class="form-label" for="sb-us-size">US Size (if known)</label>
       <select class="form-select" id="sb-us-size">
         <option value="">Select if known</option>
         ${[5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14,15,16,17].map(s=>`<option value="${s}">${s}</option>`).join('')}
@@ -950,44 +844,43 @@ function sbBootsHTML() {
     <div class="form-label">Lacing Preference</div>
     <div class="radio-grid">
       ${radioOpt('lacing','traditional','Traditional Lace')}
-      ${radioOpt('lacing','boa','BOA Dial System')}
+      ${radioOpt('lacing','boa','BOA')}
     </div>
   </div>
   <div class="form-group">
-    <div class="form-label">Expectancy</div>
+    <div class="form-label">Priority</div>
     <div class="radio-grid">
-      ${radioOpt('expectancy', 'preformance', 'Preformance')}
-      ${radioOpt('expectancy', 'comfort', 'Comfort')}
+      ${radioOpt('expectancy','performance','Performance')}
+      ${radioOpt('expectancy','comfort','Comfort')}
     </div>
   </div>
   <div class="form-group">
-    <div class="form-label">Categories</div>
+    <div class="form-label">Categories (optional)</div>
     <div class="checkbox-grid">
       ${checkOpt('categories','heel','Best Heel Hold')}
       ${checkOpt('categories','great','Great for Everything')}
       ${checkOpt('categories','investment','One Time Investment')}
     </div>
-
-    <button class="btn snow" onclick="calcSbBoot()">Find My Boot →</button>
-    <div id="sb-boot-result"></div>
-  </div>`;       
+  </div>
+  <button class="btn snow" onclick="calcSbBoot()">Find My Boot →</button>
+  <div id="sb-boot-result"></div>
+</div>`;
 }
-
+ 
 function calcSbBoot() {
-  const footLen = parseFloat($('sb-foot-len')?.value);
-  const usSize = parseFloat($('sb-us-size')?.value) || null;
-  const style = document.querySelector('input[name="sb-boot-style"]:checked')?.value;
-  const lacing = document.querySelector('input[name="lacing"]:checked')?.value;
-  const matchedBoots = (GEAR_DATA.snowboard_boots || []).filter(b =>
-    b.style.includes(style)
-  );
-
-  const bootHTML = renderProducts(matchedBoots, 'snowboard boot');
-
-  if (!footLen || !style || !lacing) {
-    $('sb-boot-result').innerHTML = `<div class="warning-box">Please fill in required fields.</div>`; return;
+  const footLen = parseFloat($('sb-foot-len')?.value) || null;
+  const usSize  = parseFloat($('sb-us-size')?.value)  || null;
+  const style   = document.querySelector('input[name="sb-boot-style"]:checked')?.value;
+  const lacing  = document.querySelector('input[name="lacing"]:checked')?.value;
+  const categories = [...document.querySelectorAll('input[name="categories"]:checked')].map(el => el.value);
+ 
+  // FIX: require either foot length OR a selected US size, plus style and lacing
+  if ((!footLen && !usSize) || !style || !lacing) {
+    $('sb-boot-result').innerHTML = `<div class="warning-box">Please enter your foot length (or select a US size), riding style, and lacing preference.</div>`; return;
   }
+ 
   const calcUS = usSize || Math.round((footLen - 17) / 0.845 * 2) / 2;
+  const matchedBoots = (GEAR_DATA.snowboard_boots || []).filter(b => b.style.includes(style));
   const flexMap = {
     'all-mountain':{flex:'Medium (5–7/10)',desc:'Balanced between response and comfort.'},
     'park':{flex:'Soft-Medium (3–5/10)',desc:'Softer flex lets you press and butter naturally.'},
@@ -995,11 +888,12 @@ function calcSbBoot() {
     'carving':{flex:'Stiff (7–9/10)',desc:'Stiff with heel-hold for hard edge carves.'}
   };
   const f = flexMap[style];
+
   const lacingInfo = {
     traditional:'Traditional laces offer the most customized fit and are cheapest to replace, but take the longest to put on.',
-    boa:'BOA dial allows micro-adjustment with one hand. Fast and precise, but the dial may need replacing over time.',
-    speed:'Hybrid lacing combines BOA convenience at the top cuff with traditional lace control at the lower boot.'
+    boa:'BOA dial allows micro-adjustment with one hand. Fast and precise, but the dial may need replacing over time.'
   };
+
   const brands = {
     'all-mountain':['Burton Moto Boa','Vans Aura Pro','ThirtyTwo Lashed'],
     'park':['DC Phantom','Ride Anthem','ThirtyTwo Lashed FT'],
@@ -1016,7 +910,7 @@ function calcSbBoot() {
     <div class="result-row"><span class="result-key">Recommended US Size</span><span class="result-val" style="color:var(--snow);">${calcUS}</span></div>
     <div class="result-row"><span class="result-key">Flex Rating</span><span class="result-val" style="color:var(--ski);">${f.flex}</span></div>
     <div class="result-row"><span class="result-key">Why this flex</span><span class="result-val" style="max-width:55%;text-align:right;font-weight:400;color:var(--muted);font-size:.8rem;">${f.desc}</span></div>
-    <div class="result-row"><span class="result-key">Lacing System</span><span class="result-val">${lacing==='traditional'?'Traditional Lace':lacing==='boa'?'BOA Dial':'Speed / Hybrid Lace'}</span></div>
+    <div class="result-row"><span class="result-key">Lacing System</span><span class="result-val">${lacing==='boa'?'BOA Dial':'Traditional Lace'}</span></div>
     <hr class="section-sep"/>
     <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">Lacing Notes</div>
     <p style="font-size:.84rem;color:var(--muted);line-height:1.6;">${lacingInfo[lacing]}</p>
@@ -1024,17 +918,67 @@ function calcSbBoot() {
     <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;">Brand Suggestions</div>
     <ul class="rec-list">${brands[style].map(b=>`<li><strong>${b}</strong></li>`).join('')}</ul>
     <hr class="section-sep"/>
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">
-    Matching Snowboard Boots
-    </div>
-
-    ${bootHTML}
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Snowboard Boots</div>
+    ${renderProducts(matchedBoots, 'snowboard boot')}
   </div>
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">Snowboard boots pack out as the liner compresses. Snug (not painful) on day 1 is correct — they'll loosen up after a few sessions.</div>`;
 }
-
+ 
+// SNOWBOARD BINDINGS
+function sbBindingsHTML() {
+  return `<div class="tool-page page">
+  <h2 class="tool-title">SNOWBOARD BINDING RECOMMENDER</h2>
+  <p class="tool-desc">Find bindings that match your riding style and boot size.</p>
+  <div class="form-group">
+    <div class="form-label">Riding Style</div>
+    <div class="radio-grid">
+      ${radioOpt('sbbind-style','all-mountain','All Mountain')}
+      ${radioOpt('sbbind-style','freeride','Freeride')}
+      ${radioOpt('sbbind-style','park','Park')}
+      ${radioOpt('sbbind-style','carving','Carving')}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="sbbind-bootsize">Boot Size (US Men's)</label>
+    <select class="form-select" id="sbbind-bootsize">
+      <option value="">Select boot size</option>
+      ${[6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14].map(s=>`<option value="${s}">${s}</option>`).join('')}
+    </select>
+  </div>
+  <div class="form-group">
+    <div class="form-label">Lacing Preference</div>
+    <div class="radio-grid">
+      ${radioOpt('binding','traditional','Traditional 2 Strap')}
+      ${radioOpt('binding','step-on','Step On')}
+      ${radioOpt('binding', 'fase', 'FASE')}
+      ${radioOpt('binding', 'supermatic', 'Supermatic')}
+    </div>
+  <button class="btn snow" onclick="calcSbBindings()">Find Bindings →</button>
+  <div id="sb-bind-result"></div>
+</div>`;
+}
+ 
+function calcSbBindings() {
+  const style = document.querySelector('input[name="sbbind-style"]:checked')?.value;
+  const bootSize = parseFloat($('sbbind-bootsize')?.value);
+  if (!style || !bootSize) {
+    $('sb-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
+  }
+  const matched = (GEAR_DATA.bindings || []).filter(b => b.sport === 'snowboard');
+  $('sb-bind-result').innerHTML = `
+  <div class="result-card">
+    <div class="result-header">
+      <div class="result-icon" style="background:rgba(167,139,250,.15);">🔗</div>
+      <div><div class="result-title">Binding Matches</div><div class="result-sub">Snowboard bindings</div></div>
+    </div>
+    <hr class="section-sep"/>
+    ${renderProducts(matched, 'snowboard binding')}
+  </div>`;
+}
+ 
 // ── INIT ───────────────────────────────────────────────────
 renderPage('landing');
 </script>
 </body>
 </html>
+ 

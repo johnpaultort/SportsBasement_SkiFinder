@@ -1,0 +1,15 @@
+[] Need to add resume last fit, remember option
+[] Add womens stuff as well
+[] Fix logic
+[] Add a pair option to combo for everything. So I think start with a pop up window that ask
+"what are you looking for today." Then individual items or then combine everything together
+[] similarity score for what the customer is looking for
+[] Snowboard stance calculator
+[] Add binding size compat
+[] Add why this was picked
+[] Gather reviews/pull data from other sites where the product is sold. 
+[] Prices out on the market. Obiously promote SB and make them know they get 10% off.
+[] Add where customers are riding often (Colorado, Utah, California , Out of Country)
+[] Add comparison, where customers can pick what to compare
+[] Add a function that checks for boot size if past 10.5 go with wide board.
+[] Pull request made for what they are looking for, so from binding calc pull din setting to match their bindings.

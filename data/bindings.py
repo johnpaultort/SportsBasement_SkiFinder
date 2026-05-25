@@ -7,6 +7,23 @@ import json
 #  flex           : 1 (softest) – 10 (stiffest)
 # ────────────────────────────────────────────────────────────
 
+# Union sizing chart 
+#
+#         "sizes": [
+#            {
+#                "size": "S",
+#                "boot_sizes": "5.5-7.5"
+#            },
+#            {
+#                "size": "M",
+#                "boot_sizes": "8-10"
+#            },
+#            {
+#                "size": "L",
+#                "boot_sizes": "10.5-13"
+#            }
+#          ],
+
 SB_BINDINGS = [
     #
     # Union Bindings
@@ -16,6 +33,20 @@ SB_BINDINGS = [
         "brand":    "Union",
         "style":   ["all-mountain", "freestyle"],
         "skill":   ["beginner", "intermediate", "advanced"],
+        "sizes": [
+            {
+                "size": "S",
+                "boot_sizes": "5.5-7.5"
+            },
+            {
+                "size": "M",
+                "boot_sizes": "8-10"
+            },
+            {
+                "size": "L",
+                "boot_sizes": "10.5-13"
+            }
+        ],
         "flex":     5,
         "pattern": ["4x2", "channel"],
         "price":    "279.95",
@@ -27,6 +58,20 @@ SB_BINDINGS = [
         "brand":     "Union",
         "style":    ["all-mountain"],
         "skill":    ["beginner", "intermediate", "advanced"],
+        "sizes": [
+            {
+                "size": "S",
+                "boot_sizes": "5.5-7.5"
+            },
+            {
+                "size": "M",
+                "boot_sizes": "8-10"
+            },
+            {
+                "size": "L",
+                "boot_sizes": "10.5-13"
+            }
+        ],
         "flex":      7, 
         "pattern":  ["4x4", "4x2", "channel"],
         "price":     "349.95",
@@ -38,6 +83,20 @@ SB_BINDINGS = [
         "brand":    "Union",
         "style":    ["freeride"],
         "skill":    ["intermediate", "advanced"],
+        "sizes": [
+            {
+                "size": "S",
+                "boot_sizes": "5.5-7.5"
+            },
+            {
+                "size": "M",
+                "boot_sizes": "8-10"
+            },
+            {
+                "size": "L",
+                "boot_sizes": "10.5-13"
+            }
+        ],
         "flex":     7,
         "pattern":  ["4x2", "channel"],
         "price":    "439.95",
@@ -49,6 +108,20 @@ SB_BINDINGS = [
         "brand":    "Union",
         "style":    ["all-mountain", "carving"],
         "skill":    ["intermediate", "advanced"],
+        "sizes": [
+            {
+                "size": "S",
+                "boot_sizes": "5.5-7.5"
+            },
+            {
+                "size": "M",
+                "boot_sizes": "8-10"
+            },
+            {
+                "size": "L",
+                "boot_sizes": "10.5-13"
+            }
+        ],
         "flex":     8,
         "pattern":  ["4x4", "4x2", "channel"],
         "price":    "399.95",
@@ -60,6 +133,20 @@ SB_BINDINGS = [
         "brand":    "Union",
         "style":    ["freestyle", "all-mountain"],
         "skill":    ["beginner", "intermediate", "advanced"],
+        "sizes": [
+            {
+                "size": "S",
+                "boot_sizes": "5.5-7.5"
+            },
+            {
+                "size": "M",
+                "boot_sizes": "8-10"
+            },
+            {
+                "size": "L",
+                "boot_sizes": "10.5-13"
+            }
+        ],
         "flex":     6, 
         "pattern":  ["4x2", "channel"],
         "price":    "329.95",
@@ -75,8 +162,8 @@ SKI_BINDINGS = [
     {
         "name": "Pivot 11",
         "brand": "Look",
-        "widths":    [95, 105, 115],
-        "price":    "279.95",
+        "widths":[95, 105, 115],
+        "price": "279.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100288955_WHBK_1.png?v=1754107554",
         "notes": ""
     },
