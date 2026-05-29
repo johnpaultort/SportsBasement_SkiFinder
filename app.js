@@ -1,193 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sports Basement Fitter</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#0a0e1a;--bg2:#111827;--bg3:#1a2236;--card:#1e2a42;
-  --border:#2d3d5a;--text:#f0f4ff;--muted:#7a8aaa;
-  --accent:#4fc3f7;--accent2:#81d4fa;
-  --ski:#4ade80;--snow:#a78bfa;--warn:#fbbf24;--danger:#f87171;
-}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
-h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.05em;}
- 
-nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem;}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--accent);letter-spacing:.1em;}
-.nav-breadcrumb{font-size:.8rem;color:var(--muted);display:flex;gap:.4rem;align-items:center;}
-.nav-back{margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--muted);padding:.35rem .8rem;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;transition:all .2s;}
-.nav-back:hover{border-color:var(--accent);color:var(--accent);}
- 
-.hero{min-height:calc(100vh - 52px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(79,195,247,.07),transparent 70%);pointer-events:none;}
-.mountain-svg{position:absolute;bottom:0;left:0;right:0;opacity:.18;pointer-events:none;}
-.hero-tag{display:inline-block;background:rgba(79,195,247,.12);border:1px solid rgba(79,195,247,.3);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:999px;margin-bottom:1.5rem;}
-.hero h1{font-size:clamp(3.5rem,10vw,7rem);line-height:.95;margin-bottom:1rem;}
-.hero h1 em{color:var(--accent);font-style:normal;}
-.hero-sub{color:var(--muted);font-size:.9rem;max-width:460px;margin:0 auto 1rem;line-height:1.7;}
-.hero-notice{display:inline-block;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);color:var(--warn);font-size:.78rem;padding:.4rem 1rem;border-radius:8px;margin-bottom:2.5rem;max-width:460px;line-height:1.6;}
-.sport-cards{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
-.sport-card{width:220px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem 1.5rem;cursor:pointer;transition:all .25s;text-align:center;position:relative;overflow:hidden;}
-.sport-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .25s;}
-.sport-card.ski-card::before{background:radial-gradient(circle at 50% 0%,rgba(74,222,128,.12),transparent 70%);}
-.sport-card.snow-card::before{background:radial-gradient(circle at 50% 0%,rgba(167,139,250,.12),transparent 70%);}
-.sport-card:hover{transform:translateY(-4px);}
-.sport-card.ski-card:hover{border-color:var(--ski);}
-.sport-card.snow-card:hover{border-color:var(--snow);}
-.sport-card:hover::before{opacity:1;}
-.sport-icon{font-size:3rem;margin-bottom:1rem;display:block;}
-.sport-card h2{font-size:2.2rem;margin-bottom:.5rem;}
-.sport-card.ski-card h2{color:var(--ski);}
-.sport-card.snow-card h2{color:var(--snow);}
-.sport-card p{font-size:.82rem;color:var(--muted);line-height:1.6;}
-.sport-arrow{display:inline-block;margin-top:1.2rem;color:var(--muted);font-size:.8rem;transition:all .2s;}
-.sport-card:hover .sport-arrow{color:var(--text);transform:translateX(4px);}
- 
-.hub{padding:2rem 1.5rem;max-width:900px;margin:0 auto;}
-.hub-header{margin-bottom:2.5rem;text-align:center;}
-.hub-header h2{font-size:3.5rem;}
-.hub-header p{color:var(--muted);font-size:.9rem;margin-top:.5rem;}
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
-.tool-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:.5rem;}
-.tool-card:hover{transform:translateY(-3px);border-color:var(--accent);}
-.tool-icon{font-size:1.8rem;margin-bottom:.3rem;}
-.tool-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.05em;color:var(--accent);}
-.tool-card p{font-size:.8rem;color:var(--muted);line-height:1.6;}
- 
-.tool-page{padding:2rem 1.5rem;max-width:700px;margin:0 auto;}
-.tool-title{font-size:3rem;margin-bottom:.3rem;}
-.tool-desc{color:var(--muted);font-size:.9rem;margin-bottom:2rem;line-height:1.6;}
- 
-.form-group{margin-bottom:1.25rem;}
-.form-label{display:block;font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
-.form-input,.form-select{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.65rem 1rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s;outline:none;}
-.form-input:focus,.form-select:focus{border-color:var(--accent);}
-.form-select option{background:var(--bg2);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-hint{font-size:.75rem;color:var(--muted);margin-top:.35rem;}
- 
-.radio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-bottom:1.25rem;}
-/* FIX: checkbox-grid uses same layout as radio-grid */
-.checkbox-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-bottom:1.25rem;}
-.radio-opt{cursor:pointer;}
-.radio-opt input{display:none;}
-.radio-label{display:block;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.65rem .9rem;font-size:.82rem;text-align:center;transition:all .18s;color:var(--muted);line-height:1.4;}
-.radio-opt input:checked + .radio-label{border-color:var(--accent);color:var(--text);background:rgba(79,195,247,.1);}
- 
-.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#0a0e1a;border:none;padding:.75rem 1.75rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;}
-.btn:hover{background:var(--accent2);transform:translateY(-1px);}
-.btn.ski{background:var(--ski);color:#0a1a0a;}
-.btn.ski:hover{filter:brightness(1.1);}
-.btn.snow{background:var(--snow);color:#0a0a1a;}
-.btn.snow:hover{filter:brightness(1.1);}
- 
-.result-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1.5rem;}
-.result-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:1rem;}
-.result-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.result-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;}
-.result-sub{font-size:.8rem;color:var(--muted);}
-.result-row{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid rgba(45,61,90,.5);}
-.result-row:last-child{border-bottom:none;}
-.result-key{font-size:.82rem;color:var(--muted);}
-.result-val{font-weight:600;font-size:.9rem;}
-.badge{display:inline-block;padding:.25rem .7rem;border-radius:999px;font-size:.72rem;font-weight:600;}
-.badge-green{background:rgba(74,222,128,.15);color:var(--ski);border:1px solid rgba(74,222,128,.3);}
-.badge-blue{background:rgba(79,195,247,.15);color:var(--accent);border:1px solid rgba(79,195,247,.3);}
-.badge-purple{background:rgba(167,139,250,.15);color:var(--snow);border:1px solid rgba(167,139,250,.3);}
-.badge-warn{background:rgba(251,191,36,.15);color:var(--warn);border:1px solid rgba(251,191,36,.3);}
- 
-.rec-list{list-style:none;margin-top:.5rem;}
-.rec-list li{padding:.5rem 0;border-bottom:1px solid rgba(45,61,90,.4);font-size:.86rem;color:var(--muted);display:flex;gap:.5rem;align-items:flex-start;}
-.rec-list li::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:.05rem;}
-.rec-list li strong{color:var(--text);}
- 
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-top:1rem;}
-.product-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1rem;overflow:hidden;transition:all .2s;}
-.product-card:hover{transform:translateY(-3px);border-color:var(--accent);}
-.product-image{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:.75rem;background:#111;transition:transform .3s;}
-.product-image:hover{transform:scale(1.03);}
-.product-name{font-weight:600;font-size:.9rem;margin-bottom:.25rem;}
-.product-brand{font-size:.75rem;color:var(--muted);margin-bottom:.5rem;}
-.product-price{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--accent);margin-bottom:.4rem;}
-.product-lengths{font-size:.75rem;color:var(--muted);}
-.product-notes{font-size:.78rem;color:var(--muted);margin-top:.4rem;line-height:1.5;border-top:1px solid var(--border);padding-top:.4rem;}
-.no-products{font-size:.85rem;color:var(--muted);padding:.75rem 0;font-style:italic;}
-.warning-box{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;font-size:.83rem;color:var(--warn);line-height:1.6;}
-.info-box{background:rgba(79,195,247,.07);border:1px solid rgba(79,195,247,.2);border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;font-size:.83rem;color:var(--accent);line-height:1.6;}
-.section-sep{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
- 
-
-/* CART */
-#gear-cart{
-  max-width:1200px;
-  margin:1rem auto 0;
-  padding:0 1.5rem;
-}
-
-.add-cart-btn{
-  width:100%;
-  margin-top:.75rem;
-  background:var(--accent);
-  color:#08111d;
-  border:none;
-  border-radius:8px;
-  padding:.65rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.add-cart-btn:hover{
-  background:var(--accent2);
-}
-
-.product-card button{
-  width:100%;
-  margin-top:.75rem;
-  background:var(--danger);
-  color:white;
-  border:none;
-  border-radius:8px;
-  padding:.6rem;
-  cursor:pointer;
-}
-
-@media(max-width:520px){.form-row{grid-template-columns:1fr;}.sport-cards{flex-direction:column;align-items:center;}.hero h1{font-size:3rem;}}
-.page{animation:fadeIn .25s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-</style>
-</head>
-<body>
- 
-<script src="gear_data.js"></script>
-<script>
-  window.GEAR_DATA = window.GEAR_DATA || {
+window.GEAR_DATA = window.GEAR_DATA || {
     skis: [],
     snowboards: [],
     ski_boots: [],
     snowboard_boots: [],
     bindings: []
-  };
-  // Shopping list to show employees
-  let gearCart = [];
-</script>
- 
-<nav id="nav">
-  <span class="nav-logo">Sports Basement Fitter</span>
-  <div class="nav-breadcrumb" id="breadcrumb"></div>
-  <button class="nav-back" id="backBtn" style="display:none" onclick="goBack()">← Back</button>
-</nav>
- 
-<div id="gear-cart"></div>
+};
 
-<div id="app"></div>
+let gearCart = [];
+
+let favorites = JSON.parse(
+  localStorage.getItem("favorites") || "[]"
+);
  
-<script>
+
 const $ = id => document.getElementById(id);
 let historyStack = [];
 let state = { sport: null, tool: null };
@@ -239,10 +64,12 @@ function renderPage(page) {
     'ski-bindings': skiBindingsHTML,
     'sb-board': sbBoardHTML,
     'sb-boots': sbBootsHTML,
-    'sb-bindings': sbBindingsHTML
+    'sb-bindings': sbBindingsHTML,
+    'accessories': accessoriesHTML
   };
   if (page === 'landing') { state = { sport: null, tool: null }; updateNav(); }
   app.innerHTML = (map[page] || landingHTML)();
+  renderCart();
 }
  
 // ── UTILS ──────────────────────────────────────────────────
@@ -266,7 +93,11 @@ function renderProducts(products, type = '') {
       ${products.map(p => `
         <div class="product-card">
 
-          <img src="${p.image || ''}" class="product-image">
+          <img 
+            src="${p.image || '/images/placeholder.jpg'}"
+            class="product-image"
+            alt="${p.name}"
+           >
 
           <div class="product-brand">${p.brand || ''}</div>
 
@@ -306,15 +137,50 @@ function renderProducts(products, type = '') {
 
           <button
             class="add-cart-btn"
-            onclick='addToCart(${JSON.stringify(p)})'
+            onclick="addToCartByName(${JSON.stringify(p.name)}, this)"
           >
             Add To List
+          </button>
+
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(${JSON.stringify(p.name)})"
+          >
+            ${favorites.includes(p.name) ? '♥' : '♡'}
           </button>
 
         </div>
       `).join('')}
     </div>
   `;
+}
+
+function addToCartByName(name,btn) {
+    const allProducts = [
+        ...(GEAR_DATA.skis || []),
+        ...(GEAR_DATA.snowboards || []),
+        ...(GEAR_DATA.ski_boots || []),
+        ...(GEAR_DATA.snowboard_boots || []),
+        ...(GEAR_DATA.bindings || [])
+    ];
+
+    const product = allProducts.find(
+        p => p.name === name
+    );
+
+    if (product) {
+        addToCart(product);
+
+        const original = btn.innerHTML;
+
+        btn.innerHTML = "✓ Added";
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.innerHTML = original;
+            btn.disabled = false;
+        }, 1500);
+    }
 }
 
 // ADD TO CART
@@ -328,55 +194,86 @@ function addToCart(product) {
 function renderCart() {
   const cart = document.getElementById('gear-cart');
 
-  if (!cart) return;
-
-  if (gearCart.length === 0) {
-    cart.innerHTML = '<p>No items added yet.</p>';
-    return;
-  }
+    if (!cart) return;
 
   cart.innerHTML = `
-    <div class="result-card">
-
-      <div class="result-title">
-        Gear List
-      </div>
-
-      <div class="product-grid">
-
-        ${gearCart.map((item, index) => `
-          <div class="product-card">
-
-            <img
-              src="${item.image || ''}"
-              class="product-image"
-            >
-
-            <div class="product-brand">
-              ${item.brand || ''}
-            </div>
-
-            <div class="product-name">
-              ${item.name || ''}
-            </div>
-
-            <div class="product-price">
-              ${item.price || ''}
-            </div>
-
-            <button
-              onclick="removeFromCart(${index})"
-            >
-              Remove
-            </button>
-
-          </div>
-        `).join('')}
-
-      </div>
-
+    <div class="cart-icon-wrapper" onclick="toggleCart()">
+     🛍️
+     <span class="cart-count">${gearCart.length}</span>
     </div>
-  `;
+
+    <div class="cart-dropdown" id="cart-dropdown">
+        ${
+            gearCart.length === 0
+                ?`
+                <div class="empty-cart">
+                    Your gear list is empty.
+                </div>
+                `
+                :`
+                <div class="result-cart">
+
+                    <div class="cart-header">
+
+                        <div class="result-title">Gear List</div>
+
+                        <button
+                            class="close-cart-btn"
+                            onclick="event.stopPropagation(); toggleCart();"
+                        >
+                            ✕
+                        </button>
+                    </div>
+
+                    <div class="product-grid">
+
+                        ${gearCart.map((item, index) => `
+                            <div class="product-card">
+
+                                <img
+                                    src="${item.image || ''}"
+                                    class="product-image"
+                                >
+
+                                <div class="product-brand">
+                                    ${item.brand || ''}
+                                </div>
+
+                                <div class="product-name">
+                                    ${item.name || ''}
+                                </div>
+
+                                <div class="product-price">
+                                    ${item.price || ''}
+                                </div>
+
+                                <button
+                                    class="remove-icon-btn" 
+                                    onclick="removeFromCart(${index})"
+                                    title="Remove item"
+                                >
+                                    🗑️
+                                </button>
+
+                            </div>
+                        `).join('')}
+
+                    </div>
+
+                 </div>
+              `
+            }
+      </div>
+    `;
+
+}
+
+function toggleCart() {
+    const dropdown = document.getElementById('cart-dropdown');
+
+    if (!dropdown) return;
+
+    dropdown.classList.toggle('show-cart');
 }
 
 // REMOVE FROM CART
@@ -384,6 +281,22 @@ function removeFromCart(index) {
   gearCart.splice(index, 1);
 
   renderCart();
+}
+
+// Favorite
+function toggleFavorite(name){
+    if(favorites.includes(name)){
+        favorites = favorites.filter(x => x !== name);
+    } else {
+        favorites.push(name);
+    }
+    
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+    renderPage(currentPage);
 }
 
 // ── LANDING ────────────────────────────────────────────────
@@ -396,27 +309,43 @@ function landingHTML() {
     <polygon points="350,220 560,60 800,220" fill="#4fc3f7"/>
     <rect width="800" height="40" y="180" fill="#0a0e1a"/>
   </svg>
-  <div class="hero-tag">Your Mountain Gear Guide</div>
+  <div class="hero-tag">Your guide to excel</div>
   <h1>FIND YOUR<br><em>PERFECT FIT</em></h1>
-  <p class="hero-sub">Tell us what you ride, and we'll match you to the right gear.</p>
+  <p class="hero-sub">Tell us the dimensions, and we'll match you to the right gear.</p>
   <div class="hero-notice">⚠ Please only use this tool if you're in a hurry or our associates are busy helping others. We're always happy to help you in person!</div>
   <div class="sport-cards">
     <div class="sport-card ski-card" onclick="chooseSport('ski')">
       <span class="sport-icon">🎿</span><h2>SKI</h2>
       <p>Ski recommender, boot fitter by measurement, and DIN binding calculator.</p>
-      <span class="sport-arrow">Explore ski tools →</span>
+      <span class="sport-arrow">Let's get fitted →</span>
     </div>
     <div class="sport-card snow-card" onclick="chooseSport('snowboard')">
       <span class="sport-icon">🏂</span><h2>SNOWBOARD</h2>
       <p>Board recommender by riding style and snowboard boot sizing guide.</p>
-      <span class="sport-arrow">Explore board tools →</span>
+      <span class="sport-arrow">Let's get fitted →</span>
+    </div>
+    <div class="sport-card accessories-card" onclick="chooseSport('accessories')">
+      <span class="sport-icon">🪖</span><h2>ACCESSORIES</h2>
+      <p>Accessories recommender by what you are looking for (bags, helmets, goggles, and more).</p>
+      <span class="sport-arrow">Let't find accessories →</span>
     </div>
   </div>
 </div>`;
 }
+
+// Sports/Accessories
 function chooseSport(sport) {
   state.sport = sport;
-  navigate(sport === 'ski' ? 'ski-hub' : 'sb-hub');
+
+  if (sport === 'ski'){
+      navigate('ski-hub');
+  }
+  else if (sport === 'snowboard'){
+      navigate('sb-hub');
+  }
+  else if (sport === 'accessories'){
+      navigate('accessories')
+  }
 }
  
 // Ski Tools
@@ -462,7 +391,7 @@ function skiRecommenderHTML() {
     <div class="radio-grid">
       ${radioOpt('style','all-mountain','All Mountain')}
       ${radioOpt('style','groomer','Groomed Runs')}
-      ${radioOpt('style', 'freeride', 'Off-Piste/freeride')}
+      ${radioOpt('style', 'freeride', 'Off-Piste/Freeride')}
       ${radioOpt('style','park','Park')}
     </div>
   </div>
@@ -501,8 +430,8 @@ function skiRecommenderHTML() {
       ${radioOpt('local', 'socal', 'So-Cal')}
       ${radioOpt('local', 'sierra', 'Sierra Nevada')}
       ${radioOpt('local', 'pnw', 'Pacific NW')}
-      ${radioOpt('local', 'rockies','Utah')} 
-      ${radioOpt('local', 'rockies', 'Colorado')}
+      ${radioOpt('local', 'utah','Utah')} 
+      ${radioOpt('local', 'colorado', 'Colorado')}
       ${radioOpt('local', 'northeast', 'North East')}
       ${radioOpt('local', 'canada', 'Canada')}
       ${radioOpt('local', 'japan', 'Japan')}
@@ -524,6 +453,7 @@ function calcSki() {
     $('ski-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
   const weightKg = Math.round(weightLbs / 2.205);
+
   let base = heightCm;
 
   //Skill Checker
@@ -659,9 +589,7 @@ function calcSkiBoot() {
   </div>
   <div class="warning-box">⚠ Always have ski boots fitted by a professional. Heat molding and shell punch-outs are often needed.</div>`;
 }
-</script>
- 
-<script>
+
 // ── DIN CALCULATOR ─────────────────────────────────────────
 function dinCalcHTML() {
   return `<div class="tool-page page">
@@ -670,7 +598,7 @@ function dinCalcHTML() {
   
   <div class="form-group">
     <label class="form-label" for="boot-size-sb">Boot Sole Length (mm)</label>
-    <select class="form-select" id="boot-size-sb">
+    <select class="form-select" id="din-boot-size">
       <option value="">Boot Sole Length</option>
       ${['< 251mm', '251-270mm', '271-290mm', '291-310mm', '311-330mm', '> 330mm'].map(s=>`<option value="${s}">${s}</option>`).join('')}
     </select>
@@ -785,9 +713,7 @@ function calcSkiBindings() {
   </div>
   <div class="warning-box">⚠ Bindings must be mounted and adjusted by a certified ski technician.</div>`;
 }
-</script>
- 
-<script>
+
 // ── SNOWBOARD HUB ──────────────────────────────────────────
 // FIX: corrected broken div nesting
 function sbHubHTML() {
@@ -914,7 +840,7 @@ function calcBoard() {
       <div><div class="result-title">${s.shape}</div><div class="result-sub">Snowboard recommendation</div></div>
     </div>
     <div class="result-row"><span class="result-key">Recommended Length</span><span class="result-val" style="color:var(--snow);">${baseLen-2}–${baseLen+2} cm</span></div>
-    <div class="result-row"><span class="result-key">Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
+    <div class="result-row"><span class="result-key">Recommended Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
     <div class="result-row"><span class="result-key">Profile</span><span class="result-val">${s.profile}</span></div>
     <div class="result-row"><span class="result-key">Flex</span><span class="result-val" style="color:var(--ski);">${s.flex}</span></div>
     <div class="result-row"><span class="result-key">Stance</span><span class="result-val">${setback}</span></div>
@@ -926,9 +852,7 @@ function calcBoard() {
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
 }
  
-// ── SNOWBOARD BOOTS ────────────────────────────────────────
-// FIX: removed stray </div> before form content; added missing sb-foot-len input;
-//      fixed calcSbBoot() validation to not require footLen when usSize is provided
+// SNOWBOARD BOOTS
 function sbBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BOOT FINDER</h2>
@@ -1092,11 +1016,15 @@ function calcSbBindings() {
     ${renderProducts(matched, 'snowboard binding')}
   </div>`;
 }
+
+function accessoriesHTML() {
+  return `
+    <div class="page">
+      <h2>Accessories Coming Soon</h2>
+    </div>
+  `;
+}
  
-// ── INIT ───────────────────────────────────────────────────
+// INIT
 renderPage('landing');
 renderCart();
-</script>
-</body>
-</html>
- 
