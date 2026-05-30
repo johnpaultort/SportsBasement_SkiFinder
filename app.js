@@ -137,14 +137,16 @@ function renderProducts(products, type = '') {
 
           <button
             class="add-cart-btn"
-            onclick="addToCartByName(${JSON.stringify(p.name)}, this)"
+            data-name="${encodeURIComponent([p.name])}"
+            onclick="addToCartByName(decodeURIComponent(this.dataset.name), this)"
           >
             Add To List
           </button>
 
           <button
-            class="favorite-btn"
-            onclick="toggleFavorite(${JSON.stringify(p.name)})"
+            class="favorite-btn ${favorites.includes(p.name) ? 'active' : ''}"
+            data-name="${encodeURIComponent(p.name)}"
+            onclick="toggleFavorite(decodeURIComponent(this.dataset.name))"
           >
             ${favorites.includes(p.name) ? '♥' : '♡'}
           </button>
@@ -185,9 +187,17 @@ function addToCartByName(name,btn) {
 
 // ADD TO CART
 function addToCart(product) {
-  gearCart.push(product);
 
-  renderCart();
+    const alreadyInCart = gearCart.some(
+        item => item.name === product.name
+    );
+
+    if (alreadyInCart) {
+        return;
+    }
+
+    gearCart.push(product);
+    renderCart();
 }
 
 // RENDER CART
@@ -296,7 +306,13 @@ function toggleFavorite(name){
         JSON.stringify(favorites)
     );
 
-    renderPage(currentPage);
+    document.querySelectorAll(".favorite-btn").forEach(btn => {
+        const itemName = btn.dataset.name;
+        btn.classList.toggle(
+            "active",
+            favorites.includes(itemName)
+        );
+    });
 }
 
 // ── LANDING ────────────────────────────────────────────────
