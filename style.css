@@ -6,7 +6,8 @@
   --ski:#4ade80;--snow:#a78bfa;--warn:#fbbf24;--danger:#f87171;
   --accessories:#4ade80;--snow:#a78bfa;--warn:#fbbf24;--danger:#f87171;
 }
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+body{
+  font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
 h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.05em;}
  
 nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem;}
@@ -28,13 +29,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-fil
 .sport-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .25s;}
 
 .sport-card.ski-card::before{
-    background:radial-gradient(circle at 50% 0%,rgba(74,222,128,.12),transparent 70%);}
+    background:radial-gradient(circle at 50% 0%,rgba(74,222,128,.12),transparent 70%);
+}
 
 .sport-card.snow-card::before{
-    background:radial-gradient(circle at 50% 0%,rgba(167,139,250,.12),transparent 70%);}
+    background:radial-gradient(circle at 50% 0%,rgba(167,139,250,.12),transparent 70%);
+}
 
 .sport-card.accessories-card::before{
-    background:radial-gradient(circle at 50% 0%,rgba(251,191,36,.12),transparent 70%);}
+    background:radial-gradient(circle at 50% 0%,rgba(251,191,36,.12),transparent 70%);
+}
 
 .sport-card:hover{
     transform:translateY(-4px);

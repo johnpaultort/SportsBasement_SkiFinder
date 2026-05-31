@@ -3,7 +3,12 @@ window.GEAR_DATA = window.GEAR_DATA || {
     snowboards: [],
     ski_boots: [],
     snowboard_boots: [],
-    bindings: []
+    bindings: [],
+
+    helmets: [],
+    goggles: [],
+    backpacks: [],
+    bags: [],
 };
 
 let gearCart = [];
@@ -65,14 +70,17 @@ function renderPage(page) {
     'sb-board': sbBoardHTML,
     'sb-boots': sbBootsHTML,
     'sb-bindings': sbBindingsHTML,
-    'accessories': accessoriesHTML
+    'acc-hub': accessoriesHubHTML,
+    'helmet-finder': helmetFinderHTML,
+    'goggle-finder': goggleFinderHTML,
+    'bag-finder': bagFinderHTML
   };
   if (page === 'landing') { state = { sport: null, tool: null }; updateNav(); }
   app.innerHTML = (map[page] || landingHTML)();
   renderCart();
 }
  
-// ── UTILS ──────────────────────────────────────────────────
+// UTILS
 function radioOpt(name, value, label) {
   return `<label class="radio-opt"><input type="radio" name="${name}" value="${value}"><div class="radio-label">${label.replace('\n','<br>')}</div></label>`;
 }
@@ -163,7 +171,12 @@ function addToCartByName(name,btn) {
         ...(GEAR_DATA.snowboards || []),
         ...(GEAR_DATA.ski_boots || []),
         ...(GEAR_DATA.snowboard_boots || []),
-        ...(GEAR_DATA.bindings || [])
+        ...(GEAR_DATA.bindings || []),
+
+        ...$(GEAR_DATA.helmets || []),
+        ...$(GEAR_DATA.goggles || []),
+        ...$(GEAR_DATA.backpacks || []),
+        ...$(GEAR_DATA.bags || [])
     ];
 
     const product = allProducts.find(
@@ -315,7 +328,7 @@ function toggleFavorite(name){
     });
 }
 
-// ── LANDING ────────────────────────────────────────────────
+// Landing
 function landingHTML() {
   return `<div class="hero page">
   <div class="hero-bg"></div>
@@ -337,7 +350,7 @@ function landingHTML() {
     </div>
     <div class="sport-card snow-card" onclick="chooseSport('snowboard')">
       <span class="sport-icon">🏂</span><h2>SNOWBOARD</h2>
-      <p>Board recommender by riding style and snowboard boot sizing guide.</p>
+      <p>Snowboard gear by riding style and sizing.</p>
       <span class="sport-arrow">Let's get fitted →</span>
     </div>
     <div class="sport-card accessories-card" onclick="chooseSport('accessories')">
@@ -349,7 +362,7 @@ function landingHTML() {
 </div>`;
 }
 
-// Sports/Accessories
+// Main Window (Shopping for ....)
 function chooseSport(sport) {
   state.sport = sport;
 
@@ -360,11 +373,12 @@ function chooseSport(sport) {
       navigate('sb-hub');
   }
   else if (sport === 'accessories'){
-      navigate('accessories')
+      navigate('acc-hub')
   }
 }
  
-// Ski Tools
+// SKI TOOLS START HERE
+// SKI HUB
 function skiHubHTML() {
   return `<div class="hub page">
   <div class="hub-header">
@@ -459,7 +473,7 @@ function skiRecommenderHTML() {
 </div>`;
 }
  
-// Function for Ski 
+// Function for Skis 
 function calcSki() {
   const skill = document.querySelector('input[name="skill"]:checked')?.value;
   const style = document.querySelector('input[name="style"]:checked')?.value;
@@ -560,6 +574,8 @@ function skiBootsHTML() {
 </div>`;
 }
  
+
+// Calculates ski boots by all information
 function calcSkiBoot() {
   const footLen = parseFloat($('foot-length')?.value);
   const footWidth = parseInt($('foot-width')?.value);
@@ -606,7 +622,7 @@ function calcSkiBoot() {
   <div class="warning-box">⚠ Always have ski boots fitted by a professional. Heat molding and shell punch-outs are often needed.</div>`;
 }
 
-// ── DIN CALCULATOR ─────────────────────────────────────────
+// DIN CALCULATOR
 function dinCalcHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">DIN CALCULATOR</h2>
@@ -687,7 +703,7 @@ function calcDIN() {
   <div class="warning-box">⚠ DIN settings should ALWAYS be checked and adjusted by a certified ski technician.</div>`;
 }
  
-// ── SKI BINDINGS (stub page) ───────────────────────────────
+// Ski Bindings
 function skiBindingsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SKI BINDING RECOMMENDER</h2>
@@ -729,9 +745,12 @@ function calcSkiBindings() {
   </div>
   <div class="warning-box">⚠ Bindings must be mounted and adjusted by a certified ski technician.</div>`;
 }
+// SKI TOOLS END HERE
 
-// ── SNOWBOARD HUB ──────────────────────────────────────────
-// FIX: corrected broken div nesting
+// SNOWBOARD TOOLS START HERE
+// Snowboard Hub
+
+// Pick tool page
 function sbHubHTML() {
   return `<div class="hub page">
   <div class="hub-header">
@@ -842,7 +861,7 @@ function calcBoard() {
   const shapes = {
     'all-mountain':{shape:'Directional Twin',profile:'Camber / Rocker-Camber-Rocker',flex:'Medium (5–6/10)',desc:'Versatile for all terrain, rides both directions with a slight directional feel.'},
     'freeride':{shape:'Directional',profile:'Directional Rocker',flex:'Medium-Stiff (6–8/10)',desc:'Longer and stiffer with setback stance for powder float and speed.'},
-    'park':{shape:'True Twin',profile:'Flat / Rocker',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
+    'park':{shape:'True Twin',profile:'Flat / RockeWhat is the way if it asks for mondo point and they dont know they can either do boot size for like us sizes, but if they know their mondo point size thats good and can release a sizer',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
     'carving':{shape:'Directional',profile:'Full Camber',flex:'Stiff (7–9/10)',desc:'Maximum edge hold for laying hard carves on groomers.'}
   };
 
@@ -868,7 +887,7 @@ function calcBoard() {
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
 }
  
-// SNOWBOARD BOOTS
+// Snowboard Boots
 function sbBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BOOT FINDER</h2>
@@ -880,7 +899,7 @@ function sbBootsHTML() {
       <div class="form-hint">Heel to longest toe, standing</div>
     </div>
     <div class="form-group">
-      <label class="form-label" for="sb-us-size">US Size (if known)</label>
+      <label class="form-label" for="sb-us-size">Boot Size (if known)</label>
       <select class="form-select" id="sb-us-size">
         <option value="">Select if known</option>
         ${[5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14,15,16,17].map(s=>`<option value="${s}">${s}</option>`).join('')}
@@ -980,7 +999,7 @@ function calcSbBoot() {
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">Snowboard boots pack out as the liner compresses. Snug (not painful) on day 1 is correct — they'll loosen up after a few sessions.</div>`;
 }
  
-// SNOWBOARD BINDINGS
+// Snowboard Bindings
 function sbBindingsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BINDING RECOMMENDER</h2>
@@ -1033,14 +1052,135 @@ function calcSbBindings() {
   </div>`;
 }
 
-function accessoriesHTML() {
-  return `
-    <div class="page">
-      <h2>Accessories Coming Soon</h2>
+// Accessories Start Here
+// Accessories Hub
+function accessoriesHubHTML() {
+  return `<div class="hub page">
+  <div class="hub-header">
+    <div class="hero-tag" style="margin-bottom:.75rem;">🏂 Snowboard Tools</div>
+    <h2>What are you looking for?</h2>
+    <p>Choose a tool.</p>
+  </div>
+  <div class="tool-grid">
+    <div class="tool-card" onclick="navigate('helmet-finder',{tool:'helmet-finder'})">
+      <div class="tool-icon">🪖</div><h3>Helmet Recommender</h3>
+      <p>Find the right helmet according to what you are after.</p>
     </div>
-  `;
+    <div class="tool-card" onclick="navigate('goggle-finder',{tool:'goggle-finder'})">
+      <div class="tool-icon">🥽</div><h3>Goggle Finder</h3>
+      <p>Find the right goggles.</p>
+    </div>
+    <div class="tool-card" onclick="navigate('backpack-finder',{tool:'backpack-finder'})">
+      <div class="tool-icon">🧳</div><h3>Backpack Finder</h3>
+      <p>Find the right backpack to fit your needs.</p>
+    </div>
+    </div>
+    <div class="tool-card" onclick="navigate('bag-finder',{tool:'bag-finder'})">
+      <div class="tool-icon">🧳</div><h3>Travel Bag Finder</h3>
+      <p>Find the right travel bag for skis or snowboards.</p>
+    </div>
+  </div>
+</div>`;
+}
+
+function helmetFinderHTML() {
+  return `<div class="tool-page page">
+  <h2 class="tool-title">Helmet Finder</h2>
+  <p class="tool-desc">Find helmet that may fit right for you from our inventory.</p>
+  <div class="form-group">
+    <div class="form-label">Gender</div>
+    <div class="radio-grid">
+      ${radioOpt('gender','unisex','Unisex')}
+      ${radioOpt('gender','mens','Mens')}
+      ${radioOpt('gender','womens','Womens')}
+      ${radioOpt('gender','kids','Kids')}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-label">Aspects</div>
+    <div class="radio-grid">
+      ${radioOpt('aspects','vents','Air Ventilation')}
+      ${radioOpt('aspects','value','Cheapest')}
+      ${radioOpt('aspects','adjustable','Adjustable BOA')}
+      <div class="form-hint">All Helmets have MIPS</div>
+    </div>
+  </div>
+  <button class="btn snow" onclick="calcBoard()">Get My Board →</button>
+  <div id="board-result"></div>
+</div>`;
 }
  
+function calcHelmet() {
+  const skill = document.querySelector('input[name="sb-skill"]:checked')?.value;
+  const style = document.querySelector('input[name="sb-style"]:checked')?.value;
+  const heightCm = parseInt($('sb-height')?.value);
+  const weightLbs = parseInt($('sb-weight')?.value);
+  const bootSize = parseFloat($('boot-size-sb')?.value);
+  if (!skill || !style || !heightCm || !weightLbs || !bootSize) {
+    $('board-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
+  }
+  const weightKg = weightLbs / 2.205;
+  let pct = 0.88;
+
+  // Skill level
+  if (skill==='beginner') pct=0.86; 
+  else if (skill==='advanced') pct=0.90;
+
+  // Riding type
+  if (style==='freeride') pct+=0.03; 
+  else if (style==='park') pct-=0.03; 
+  else if (style==='carving') pct+=0.02;
+
+  let baseLen = Math.round(heightCm * pct);
+
+  if (weightKg>90) baseLen+=5; 
+  else if (weightKg<55) baseLen-=5;
+
+  let boardWidth;
+  let widthNote;
+
+  if (bootSize >= 11) { 
+    boardWidth = 'Wide'; 
+    widthNote = 'Your foot size requires a wide board to avoid toe/heel drag.' 
+  } 
+  else if (bootSize == 10.5) {
+    boardWidth = 'Regular or Wide';
+    widthNote = '10.5 is middle point, this is also where bindings go from M to L. Carvers will notice the difference';
+  } 
+  else {
+    boardWidth = 'Regular'; 
+    widthNote = 'Regular sized snowboard fits your foot, no need for a wide.' 
+  }
+
+  const shapes = {
+    'all-mountain':{shape:'Directional Twin',profile:'Camber / Rocker-Camber-Rocker',flex:'Medium (5–6/10)',desc:'Versatile for all terrain, rides both directions with a slight directional feel.'},
+    'freeride':{shape:'Directional',profile:'Directional Rocker',flex:'Medium-Stiff (6–8/10)',desc:'Longer and stiffer with setback stance for powder float and speed.'},
+    'park':{shape:'True Twin',profile:'Flat / RockeWhat is the way if it asks for mondo point and they dont know they can either do boot size for like us sizes, but if they know their mondo point size thats good and can release a sizer',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
+    'carving':{shape:'Directional',profile:'Full Camber',flex:'Stiff (7–9/10)',desc:'Maximum edge hold for laying hard carves on groomers.'}
+  };
+
+  const s = shapes[style];
+  const setback = style==='freeride' ? '2–5cm back from center' : 'Rec: 12-15 front, 0-6 back';
+  const matched = (GEAR_DATA.snowboards || []).filter(b => b.styles.includes(style) && b.skill.includes(skill));
+  $('board-result').innerHTML = `
+  <div class="result-card">
+    <div class="result-header">
+      <div class="result-icon" style="background:rgba(167,139,250,.15);">🏂</div>
+      <div><div class="result-title">${s.shape}</div><div class="result-sub">Snowboard recommendation</div></div>
+    </div>
+    <div class="result-row"><span class="result-key">Recommended Length</span><span class="result-val" style="color:var(--snow);">${baseLen-2}–${baseLen+2} cm</span></div>
+    <div class="result-row"><span class="result-key">Recommended Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
+    <div class="result-row"><span class="result-key">Profile</span><span class="result-val">${s.profile}</span></div>
+    <div class="result-row"><span class="result-key">Flex</span><span class="result-val" style="color:var(--ski);">${s.flex}</span></div>
+    <div class="result-row"><span class="result-key">Stance</span><span class="result-val">${setback}</span></div>
+    <div class="result-row"><span class="result-key">About</span><span class="result-val" style="max-width:55%;text-align:right;font-weight:400;color:var(--muted);font-size:.8rem;">${s.desc}</span></div>
+    <hr class="section-sep"/>
+    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Products In Stock</div>
+    ${renderProducts(matched, 'snowboard')}
+  </div>
+  <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
+}
+
 // INIT
 renderPage('landing');
 renderCart();
