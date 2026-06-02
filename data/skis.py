@@ -11,8 +11,9 @@ import json
  
 # ────────────────────────────────────────────────────────────
 #  SKIS
-#  styles options : "all-mountain", "groomer" , "powder", "park", "mogul"
-#  skill options  : "beginner" | "intermediate" | "advanced"
+#   Skill [Beginner, intermediate, Advanced]
+#   Style   [All Mountain, Groomer, Freeride, Park]
+#   Terrain [So-cal, Sierra Nevada, Pacific NW, Utah, Colorado, North East, Canada, Japan, Switzerland/France]
 # ────────────────────────────────────────────────────────────
 
 # TO-DO 1: Add all the skis we sell in store, if images are not found for 26/27 using 25/26 images.

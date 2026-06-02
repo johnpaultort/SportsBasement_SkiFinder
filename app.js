@@ -73,6 +73,7 @@ function renderPage(page) {
     'acc-hub': accessoriesHubHTML,
     'helmet-finder': helmetFinderHTML,
     'goggle-finder': goggleFinderHTML,
+    'backpack-finder': backpackFinderHTML,
     'bag-finder': bagFinderHTML
   };
   if (page === 'landing') { state = { sport: null, tool: null }; updateNav(); }
@@ -173,10 +174,10 @@ function addToCartByName(name,btn) {
         ...(GEAR_DATA.snowboard_boots || []),
         ...(GEAR_DATA.bindings || []),
 
-        ...$(GEAR_DATA.helmets || []),
-        ...$(GEAR_DATA.goggles || []),
-        ...$(GEAR_DATA.backpacks || []),
-        ...$(GEAR_DATA.bags || [])
+        ...(GEAR_DATA.helmets || []),
+        ...(GEAR_DATA.goggles || []),
+        ...(GEAR_DATA.backpacks || []),
+        ...(GEAR_DATA.bags || [])
     ];
 
     const product = allProducts.find(
@@ -412,10 +413,20 @@ function skiRecommenderHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SKI RECOMMENDER</h2>
   <p class="tool-desc">Answer a few questions and we'll suggest the right type of ski, length, and products from our inventory.</p>
+  
+  <div class="form-group>
+    <div class="form-label">Category</div>
+    <div class="radio-grid">
+    ${radioOpt('gender', 'mens', "Men's")}
+    ${radioOpt('gender', 'womens', "Women's")}
+    ${radioOpt('gender', 'unisex', "Unisex")}
+  </div>
+
   <div class="form-group">
     <div class="form-label">Skill Level</div>
     <div class="radio-grid">${['beginner','intermediate','advanced'].map(s=>radioOpt('skill',s,s.charAt(0).toUpperCase()+s.slice(1))).join('')}</div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Riding Style</div>
     <div class="radio-grid">
@@ -425,6 +436,7 @@ function skiRecommenderHTML() {
       ${radioOpt('style','park','Park')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Specific Traits (optional)</div>
     <div class="checkbox-grid">
@@ -436,24 +448,28 @@ function skiRecommenderHTML() {
       ${checkOpt('preferences', 'charger', 'Charger')}
       ${checkOpt('preferences', 'powder', 'Powder')}
     </div>
-  </div> 
+  </div>
+
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="skier-height">Your Height</label>
       <select class="form-select" id="skier-height"><option value="">Select height</option>${heightOpts()}</select>
     </div>
+
     <div class="form-group">
       <label class="form-label" for="skier-weight">Weight (lbs)</label>
       <input type="number" class="form-input" id="skier-weight" placeholder="e.g. 170" min="80" max="350" />
     </div>
   </div>
+
   <div class="form-group">
-    <div class="form-label">Terrain Preference</div>
+    <div class="form-label">Terrain</div>
     <div class="radio-grid">
-      ${radioOpt('terrain','groomed','Mostly Groomed')}
+      ${radioOpt('terrain','groomed','Only Groomed')}
       ${radioOpt('terrain','mixed','Mixed Terrain')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Where do you ride?</div>
     <div class="radio-grid">
@@ -468,6 +484,7 @@ function skiRecommenderHTML() {
       ${radioOpt('local', 'alps', 'Switzerland/France')}
     </div>
   </div>
+
   <button class="btn ski" onclick="calcSki()">Get My Ski Recommendation →</button>
   <div id="ski-result"></div>
 </div>`;
@@ -475,6 +492,7 @@ function skiRecommenderHTML() {
  
 // Function for Skis 
 function calcSki() {
+  const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const skill = document.querySelector('input[name="skill"]:checked')?.value;
   const style = document.querySelector('input[name="style"]:checked')?.value;
   const heightCm = parseInt($('skier-height')?.value);
@@ -500,16 +518,45 @@ function calcSki() {
   else if (weightKg<60) base-=5;
   const minLen=base-3, maxLen=base+3;
   const types = {
-    'all-mountain':{name:'All-Mountain Ski',width:'85–95mm',rocker:'Slight tip rocker',desc:'Versatile ski for any condition.'},
-    'groomer':{name:'Carving / Piste Ski',width:'68–82mm',rocker:'Camber dominant',desc:'Narrow waist for precise carving on groomers.'},
-    'powder':{name:'Powder / Freeride Ski',width:'100–130mm',rocker:'Full early rise tip & tail',desc:'Wide and rockered for deep snow.'},
-    'park':{name:'Park / Twin-Tip Ski',width:'85–95mm',rocker:'Twin-tip, slight camber',desc:'Symmetrical for skiing switch and park features.'},
-    'race':{name:'Race / Slalom Ski',width:'62–72mm',rocker:'Full camber',desc:'Stiff and narrow for maximum edge hold.'},
-    'mogul':{name:'Mogul / All-Mountain Ski',width:'75–85mm',rocker:'Early tip rise',desc:'Short and nimble for trees and bumps.'}
+    'all-mountain':{
+      name:'All-Mountain Ski',
+      width:'85–95mm',
+      rocker:'Slight tip rocker',
+      desc:'Versatile ski for any condition.'
+    },
+
+    'groomer':{
+      name:'Carving / Piste Ski',
+      width:'68–82mm',
+      rocker:'Camber dominant',
+      desc:'Narrow waist for precise carving on groomers.'
+    },
+
+    'powder':{
+      name:'Powder / Freeride Ski',
+      width:'100–130mm',rocker:'Full early rise tip & tail',
+      desc:'Wide and rockered for deep snow.'
+    },
+
+    'park':{
+      name:'Park / Twin-Tip Ski',
+      width:'85–95mm',
+      rocker:'Twin-tip, slight camber',
+      desc:'Symmetrical for skiing switch and park features.'
+    },
+
   };
   const t = types[style];
   const skillBadge={beginner:'badge-blue',intermediate:'badge-green',advanced:'badge-warn'};
-  const matched = (GEAR_DATA.skis || []).filter(s => s.styles.includes(style) && s.skill.includes(skill));
+  const matched = (GEAR_DATA.skis || []).filter(s =>
+    s.styles.includes(style) && 
+    s.skill.includes(skill) &&
+    (
+      s.gender === gender ||
+      s.gender === 'unisex'
+    )
+  );
+
   $('ski-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -533,18 +580,29 @@ function skiBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SKI BOOT FITTER</h2>
   <p class="tool-desc">Ski boots are the most important piece of gear. Enter your foot measurements for an accurate fit recommendation.</p>
+  
+  <div class="form-group">
+    <div class="form-label">Category</div>
+    <div class="radio-grid">
+      ${radioOpt('gender','mens',"Men's")}
+      ${radioOpt('gender','womens',"Women's")}
+    </div>
+  </div>
+
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="foot-length">Foot Length (cm)</label>
       <input type="number" class="form-input" id="foot-length" placeholder="e.g. 27.5" step="0.5" min="20" max="34" />
       <div class="form-hint">Heel to longest toe, standing</div>
     </div>
+
     <div class="form-group">
       <label class="form-label" for="foot-width">Forefoot Width (mm)</label>
       <input type="number" class="form-input" id="foot-width" placeholder="e.g. 98" step="1" min="85" max="115" />
       <div class="form-hint">Widest part of foot (ball)</div>
     </div>
   </div>
+
   <div class="form-group">
     <label class="form-label" for="arch-type">Arch Type</label>
     <select class="form-select" id="arch-type">
@@ -554,6 +612,7 @@ function skiBootsHTML() {
       <option value="high">High arch</option>
     </select>
   </div>
+
   <div class="form-group">
     <div class="form-label">Riding Level</div>
     <div class="radio-grid">
@@ -562,6 +621,7 @@ function skiBootsHTML() {
       ${radioOpt('boot-level','advanced','Advanced')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Instep</div>
     <div class="radio-grid">
@@ -569,14 +629,17 @@ function skiBootsHTML() {
       ${radioOpt('instep','regular','MV')}
       ${radioOpt('instep','wide','HV')}</div>
   </div>
+
   <button class="btn ski" onclick="calcSkiBoot()">Find My Boot Size →</button>
   <div id="boot-result"></div>
+
 </div>`;
 }
  
 
 // Calculates ski boots by all information
 function calcSkiBoot() {
+  const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const footLen = parseFloat($('foot-length')?.value);
   const footWidth = parseInt($('foot-width')?.value);
   const archType = $('arch-type')?.value;
@@ -585,7 +648,11 @@ function calcSkiBoot() {
   if (!footLen || !footWidth || !archType || !level || !shape) {
     $('boot-result').innerHTML = '<div class="warning-box">Please fill in all fields.</div>'; return;
   }
-  const matchedBoots = (GEAR_DATA.ski_boots || []).filter(b => b.skill.includes(level) && b.width.includes(shape));
+  const matchedBoots = (GEAR_DATA.ski_boots || []).filter(b =>
+    b.skill.includes(level) &&
+    b.width.includes(shape) &&
+    b.gender === gender
+  );  
   const usSize = Math.round((footLen - 17) / 0.845 * 10) / 10;
   const euroSize = Math.round(footLen * 1.5 + 1.5);
   const shellSize = Math.round((footLen + 1) * 10) / 10;
@@ -718,7 +785,7 @@ function skiBindingsHTML() {
     <div class="radio-grid">
       ${radioOpt('bind-style','all-mountain','All Mountain')}
       ${radioOpt('bind-style','freeride','Freeride')}
-      ${radioOpt('bind-style','race','Race / Carving')}
+      ${radioOpt('bind-style','carving','Carving')}
       ${radioOpt('bind-style','park','Park')}
     </div>
   </div>
@@ -780,10 +847,21 @@ function sbBoardHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">BOARD RECOMMENDER</h2>
   <p class="tool-desc">Find your ideal snowboard shape, length, and flex — plus matching boards from our inventory.</p>
+  
+  <div class="form-group">
+    <div class="form-label">Category</div>
+    <div class="radio-grid">
+      ${radioOpt('gender','mens',"Men's")}
+      ${radioOpt('gender','womens',"Women's")}
+      ${radioOpt('gender','unisex',"Unisex")}
+    </div>
+  </div>
+
   <div class="form-group">
     <div class="form-label">Skill Level</div>
     <div class="radio-grid">${['beginner','intermediate','advanced'].map(s=>radioOpt('sb-skill',s,s.charAt(0).toUpperCase()+s.slice(1))).join('')}</div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Riding Style</div>
     <div class="radio-grid">
@@ -793,16 +871,19 @@ function sbBoardHTML() {
       ${radioOpt('sb-style','carving','Carving')}
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="sb-height">Your Height</label>
       <select class="form-select" id="sb-height"><option value="">Select height</option>${heightOpts()}</select>
     </div>
+
     <div class="form-group">
       <label class="form-label" for="sb-weight">Weight (lbs)</label>
       <input type="number" class="form-input" id="sb-weight" placeholder="e.g. 160" min="80" max="300" />
     </div>
   </div>
+
   <div class="form-group">
     <label class="form-label" for="boot-size-sb">Boot Size (US Men's)</label>
     <select class="form-select" id="boot-size-sb">
@@ -811,12 +892,14 @@ function sbBoardHTML() {
     </select>
     <div class="form-hint">Used to check necessary board width (toe/heel overhang)</div>
   </div>
+
   <button class="btn snow" onclick="calcBoard()">Get My Board →</button>
   <div id="board-result"></div>
 </div>`;
 }
  
 function calcBoard() {
+  const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const skill = document.querySelector('input[name="sb-skill"]:checked')?.value;
   const style = document.querySelector('input[name="sb-style"]:checked')?.value;
   const heightCm = parseInt($('sb-height')?.value);
@@ -859,15 +942,46 @@ function calcBoard() {
   }
 
   const shapes = {
-    'all-mountain':{shape:'Directional Twin',profile:'Camber / Rocker-Camber-Rocker',flex:'Medium (5–6/10)',desc:'Versatile for all terrain, rides both directions with a slight directional feel.'},
-    'freeride':{shape:'Directional',profile:'Directional Rocker',flex:'Medium-Stiff (6–8/10)',desc:'Longer and stiffer with setback stance for powder float and speed.'},
-    'park':{shape:'True Twin',profile:'Flat / RockeWhat is the way if it asks for mondo point and they dont know they can either do boot size for like us sizes, but if they know their mondo point size thats good and can release a sizer',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
-    'carving':{shape:'Directional',profile:'Full Camber',flex:'Stiff (7–9/10)',desc:'Maximum edge hold for laying hard carves on groomers.'}
+    'all-mountain':{
+      shape:'Directional Twin',
+      profile:'Camber / Rocker-Camber-Rocker',
+      flex:'Medium (5–6/10)',
+      desc:'Versatile for all terrain, rides both directions with a slight directional feel.'
+    },
+
+    'freeride':{
+      shape:'Directional',
+      profile:'Directional Rocker',
+      flex:'Medium-Stiff (6–8/10)',
+      desc:'Longer and stiffer with setback stance for powder float and speed.'
+    },
+
+    'park':{
+      shape:'True Twin',
+      profile:'Flat / Rocker',
+      flex:'Soft-Medium (4–6/10)',
+      desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'
+    },
+
+    'carving':{
+      shape:'Directional',
+      profile:'Full Camber',
+      flex:'Stiff (7–9/10)',
+      desc:'Maximum edge hold for laying hard carves on groomers.'
+    }
   };
 
   const s = shapes[style];
   const setback = style==='freeride' ? '2–5cm back from center' : 'Rec: 12-15 front, 0-6 back';
-  const matched = (GEAR_DATA.snowboards || []).filter(b => b.styles.includes(style) && b.skill.includes(skill));
+  const matched = (GEAR_DATA.snowboards || []).filter(b =>
+     b.styles.includes(style) && 
+     b.skill.includes(skill)  &&
+     (
+     b.gender === gender ||
+     b.gender === 'unisex'
+    )
+  );
+
   $('board-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -892,12 +1006,22 @@ function sbBootsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BOOT FINDER</h2>
   <p class="tool-desc">Snowboard boots fit more like athletic shoes. The right flex and lacing system makes a big difference in control and comfort.</p>
+  
+  <div class="form-group">
+    <div class="form-label">Category</div>
+    <div class="radio-grid">
+      ${radioOpt('gender','mens',"Men's")}
+      ${radioOpt('gender','womens',"Women's")}
+    </div>
+  </div>
+
   <div class="form-row">
     <div class="form-group">
       <label class="form-label" for="sb-foot-len">Foot Length (Mondo Point)</label>
       <input type="number" class="form-input" id="sb-foot-len" placeholder="e.g. 27.5" step="0.5" min="20" max="34" />
       <div class="form-hint">Heel to longest toe, standing</div>
     </div>
+
     <div class="form-group">
       <label class="form-label" for="sb-us-size">Boot Size (if known)</label>
       <select class="form-select" id="sb-us-size">
@@ -906,6 +1030,7 @@ function sbBootsHTML() {
       </select>
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Riding Style</div>
     <div class="radio-grid">
@@ -915,6 +1040,7 @@ function sbBootsHTML() {
       ${radioOpt('sb-boot-style','carving','Carving')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Lacing Preference</div>
     <div class="radio-grid">
@@ -922,6 +1048,7 @@ function sbBootsHTML() {
       ${radioOpt('lacing','boa','BOA')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Priority</div>
     <div class="radio-grid">
@@ -929,6 +1056,7 @@ function sbBootsHTML() {
       ${radioOpt('expectancy','comfort','Comfort')}
     </div>
   </div>
+
   <div class="form-group">
     <div class="form-label">Categories (optional)</div>
     <div class="checkbox-grid">
@@ -937,12 +1065,14 @@ function sbBootsHTML() {
       ${checkOpt('categories','investment','One Time Investment')}
     </div>
   </div>
+
   <button class="btn snow" onclick="calcSbBoot()">Find My Boot →</button>
   <div id="sb-boot-result"></div>
 </div>`;
 }
  
 function calcSbBoot() {
+  const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const footLen = parseFloat($('sb-foot-len')?.value) || null;
   const usSize  = parseFloat($('sb-us-size')?.value)  || null;
   const style   = document.querySelector('input[name="sb-boot-style"]:checked')?.value;
@@ -955,12 +1085,33 @@ function calcSbBoot() {
   }
  
   const calcUS = usSize || Math.round((footLen - 17) / 0.845 * 2) / 2;
-  const matchedBoots = (GEAR_DATA.snowboard_boots || []).filter(b => b.style.includes(style));
+  const matchedBoots = (GEAR_DATA.snowboard_boots || []).filter(b =>
+     b.style.includes(style) &&
+     (
+      b.gender === gender
+     )
+  );
+
   const flexMap = {
-    'all-mountain':{flex:'Medium (5–7/10)',desc:'Balanced between response and comfort.'},
-    'park':{flex:'Soft-Medium (3–5/10)',desc:'Softer flex lets you press and butter naturally.'},
-    'freeride':{flex:'Stiff (7–9/10)',desc:'Stiff boots transmit power for high-speed riding.'},
-    'carving':{flex:'Stiff (7–9/10)',desc:'Stiff with heel-hold for hard edge carves.'}
+    'all-mountain':{
+      flex:'Medium (5–7/10)',
+      desc:'Balanced between response and comfort.'
+    },
+
+    'park':{
+      flex:'Soft-Medium (3–5/10)',
+      desc:'Softer flex lets you press and butter naturally.'
+    },
+
+    'freeride':{
+      flex:'Stiff (7–9/10)',
+      desc:'Stiff boots transmit power for high-speed riding.'
+    },
+
+    'carving':{
+      flex:'Stiff (7–9/10)',
+      desc:'Stiff with heel-hold for hard edge carves.'
+    }
   };
   const f = flexMap[style];
 
@@ -970,10 +1121,20 @@ function calcSbBoot() {
   };
 
   const brands = {
-    'all-mountain':['Burton Moto Boa','Vans Aura Pro','ThirtyTwo Lashed'],
-    'park':['DC Phantom','Ride Anthem','ThirtyTwo Lashed FT'],
-    'freeride':['Salomon Hologram Boa','Vans Aura Pro','Jones MTN'],
-    'carving':['Northwave Domain Boa','Deeluxe Track 325','Salomon Malamute']
+    'all-mountain':[
+      'Burton Moto Boa','Vans Aura Pro','ThirtyTwo Lashed'
+    ],
+
+    'park':[
+      'DC Phantom','Ride Anthem','ThirtyTwo Lashed FT'
+    ],
+    'freeride':[
+      'Salomon Hologram Boa','Vans Aura Pro','Jones MTN'
+    ],
+
+    'carving':[
+      'Northwave Domain Boa','Deeluxe Track 325','Salomon Malamute'
+    ]
   };
 
   $('sb-boot-result').innerHTML = `
@@ -1004,6 +1165,15 @@ function sbBindingsHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">SNOWBOARD BINDING RECOMMENDER</h2>
   <p class="tool-desc">Find bindings that match your riding style and boot size.</p>
+  
+  <div class="form-group">
+    <div class="form-label">Category</div>
+    <div class="radio-grid">
+      ${radioOpt('gender','mens',"Men's")}
+      ${radioOpt('gender','womens',"Women's")}
+    </div>
+  </div>
+
   <div class="form-group">
     <div class="form-label">Riding Style</div>
     <div class="radio-grid">
@@ -1013,6 +1183,7 @@ function sbBindingsHTML() {
       ${radioOpt('sbbind-style','carving','Carving')}
     </div>
   </div>
+
   <div class="form-group">
     <label class="form-label" for="sbbind-bootsize">Boot Size (US Men's)</label>
     <select class="form-select" id="sbbind-bootsize">
@@ -1020,6 +1191,7 @@ function sbBindingsHTML() {
       ${[6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14].map(s=>`<option value="${s}">${s}</option>`).join('')}
     </select>
   </div>
+
   <div class="form-group">
     <div class="form-label">Binding Preference</div>
     <div class="radio-grid">
@@ -1029,18 +1201,24 @@ function sbBindingsHTML() {
       ${radioOpt('binding', 'supermatic', 'Supermatic')}
     </div>
   </div>
+
   <button class="btn snow" onclick="calcSbBindings()">Find Bindings →</button>
   <div id="sb-bind-result"></div>
 </div>`;
 }
  
 function calcSbBindings() {
+  const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const style = document.querySelector('input[name="sbbind-style"]:checked')?.value;
   const bootSize = parseFloat($('sbbind-bootsize')?.value);
   if (!style || !bootSize) {
     $('sb-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
-  const matched = (GEAR_DATA.bindings || []).filter(b => b.sport === 'snowboard');
+  const matched = (GEAR_DATA.bindings || []).filter(b =>
+   b.sport === 'snowboard' &&
+    b.gender === gender
+  );
+
   $('sb-bind-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -1061,24 +1239,28 @@ function accessoriesHubHTML() {
     <h2>What are you looking for?</h2>
     <p>Choose a tool.</p>
   </div>
+
   <div class="tool-grid">
     <div class="tool-card" onclick="navigate('helmet-finder',{tool:'helmet-finder'})">
       <div class="tool-icon">🪖</div><h3>Helmet Recommender</h3>
       <p>Find the right helmet according to what you are after.</p>
     </div>
+
     <div class="tool-card" onclick="navigate('goggle-finder',{tool:'goggle-finder'})">
       <div class="tool-icon">🥽</div><h3>Goggle Finder</h3>
       <p>Find the right goggles.</p>
     </div>
+
     <div class="tool-card" onclick="navigate('backpack-finder',{tool:'backpack-finder'})">
       <div class="tool-icon">🧳</div><h3>Backpack Finder</h3>
       <p>Find the right backpack to fit your needs.</p>
     </div>
-    </div>
+
     <div class="tool-card" onclick="navigate('bag-finder',{tool:'bag-finder'})">
       <div class="tool-icon">🧳</div><h3>Travel Bag Finder</h3>
       <p>Find the right travel bag for skis or snowboards.</p>
     </div>
+
   </div>
 </div>`;
 }
@@ -1090,95 +1272,75 @@ function helmetFinderHTML() {
   <div class="form-group">
     <div class="form-label">Gender</div>
     <div class="radio-grid">
-      ${radioOpt('gender','unisex','Unisex')}
-      ${radioOpt('gender','mens','Mens')}
-      ${radioOpt('gender','womens','Womens')}
-      ${radioOpt('gender','kids','Kids')}
+      ${radioOpt('gender-helmet','unisex','Unisex')}
+      ${radioOpt('gender-helmet','mens','Mens')}
+      ${radioOpt('gender-helmet','womens','Womens')}
+      ${radioOpt('gender-helmet','kids','Kids')}
     </div>
   </div>
   <div class="form-group">
     <div class="form-label">Aspects</div>
+
     <div class="radio-grid">
-      ${radioOpt('aspects','vents','Air Ventilation')}
-      ${radioOpt('aspects','value','Cheapest')}
-      ${radioOpt('aspects','adjustable','Adjustable BOA')}
-      <div class="form-hint">All Helmets have MIPS</div>
+      ${radioOpt('aspects-qualities','vents','Air Ventilation')}
+      ${radioOpt('aspects-qualities','value','Cheapest')}
+      ${radioOpt('aspects-qualities','adjustable','Adjustable BOA')}
+    </div>
+
+    <div class="form-hint">
+      All Helmets have MIPS
     </div>
   </div>
-  <button class="btn snow" onclick="calcBoard()">Get My Board →</button>
-  <div id="board-result"></div>
+  <button class="btn helmets" onclick="calcHelmet()">Get My Helmet→</button>
+  <div id="helmet-result"></div>
 </div>`;
 }
  
 function calcHelmet() {
-  const skill = document.querySelector('input[name="sb-skill"]:checked')?.value;
-  const style = document.querySelector('input[name="sb-style"]:checked')?.value;
-  const heightCm = parseInt($('sb-height')?.value);
-  const weightLbs = parseInt($('sb-weight')?.value);
-  const bootSize = parseFloat($('boot-size-sb')?.value);
-  if (!skill || !style || !heightCm || !weightLbs || !bootSize) {
-    $('board-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
+  const gender = document.querySelector('input[name="gender-helmet"]:checked')?.value;
+  const aspects = document.querySelector('input[name="aspects-qualities"]:checked')?.value;
+  if (!gender || !aspects) {
+    $('helmet-result').innerHTML = `
+    <div class="warning-box">Please fill in all fields.</div>`; 
+    return;
   }
-  const weightKg = weightLbs / 2.205;
-  let pct = 0.88;
-
-  // Skill level
-  if (skill==='beginner') pct=0.86; 
-  else if (skill==='advanced') pct=0.90;
-
-  // Riding type
-  if (style==='freeride') pct+=0.03; 
-  else if (style==='park') pct-=0.03; 
-  else if (style==='carving') pct+=0.02;
-
-  let baseLen = Math.round(heightCm * pct);
-
-  if (weightKg>90) baseLen+=5; 
-  else if (weightKg<55) baseLen-=5;
-
-  let boardWidth;
-  let widthNote;
-
-  if (bootSize >= 11) { 
-    boardWidth = 'Wide'; 
-    widthNote = 'Your foot size requires a wide board to avoid toe/heel drag.' 
-  } 
-  else if (bootSize == 10.5) {
-    boardWidth = 'Regular or Wide';
-    widthNote = '10.5 is middle point, this is also where bindings go from M to L. Carvers will notice the difference';
-  } 
-  else {
-    boardWidth = 'Regular'; 
-    widthNote = 'Regular sized snowboard fits your foot, no need for a wide.' 
-  }
-
-  const shapes = {
-    'all-mountain':{shape:'Directional Twin',profile:'Camber / Rocker-Camber-Rocker',flex:'Medium (5–6/10)',desc:'Versatile for all terrain, rides both directions with a slight directional feel.'},
-    'freeride':{shape:'Directional',profile:'Directional Rocker',flex:'Medium-Stiff (6–8/10)',desc:'Longer and stiffer with setback stance for powder float and speed.'},
-    'park':{shape:'True Twin',profile:'Flat / RockeWhat is the way if it asks for mondo point and they dont know they can either do boot size for like us sizes, but if they know their mondo point size thats good and can release a sizer',flex:'Soft-Medium (4–6/10)',desc:'Symmetrical for riding switch. Soft flex for pressing and buttering.'},
-    'carving':{shape:'Directional',profile:'Full Camber',flex:'Stiff (7–9/10)',desc:'Maximum edge hold for laying hard carves on groomers.'}
-  };
-
-  const s = shapes[style];
-  const setback = style==='freeride' ? '2–5cm back from center' : 'Rec: 12-15 front, 0-6 back';
-  const matched = (GEAR_DATA.snowboards || []).filter(b => b.styles.includes(style) && b.skill.includes(skill));
-  $('board-result').innerHTML = `
+  const matched = (GEAR_DATA.helmets || []).filter(b => b.sport === 'accessories');
+  $('helmet-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
-      <div class="result-icon" style="background:rgba(167,139,250,.15);">🏂</div>
-      <div><div class="result-title">${s.shape}</div><div class="result-sub">Snowboard recommendation</div></div>
+      <div class="result-icon" style="background:rgba(167,139,250,.15);">🪖</div>
+      <div><div class="result-title">Helmet Matches</div><div class="result-sub">Helmets</div></div>
     </div>
-    <div class="result-row"><span class="result-key">Recommended Length</span><span class="result-val" style="color:var(--snow);">${baseLen-2}–${baseLen+2} cm</span></div>
-    <div class="result-row"><span class="result-key">Recommended Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
-    <div class="result-row"><span class="result-key">Profile</span><span class="result-val">${s.profile}</span></div>
-    <div class="result-row"><span class="result-key">Flex</span><span class="result-val" style="color:var(--ski);">${s.flex}</span></div>
-    <div class="result-row"><span class="result-key">Stance</span><span class="result-val">${setback}</span></div>
-    <div class="result-row"><span class="result-key">About</span><span class="result-val" style="max-width:55%;text-align:right;font-weight:400;color:var(--muted);font-size:.8rem;">${s.desc}</span></div>
     <hr class="section-sep"/>
-    <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Products In Stock</div>
-    ${renderProducts(matched, 'snowboard')}
-  </div>
-  <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
+    ${renderProducts(matched, 'helmet')}
+  </div>`;
+}
+
+function goggleFinderHTML() {
+    return `
+        <div class="tool-page page">
+            <h2>Goggle Finder</h2>
+            <p>Coming soon.</p>
+        </div>
+    `;
+}
+
+function backpackFinderHTML() {
+    return `
+        <div class="tool-page page">
+            <h2>Bag Finder</h2>
+            <p>Coming soon.</p>
+        </div>
+    `;
+}
+
+function bagFinderHTML() {
+    return `
+        <div class="tool-page page">
+            <h2>Bag Finder</h2>
+            <p>Coming soon.</p>
+        </div>
+    `;
 }
 
 // INIT
