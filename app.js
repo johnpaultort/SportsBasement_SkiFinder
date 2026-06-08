@@ -419,7 +419,6 @@ function skiRecommenderHTML() {
     <div class="radio-grid">
     ${radioOpt('gender', 'mens', "Men's")}
     ${radioOpt('gender', 'womens', "Women's")}
-    ${radioOpt('gender', 'unisex', "Unisex")}
   </div>
 
   <div class="form-group">
@@ -552,8 +551,7 @@ function calcSki() {
     s.styles.includes(style) && 
     s.skill.includes(skill) &&
     (
-      s.gender === gender ||
-      s.gender === 'unisex'
+      s.gender === gender
     )
   );
 
@@ -853,7 +851,6 @@ function sbBoardHTML() {
     <div class="radio-grid">
       ${radioOpt('gender','mens',"Men's")}
       ${radioOpt('gender','womens',"Women's")}
-      ${radioOpt('gender','unisex',"Unisex")}
     </div>
   </div>
 
@@ -977,8 +974,7 @@ function calcBoard() {
      b.styles.includes(style) && 
      b.skill.includes(skill)  &&
      (
-     b.gender === gender ||
-     b.gender === 'unisex'
+     b.gender === gender
     )
   );
 
@@ -988,6 +984,7 @@ function calcBoard() {
       <div class="result-icon" style="background:rgba(167,139,250,.15);">🏂</div>
       <div><div class="result-title">${s.shape}</div><div class="result-sub">Snowboard recommendation</div></div>
     </div>
+
     <div class="result-row"><span class="result-key">Recommended Length</span><span class="result-val" style="color:var(--snow);">${baseLen-2}–${baseLen+2} cm</span></div>
     <div class="result-row"><span class="result-key">Recommended Board Width</span><span class="result-val" style="color:var(--accent);">${boardWidth}</span></div>
     <div class="result-row"><span class="result-key">Profile</span><span class="result-val">${s.profile}</span></div>
@@ -998,6 +995,7 @@ function calcBoard() {
     <div style="font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;">Matching Products In Stock</div>
     ${renderProducts(matched, 'snowboard')}
   </div>
+  
   <div class="info-box" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.25);color:var(--snow);">${widthNote} Overhang of 1–2cm on each side is fine; 3cm+ causes drag in carves.</div>`;
 }
  
@@ -1211,12 +1209,14 @@ function calcSbBindings() {
   const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const style = document.querySelector('input[name="sbbind-style"]:checked')?.value;
   const bootSize = parseFloat($('sbbind-bootsize')?.value);
+  const bindingPref = document.querySelector('input[name="binding"]:checked')?.value;
   if (!style || !bootSize) {
     $('sb-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
   const matched = (GEAR_DATA.bindings || []).filter(b =>
-   b.sport === 'snowboard' &&
-    b.gender === gender
+    b.gender === gender &&
+    b.binding === bindingPref &&
+    b.style.includes(style)
   );
 
   $('sb-bind-result').innerHTML = `
@@ -1235,7 +1235,7 @@ function calcSbBindings() {
 function accessoriesHubHTML() {
   return `<div class="hub page">
   <div class="hub-header">
-    <div class="hero-tag" style="margin-bottom:.75rem;">🏂 Snowboard Tools</div>
+    <div class="hero-tag" style="margin-bottom:.75rem;">🏂 Accessories Tool</div>
     <h2>What are you looking for?</h2>
     <p>Choose a tool.</p>
   </div>

@@ -12,7 +12,10 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "playful",
+        "powder"
+      ],
       "waist_mm": 118,
       "lengths": [
         172,
@@ -82,7 +85,10 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "powder",
+        "trees"
+      ],
       "waist_mm": 102,
       "lengths": [
         168,
@@ -107,7 +113,9 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "playful"
+      ],
       "waist_mm": 94,
       "lengths": [
         164,
@@ -294,7 +302,10 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "powder",
+        "trees"
+      ],
       "waist_mm": 120,
       "lengths": [
         176,
@@ -390,7 +401,9 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "playful"
+      ],
       "waist_mm": 98,
       "lengths": [
         165,
@@ -412,7 +425,9 @@ window.GEAR_DATA = {
         "advanced"
       ],
       "terrain": [],
-      "preferences": [],
+      "preferences": [
+        "playful"
+      ],
       "waist_mm": 88,
       "lengths": [
         164,
@@ -707,28 +722,49 @@ window.GEAR_DATA = {
       "notes": "This is going to be their all mountain option that can run down the hill."
     },
     {
-      "name": "Dark Horse",
+      "name": "Resort Twin",
       "brand": "Capita",
       "styles": [
-        "park"
+        "all-mountain"
       ],
       "skill": [
+        "beginner",
         "intermediate",
         "advanced"
       ],
-      "shape": "true-twin",
-      "flex": 6,
+      "shape": "directional-twin",
+      "flex": 6.5,
       "lengths": [
-        148,
-        150,
         152,
         154,
         156,
+        158,
+        160
+      ],
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303371-ONE.png?v=1779917790",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
+    },
+    {
+      "name": "Resort Twin Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "directional-twin",
+      "flex": 6.5,
+      "lengths": [
+        155,
         158
       ],
-      "price": "499.95",
-      "image": "https://capitasnowboarding.com/cdn/shop/files/FST03_DARK_HORSE_150_550x550.png?v=1738183696",
-      "notes": "This is going to be a park/resort board that is really good at jumps either small to 100 footers."
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303372-ONE.png?v=1779923615",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
       "name": "Mercury",
@@ -752,35 +788,104 @@ window.GEAR_DATA = {
         159,
         161
       ],
-      "price": "679.95",
-      "image": "https://capitasnowboarding.com/cdn/shop/files/FRD05_MERCURY_147_f704d6fe-b943-47ea-a52c-f2474d32c864_550x550.png?v=1738179265",
+      "price": "699.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303367-ONE-1.png?v=1778714939",
       "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
-      "name": "Aeronaut",
+      "name": "Mercury Wide",
       "brand": "Capita",
       "styles": [
-        "freeride"
+        "all-mountain"
       ],
       "skill": [
+        "beginner",
         "intermediate",
         "advanced"
       ],
-      "shape": "directional",
-      "flex": 6,
+      "shape": "directional-twin",
+      "flex": 6.5,
       "lengths": [
-        144,
-        148,
-        152,
         156,
-        160
+        158,
+        160,
+        162
       ],
       "price": "699.95",
-      "image": "https://capitasnowboarding.com/cdn/shop/files/RST02_AERONAUT_153_9c18bb71-000d-44bb-b0ed-a273060dd713.png?v=1738177827&width=1024",
-      "notes": "This directional boards is amazing in the backcountry!"
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303367-ONE-1.png?v=1778714939",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
-      "name": "Kazu Kokubo",
+      "name": "Mega Merc",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "directional-twin",
+      "flex": 6.5,
+      "lengths": [
+        153,
+        155,
+        157,
+        159,
+        161
+      ],
+      "price": "699.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303357-ONE-1.png?v=1778537175",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
+    },
+    {
+      "name": "Mega Death",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "directional-twin",
+      "flex": 6.5,
+      "lengths": [
+        156,
+        159,
+        162
+      ],
+      "price": "1,199.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303355-ONE-2.png?v=1778531228",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
+    },
+    {
+      "name": "Mega Death Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "directional-twin",
+      "flex": 6.5,
+      "lengths": [
+        157,
+        161,
+        165,
+        169
+      ],
+      "price": "1,199.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303355-ONE-2.png?v=1778531228",
+      "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
+    },
+    {
+      "name": "Kazu Kokubo Pro",
       "brand": "Capita",
       "styles": [
         "freeride",
@@ -793,14 +898,36 @@ window.GEAR_DATA = {
       "shape": "directional",
       "flex": 6,
       "lengths": [
-        144,
-        148,
-        152,
-        156,
+        151,
+        154,
+        157,
         160
       ],
-      "price": "699.95",
-      "image": "https://capitasnowboarding.com/cdn/shop/files/FRD04_KAZU_151_e3c09b6f-11ba-4d7c-a083-993a9d6651e8.png?v=1738178854&width=1024",
+      "price": "679.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303369-ONE-1.png?v=1779749673",
+      "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
+    },
+    {
+      "name": "Kazu Kokubo Pro Wide",
+      "brand": "Capita",
+      "styles": [
+        "freeride",
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "directional",
+      "flex": 6,
+      "lengths": [
+        155,
+        158,
+        161,
+        164
+      ],
+      "price": "679.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303370-ONE-1.png?v=1779911523",
       "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
     },
     {
@@ -823,13 +950,191 @@ window.GEAR_DATA = {
         154,
         156,
         158,
-        160,
-        162,
-        164
+        160
       ],
-      "price": "579.95",
-      "image": "https://capitasnowboarding.com/cdn/shop/files/RST03_DOA_148_07b6f332-7858-4fdb-8b75-2b0a1b617fb0.png?v=1738178394&width=1024",
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303361-ONE-1.png?v=1778605725",
       "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
+    },
+    {
+      "name": "D.O.A. Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        153,
+        155,
+        157,
+        159,
+        161
+      ],
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303377-ONE-1.png?v=1778607418",
+      "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
+    },
+    {
+      "name": "Super D.O.A.",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        152,
+        154,
+        156,
+        158,
+        160
+      ],
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303359-ONE-1.png?v=1778597250",
+      "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
+    },
+    {
+      "name": "Super D.O.A. Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        155,
+        157,
+        159,
+        161,
+        163
+      ],
+      "price": "599.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303359-ONE-1.png?v=1778597250",
+      "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
+    },
+    {
+      "name": "Sidewinder",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        148,
+        150,
+        152,
+        154,
+        156,
+        158,
+        160
+      ],
+      "price": "549.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303362-ONE-2.png?v=1778612047",
+      "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
+    },
+    {
+      "name": "Black Snowboard of Death",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        156,
+        159,
+        162
+      ],
+      "price": "749.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303363-ONE-1.png?v=1778616675",
+      "notes": ""
+    },
+    {
+      "name": "Black Snowboard of Death Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        157,
+        161,
+        165
+      ],
+      "price": "749.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303363-ONE-1.png?v=1778616675",
+      "notes": ""
+    },
+    {
+      "name": "Matriarch",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        155,
+        158,
+        161
+      ],
+      "price": "729.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303365-ONE-1.png?v=1778648036",
+      "notes": ""
+    },
+    {
+      "name": "Matriarch Wide",
+      "brand": "Capita",
+      "styles": [
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "shape": "true-twin",
+      "flex": 5.5,
+      "lengths": [
+        157,
+        160
+      ],
+      "price": "729.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303365-ONE-1.png?v=1778648036",
+      "notes": ""
     },
     {
       "name": "Horizon",
@@ -1919,8 +2224,8 @@ window.GEAR_DATA = {
         110,
         120
       ],
-      "price": "429.99",
-      "image": "https://www.sportsbasement.com/cdn/shop/files/100293343_BKGP_1.png?v=1754107225",
+      "price": "299.99",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100305309_BLK_1.png?v=1779991584",
       "notes": ""
     },
     {
@@ -1974,11 +2279,12 @@ window.GEAR_DATA = {
       "notes": "."
     },
     {
+      "gender": "mens",
       "name": "Strata",
       "brand": "Union",
       "style": [
-        "all-mountain",
-        "freestyle"
+        "freestyle",
+        "all-mountain"
       ],
       "skill": [
         "beginner",
@@ -2004,15 +2310,18 @@ window.GEAR_DATA = {
         "4x2",
         "channel"
       ],
+      "binding": "traditional",
       "price": "279.95",
       "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_STRATA_BLACK_1024x.jpg?v=1753686597",
       "notes": "The Strata has a mini disk that allows the binding to carry a soft surfy feeling. Smaller contact point and allows your board to flex naturally."
     },
     {
+      "gender": "mens",
       "name": "Force",
       "brand": "Union",
       "style": [
-        "all-mountain"
+        "all-mountain",
+        "freestyle"
       ],
       "skill": [
         "beginner",
@@ -2039,15 +2348,19 @@ window.GEAR_DATA = {
         "4x2",
         "channel"
       ],
+      "binding": "traditional",
       "price": "349.95",
-      "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_FORCE_BLACK_db5dd6ad-dca0-4136-982f-dfaf63159e12_1024x.jpg?v=1753861019",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303407.Force.Black.1.png?v=1780696910",
       "notes": "."
     },
     {
+      "gender": "mens",
       "name": "Falcor",
       "brand": "Union",
       "style": [
-        "freeride"
+        "freeride",
+        "freestyle",
+        "all-mountain"
       ],
       "skill": [
         "intermediate",
@@ -2072,16 +2385,20 @@ window.GEAR_DATA = {
         "4x2",
         "channel"
       ],
+      "binding": "traditional",
       "price": "439.95",
-      "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_FALCOR_BLACK_1024x.jpg?v=1753276224",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303402.Black.1.png?v=1780676964",
       "notes": "."
     },
     {
+      "gender": "mens",
       "name": "Atlas",
       "brand": "Union",
       "style": [
         "all-mountain",
-        "carving"
+        "carving",
+        "freestyle",
+        "freeride"
       ],
       "skill": [
         "intermediate",
@@ -2107,12 +2424,50 @@ window.GEAR_DATA = {
         "4x2",
         "channel"
       ],
+      "binding": "traditional",
       "price": "399.95",
-      "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_ATLAS_CHROME_1024x.jpg?v=1757931696",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303406.Atlas.Black.1.png?v=1780693194",
       "notes": "."
     },
     {
+      "gender": "mens",
       "name": "Ultra",
+      "brand": "Union",
+      "style": [
+        "freestyle",
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "5.5-7.5"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 6,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "traditional",
+      "price": "329.95",
+      "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_ULTRA_BLACK_1024x.jpg?v=1753276418",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Neo",
       "brand": "Union",
       "style": [
         "freestyle",
@@ -2142,8 +2497,304 @@ window.GEAR_DATA = {
         "4x2",
         "channel"
       ],
-      "price": "329.95",
-      "image": "https://unionbindingcompany.com/cdn/shop/files/UN25_ULTRA_BLACK_1024x.jpg?v=1753276418",
+      "binding": "traditional",
+      "price": "379.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303403.Neo.White.1.png?v=1780680369",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "STR",
+      "brand": "Union",
+      "style": [
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "5.5-7.5"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 6,
+      "pattern": [
+        "4x2",
+        "4x4",
+        "channel"
+      ],
+      "binding": "traditional",
+      "price": "199.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303408.STR.Black.1.png?v=1780704023",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Atlas Step On",
+      "brand": "Union",
+      "style": [
+        "freestyle",
+        "all-mountain",
+        "freeride"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "6-8"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8.5-10.5"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "11-13"
+        },
+        {
+          "size": "XL",
+          "boot_sizes": "14-15"
+        }
+      ],
+      "flex": 8,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "step-on",
+      "price": "429.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303392.Black.1.png?v=1780506580",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Atlas Step On Pro",
+      "brand": "Union",
+      "style": [
+        "freestyle",
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "5.5-7.5"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 6,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "step-on",
+      "price": "499.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303385.Black.1.png?v=1780499173",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Source",
+      "brand": "Union",
+      "style": [
+        "all-mountain",
+        "carving",
+        "freeride"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 7,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "traditional",
+      "price": "549.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303400.Source.Black.1.png?v=1780612051",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Source FC",
+      "brand": "Union",
+      "style": [
+        "all-mountain",
+        "freeride",
+        "carving"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 8,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "traditional",
+      "price": "999.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303396.FCBlack.1.png?v=1780606599",
+      "notes": "."
+    },
+    {
+      "gender": "mens",
+      "name": "Source Pro TH",
+      "brand": "Union",
+      "style": [
+        "freestyle",
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "M",
+          "boot_sizes": "8-10"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "10.5-13"
+        }
+      ],
+      "flex": 6,
+      "pattern": [
+        "4x2",
+        "channel"
+      ],
+      "binding": "traditional",
+      "price": "999.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100303397.SourceProTH.Black.1.png?v=1780610364",
+      "notes": "."
+    },
+    {
+      "gender": [
+        "mens",
+        "womens"
+      ],
+      "name": "Nebula FASE",
+      "brand": "Jones",
+      "style": [
+        "freestyle",
+        "all-mountain"
+      ],
+      "skill": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "5-8"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8.5-10.5"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "11-14"
+        }
+      ],
+      "flex": 4,
+      "pattern": [
+        "4x4",
+        "4x2",
+        "channel"
+      ],
+      "binding": "fase",
+      "price": "299.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100308731_TBR_1.png?v=1780069215",
+      "notes": "."
+    },
+    {
+      "gender": [
+        "mens",
+        "womens"
+      ],
+      "name": "Mercury FASE",
+      "brand": "Jones",
+      "style": [
+        "freeride",
+        "all-mountain"
+      ],
+      "skill": [
+        "intermediate",
+        "advanced"
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "boot_sizes": "5-8"
+        },
+        {
+          "size": "M",
+          "boot_sizes": "8.5-10.5"
+        },
+        {
+          "size": "L",
+          "boot_sizes": "11-14"
+        }
+      ],
+      "flex": 8,
+      "pattern": [
+        "4x4",
+        "4x2",
+        "channel"
+      ],
+      "binding": "fase",
+      "price": "369.95",
+      "image": "https://www.sportsbasement.com/cdn/shop/files/100308731_TBR_1.png?v=1780069215",
       "notes": "."
     }
   ]
