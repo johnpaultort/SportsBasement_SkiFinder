@@ -1,24 +1,11 @@
 import json
 
-# ────────────────────────────────────────────────────────────
-#  SNOWBOARDS
-#  name           : "x"
-#  brand          : "y"
-#  styles options : "all-mountain" | "freeride" | "park" | "carving"
-#  shape options  : "directional" | "directional-twin" | "true-twin"
-#  wide           :  true         |  false
-#  TD: strengths      : x, y, z
-#  TD: weakness       : x, y, z
-#  TD: style-rating   : 1-10
-#  TD: profile        : Camber Rocker, Rocker, Camber, Triple Camber
-#  flex           : 1 (softest) – 10 (stiffest)
-# ────────────────────────────────────────────────────────────
- 
 SNOWBOARDS = [
     # No 26/27 images yet
     # Burton
     # As far as what we carry this is it
     {
+        "gender": "mens",
         "name": "Hometown Hero",
         "brand": "Burton",
 
@@ -46,6 +33,7 @@ SNOWBOARDS = [
         "notes": "This is a great All Mountain board, it feels stable at high speed. This pairs great with their channel system bindings"
     },
     {
+        "gender": "mens",
         "name": "Good Company",
         "brand": "Burton",
         "styles": ["park"],
@@ -58,6 +46,7 @@ SNOWBOARDS = [
         "notes": "This is one of the best park boards on the market. Go anywhere on the park with this board."
     },
     {
+        "gender": "mens",
         "name": "Custom",
         "brand": "Burton",
         "styles": ["all-mountain"],
@@ -70,6 +59,7 @@ SNOWBOARDS = [
         "notes": "The custom is a great board."
     },
     {
+        "gender": "mens",
         "name": "Custom X",
         "brand": "Burton",
         "styles": ["all-mountain"],
@@ -86,6 +76,7 @@ SNOWBOARDS = [
     # Nitro
     # This is what we carry in store
     {
+        "gender": "mens",
         "name": "Team",
         "brand": "Nitro",
         "styles": ["all-mountain"],
@@ -98,6 +89,7 @@ SNOWBOARDS = [
         "notes": "Nitro Team is a great board for someone that just wants to hit all the mountain with no regret and no hezzy."
     },
     {
+        "gender": "mens",
         "name": "T1",
         "brand": "Nitro",
         "styles": ["all-mountain"],
@@ -110,6 +102,7 @@ SNOWBOARDS = [
         "notes": "This board is an amazing all mountain board for those blue bird days that can be taken anywhere. Its least strongest suit is in powder."
     },
     {
+        "gender": "mens",
         "name": "Alternator",
         "brand": "Nitro",
         "styles": ["all-mountain"],
@@ -126,6 +119,7 @@ SNOWBOARDS = [
     # Bataleon
     # What we carried 25/26
     {
+        "gender": "mens",
         "name": "Whatever",
         "brand": "Bataleon",
         "styles": ["all-mountain"],
@@ -138,6 +132,7 @@ SNOWBOARDS = [
         "notes": "This is a great board that goes from groomers to steeps without hezzy."
     },
     {
+        "gender": "mens",
         "name": "Evil Twin",
         "brand": "Bataleon",
         "styles": ["park"],
@@ -150,6 +145,7 @@ SNOWBOARDS = [
         "notes": "Bataleons best resort board that we carry, it has a lot of hype around the mountain from the park to steeps."
     },
     {
+        "gender": "mens",
         "name": "Disaster",
         "brand": "Bataleon",
         "styles": ["park"],
@@ -162,6 +158,7 @@ SNOWBOARDS = [
         "notes": "Park heavy board that does anything, best for butters or any kind of presses."
     },
     {
+        "gender": "mens",
         "name": "Goliath+",
         "brand": "Bataleon",
         "styles": ["all-mountain"],
@@ -177,18 +174,20 @@ SNOWBOARDS = [
     # Capita (25/26 images)
     #
     {
+        "gender": "mens",
         "name": "Resort Twin",
         "brand": "Capita",
-        "styles": ["all-mountain"],
+        "styles": ["park"],
         "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 6.5,
+        "shape": "true-twin",
+        "flex": 5,
         "lengths": [152, 154, 156, 158, 160],
         "price": "599.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303371-ONE.png?v=1779917790",
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Resort Twin Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -201,11 +200,12 @@ SNOWBOARDS = [
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Mercury",
         "brand": "Capita",
-        "styles": ["all-mountain"],
+        "styles": ["all-mountain", "freeride"],
         "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
+        "shape": "directional",
         "flex": 6.5,
         "lengths": [147, 150, 153, 155, 157, 159, 161],
         "price": "699.95",
@@ -213,11 +213,12 @@ SNOWBOARDS = [
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Mercury Wide",
         "brand": "Capita",
-        "styles": ["all-mountain"],
+        "styles": ["all-mountain", "free-ride"],
         "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
+        "shape": "directional",
         "flex": 6.5,
         "lengths": [156, 158, 160, 162],
         "price": "699.95",
@@ -225,18 +226,20 @@ SNOWBOARDS = [
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Mega Merc",
         "brand": "Capita",
-        "styles": ["all-mountain"],
+        "styles": ["all-mountain", "freeride"],
         "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 6.5,
+        "shape": "directional",
+        "flex": 7,
         "lengths": [153, 155, 157, 159, 161],
         "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303357-ONE-1.png?v=1778537175",
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Mega Death",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -249,6 +252,7 @@ SNOWBOARDS = [
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Mega Death Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -261,6 +265,7 @@ SNOWBOARDS = [
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
+        "gender": "mens",
         "name": "Kazu Kokubo Pro",
         "brand": "Capita",
         "styles": ["freeride", "all-mountain"],
@@ -273,6 +278,7 @@ SNOWBOARDS = [
         "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
     },
     {
+        "gender": "mens",
         "name": "Kazu Kokubo Pro Wide",
         "brand": "Capita",
         "styles": ["freeride", "all-mountain"],
@@ -285,6 +291,7 @@ SNOWBOARDS = [
         "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
     },
     {
+        "gender": "mens",
         "name": "D.O.A.",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -297,6 +304,7 @@ SNOWBOARDS = [
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
+        "gender": "mens",
         "name": "D.O.A. Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -309,6 +317,7 @@ SNOWBOARDS = [
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
+        "gender": "mens",
         "name": "Super D.O.A.",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -321,6 +330,7 @@ SNOWBOARDS = [
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
+        "gender": "mens",
         "name": "Super D.O.A. Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -333,6 +343,7 @@ SNOWBOARDS = [
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
+        "gender": "mens",
         "name": "Sidewinder",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -345,18 +356,20 @@ SNOWBOARDS = [
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
+        "gender": "mens",
         "name": "Black Snowboard of Death",
         "brand": "Capita",
-        "styles": ["all-mountain"],
+        "styles": ["all-mountain", "freeride"],
         "skill": ["intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 5.5,
+        "shape": "directional",
+        "flex": 6.5,
         "lengths": [156, 159, 162],
         "price": "749.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303363-ONE-1.png?v=1778616675",
         "notes": ""
     },
     {
+        "gender": "mens",
         "name": "Black Snowboard of Death Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -369,6 +382,7 @@ SNOWBOARDS = [
         "notes": ""
     },
     {
+        "gender": "mens",
         "name": "Matriarch",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -381,6 +395,7 @@ SNOWBOARDS = [
         "notes": ""
     },
     {
+        "gender": "mens",
         "name": "Matriarch Wide",
         "brand": "Capita",
         "styles": ["all-mountain"],
@@ -399,6 +414,7 @@ SNOWBOARDS = [
     #
 
     {
+        "gender": "mens",
         "name": "Horizon",
         "brand": "United Shapes",
         "styles": ["all-mountain"],
@@ -412,6 +428,7 @@ SNOWBOARDS = [
                  "Not to mention the tortional flex this board has allows for quick response."
     },
     {
+        "gender": "mens",
         "name": "Object",
         "brand": "United Shapes",
         "styles": ["park"],
@@ -424,6 +441,7 @@ SNOWBOARDS = [
         "notes": "The object is a really niche park board that is not spotted on the regular, this board is really flexy for those who enjoy presses and butters."
     },
     {
+        "gender": "mens",
         "name": "Deep Reach",
         "brand": "United Shapes",
         "styles": ["freeride"],
@@ -436,6 +454,7 @@ SNOWBOARDS = [
         "notes": "The Deep Reach is amazing at holding edges, and carving really fun on those powder days."
     },
     {
+        "gender": "mens",
         "name": "Cadet",
         "brand": "United Shapes",
         "styles": ["freeride", "carving", "all-mountain"],
@@ -454,6 +473,7 @@ SNOWBOARDS = [
     #
     
     {
+        "gender": "mens",
         "name": "Orca",
         "brand": "Lib Tech",
         "styles": ["freeride"],
@@ -466,6 +486,7 @@ SNOWBOARDS = [
         "notes": "Directonal board that does everything from groomers down to powder, this is an everday board that you cannot get enough from."
     },
     {
+        "gender": "mens",
         "name": "DPR",
         "brand": "Lib Tech",
         "styles": ["all-mountain"],
@@ -483,6 +504,7 @@ SNOWBOARDS = [
     #
 
     {
+        "gender": "mens",
         "name": "Sleepwalker",
         "brand": "Salomon",
         "styles": ["park"],
@@ -495,6 +517,7 @@ SNOWBOARDS = [
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
+        "gender": "mens",
         "name": "Huck Knife",
         "brand": "Salomon",
         "styles": ["park"],
@@ -507,6 +530,7 @@ SNOWBOARDS = [
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
+        "gender": "mens",
         "name": "Huck Knife Pro",
         "brand": "Salomon",
         "styles": ["park"],
@@ -519,6 +543,7 @@ SNOWBOARDS = [
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
+        "gender": "mens",
         "name": "Abstract",
         "brand": "Salomon",
         "styles": ["park"],
@@ -531,6 +556,7 @@ SNOWBOARDS = [
         "notes": "True twin that is ready for any rails, this board is mid stiff great entry level board into the sport as well"
     },
     {
+        "gender": "mens",
         "name": "Assasin",
         "brand": "Salomon",
         "styles": ["all-mountain"],
@@ -543,6 +569,7 @@ SNOWBOARDS = [
         "notes": "Matte color to avoid having a shark or a bannana printed on your board, a niche board that holds a lot of fun."
     },
     {
+        "gender": "mens",
         "name": "Assasin Pro",
         "brand": "Salomon",
         "styles": ["all-mountain"],
@@ -555,6 +582,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Craft",
         "brand": "Salomon",
         "styles": ["all-mountain"],
@@ -567,6 +595,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Dancehaul",
         "brand": "Salomon",
         "styles": ["freeride"],
@@ -583,6 +612,7 @@ SNOWBOARDS = [
     # Jones (26/27 images)
     # 
     {
+        "gender": "mens",
         "name": "Rally Cat",
         "brand": "Jones",
         "styles": ["park", "all-mountain"],
@@ -595,6 +625,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Frontier 2.0",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -607,6 +638,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Storm Wolf",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -619,6 +651,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Storm Chaser",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -631,6 +664,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Free Carver 6000",
         "brand": "Jones",
         "styles": ["carving"],
@@ -643,6 +677,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Free Carver 9000",
         "brand": "Jones",
         "styles": ["carving"],
@@ -655,6 +690,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Howler",
         "brand": "Jones",
         "styles": ["freeride", "park"],
@@ -667,6 +703,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Mountain Twin Pro",
         "brand": "Jones",
         "styles": ["all-mountain"],
@@ -679,6 +716,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Hovercraft 2.0",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -691,6 +729,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Stratos",
         "brand": "Jones",
         "styles": ["freeride", "all-mountain"],
@@ -703,6 +742,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Flagship",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -715,6 +755,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
+        "gender": "mens",
         "name": "Flagship pro",
         "brand": "Jones",
         "styles": ["freeride"],

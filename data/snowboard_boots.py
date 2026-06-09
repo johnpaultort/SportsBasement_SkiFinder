@@ -152,5 +152,28 @@ BOOTS = [
         "price": "349.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303316_BLK_1.png?v=1779123852",
         "notes": "."
+    },
+    # Union
+    {
+        "name": "Reset Pro",
+        "brand": "Union",
+        "styles": ["all-mountain"],
+        "flex": 8,
+        "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11],
+        "lacing": ["double-boa"],
+        "price": "649.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100303383.Black.3.png?v=1780435792",
+        "notes": "."
+    },
+    {
+        "name": "Reset",
+        "brand": "Union",
+        "styles": ["all-mountain"],
+        "flex": 6,
+        "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11],
+        "lacing": ["double-boa"],
+        "price": "549.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100303384.Black.1.png?v=1780441049",
+        "notes": "."
     }
 ]

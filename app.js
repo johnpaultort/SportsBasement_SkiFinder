@@ -3,7 +3,8 @@ window.GEAR_DATA = window.GEAR_DATA || {
     snowboards: [],
     ski_boots: [],
     snowboard_boots: [],
-    bindings: [],
+    snowboard_bindings: [],
+    ski_bindings: [],
 
     helmets: [],
     goggles: [],
@@ -127,14 +128,11 @@ function renderProducts(products, type = '') {
             </div>
           ` : ''}
 
-          ${p.sizes ? `
-            <div class="product-lengths">
-              Sizes:
-              ${p.sizes.map(s =>
-                `${s.size} (${s.boot_sizes})`
-              ).join(', ')}
-            </div>
-          ` : ''}
+          ${p.recommendedSize 
+            ? `<div class="product-lengths">
+            Recommended Size: <strong>${p.recommendedSize}</strong>
+            </div>`
+          : ''}
 
           ${p.flex
             ? `<div class="product-lengths">Flex: ${p.flex}</div>`
@@ -146,7 +144,7 @@ function renderProducts(products, type = '') {
 
           <button
             class="add-cart-btn"
-            data-name="${encodeURIComponent([p.name])}"
+            data-name="${encodeURIComponent(p.name)}"
             onclick="addToCartByName(decodeURIComponent(this.dataset.name), this)"
           >
             Add To List
@@ -172,7 +170,8 @@ function addToCartByName(name,btn) {
         ...(GEAR_DATA.snowboards || []),
         ...(GEAR_DATA.ski_boots || []),
         ...(GEAR_DATA.snowboard_boots || []),
-        ...(GEAR_DATA.bindings || []),
+        ...(GEAR_DATA.snowboard_bindings || []),
+        ...(GEAR_DATA.ski_bindings || []),
 
         ...(GEAR_DATA.helmets || []),
         ...(GEAR_DATA.goggles || []),
@@ -321,7 +320,8 @@ function toggleFavorite(name){
     );
 
     document.querySelectorAll(".favorite-btn").forEach(btn => {
-        const itemName = btn.dataset.name;
+        const itemName = decodeURIComponent(btn.dataset.name);
+
         btn.classList.toggle(
             "active",
             favorites.includes(itemName)
@@ -414,7 +414,7 @@ function skiRecommenderHTML() {
   <h2 class="tool-title">SKI RECOMMENDER</h2>
   <p class="tool-desc">Answer a few questions and we'll suggest the right type of ski, length, and products from our inventory.</p>
   
-  <div class="form-group>
+  <div class="form-group">
     <div class="form-label">Category</div>
     <div class="radio-grid">
     ${radioOpt('gender', 'mens', "Men's")}
@@ -531,7 +531,7 @@ function calcSki() {
       desc:'Narrow waist for precise carving on groomers.'
     },
 
-    'powder':{
+    'freeride':{
       name:'Powder / Freeride Ski',
       width:'100–130mm',rocker:'Full early rise tip & tail',
       desc:'Wide and rockered for deep snow.'
@@ -750,7 +750,7 @@ function calcDIN() {
   if (age <= 10 || age >= 50) { const adjustedIdx = Math.max(0, typeIndex - 1); din = row[2 + adjustedIdx]; }
   if (heightCm > 193) din += 0.25; else if (heightCm < 150) din -= 0.25;
   din = Math.round(din * 4) / 4;
-  const matchedBindings = (GEAR_DATA.bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
+  const matchedBindings = (GEAR_DATA.ski_bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
   $('din-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -798,7 +798,7 @@ function calcSkiBindings() {
   if (!din || !style) {
     $('ski-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
-  const matched = (GEAR_DATA.bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
+  const matched = (GEAR_DATA.ski_bindings || []).filter(b => din >= b.min_din && din <= b.max_din);
   $('ski-bind-result').innerHTML = `
   <div class="result-card">
     <div class="result-header">
@@ -1204,20 +1204,43 @@ function sbBindingsHTML() {
   <div id="sb-bind-result"></div>
 </div>`;
 }
+
+function getBindingSize(binding, bootSize){
+  if (!binding.sizes) return null;
+
+  for (const s of binding.sizes) {
+    const [min, max] = s.boot_sizes.split('-').map(Number);
+
+    if (bootSize >= min && bootSize <= max) {
+      return s.size;
+    }
+  }
+  return null;
+}
  
 function calcSbBindings() {
   const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const style = document.querySelector('input[name="sbbind-style"]:checked')?.value;
   const bootSize = parseFloat($('sbbind-bootsize')?.value);
   const bindingPref = document.querySelector('input[name="binding"]:checked')?.value;
-  if (!style || !bootSize) {
-    $('sb-bind-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
+  
+  if (!gender || !style || !bootSize || !bindingPref) {
+    $('sb-bind-result').innerHTML = 
+      `<div class="warning-box">Please fill in all fields.</div>`; 
+    return;
   }
-  const matched = (GEAR_DATA.bindings || []).filter(b =>
-    b.gender === gender &&
-    b.binding === bindingPref &&
-    b.style.includes(style)
-  );
+
+  const matched = (GEAR_DATA.snowboard_bindings || [])
+    .filter(binding => 
+      binding.style.includes(style) &&
+      binding.type === bindingPref &&
+      binding.gender.includes(gender)
+    )
+    .map (binding => ({
+      ...binding,
+      recommendedSize: getBindingSize(binding, bootSize)
+    }))
+    .filter(binding => binding.recommendedSize);
 
   $('sb-bind-result').innerHTML = `
   <div class="result-card">
@@ -1227,7 +1250,8 @@ function calcSbBindings() {
     </div>
     <hr class="section-sep"/>
     ${renderProducts(matched, 'snowboard binding')}
-  </div>`;
+  </div>
+  `;
 }
 
 // Accessories Start Here

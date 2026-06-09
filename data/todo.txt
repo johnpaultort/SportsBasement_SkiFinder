@@ -1,6 +1,4 @@
 [] Need to add resume last fit, remember option
-[] Add womens stuff as well
-[] Fix logic
 [] Add a pair option to combo for everything. So I think start with a pop up window that ask
 "what are you looking for today." Then individual items or then combine everything together
 [] similarity score for what the customer is looking for
