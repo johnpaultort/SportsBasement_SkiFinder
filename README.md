@@ -74,4 +74,4 @@ To reduce decision fatigue in ski/snowboard gear selection by building a structu
 
 ## 🔗 Links
 - Live Demo: https://snowfitter.netlify.app/
-- GitHub: https://github.com/yourusername/repo
+- GitHub: https://github.com/johnpaultort/SportsBasement_SkiFinder
