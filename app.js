@@ -79,6 +79,9 @@ function renderPage(page) {
   };
   if (page === 'landing') { state = { sport: null, tool: null }; updateNav(); }
   app.innerHTML = (map[page] || landingHTML)();
+  if(page === 'ski-recommender') {
+    setupPreferenceLimit();
+  }
   renderCart();
 }
  
@@ -86,13 +89,38 @@ function renderPage(page) {
 function radioOpt(name, value, label) {
   return `<label class="radio-opt"><input type="radio" name="${name}" value="${value}"><div class="radio-label">${label.replace('\n','<br>')}</div></label>`;
 }
+
 function checkOpt(name, value, label) {
   return `<label class="radio-opt"><input type="checkbox" name="${name}" value="${value}"><div class="radio-label">${label}</div></label>`;
 }
+
+function setupPreferenceLimit() {
+  const checkboxes = document.querySelectorAll('input[name="preferences"]');
+
+  if (!checkboxes.length) return;
+
+  checkboxes.forEach(box => {
+    box.addEventListener("change", () => {
+      const checked = document.querySelectorAll('input[name="preferences"]:checked');
+
+      if (checked.length >= 3){
+        checkboxes.forEach(cb=> {
+          if (!cb.checked) cb.disabled = true;
+      });
+      } else {
+        checkboxes.forEach(cb => {
+          cb.disabled = false;
+        });
+      }
+    });
+  });
+}
+
 function heightOpts() {
   return [["4'10\"","147"],["4'11\"","150"],["5'0\"","152"],["5'1\"","155"],["5'2\"","157"],["5'3\"","160"],["5'4\"","163"],["5'5\"","165"],["5'6\"","168"],["5'7\"","170"],["5'8\"","173"],["5'9\"","175"],["5'10\"","178"],["5'11\"","180"],["6'0\"","183"],["6'1\"","185"],["6'2\"","188"],["6'3\"","190"],["6'4\"","193"],["6'5\"","196"]]
     .map(([l,v]) => `<option value="${v}">${l} (${v}cm)</option>`).join('');
 }
+
 function renderProducts(products, type = '') {
   if (!products || products.length === 0) {
     return `<p class="no-products">No ${type} products on file yet.</p>`;
@@ -437,7 +465,7 @@ function skiRecommenderHTML() {
   </div>
 
   <div class="form-group">
-    <div class="form-label">Specific Traits (optional)</div>
+    <div class="form-label">Specific Traits (select 3)</div>
     <div class="checkbox-grid">
       ${checkOpt('preferences','trees','Trees')}
       ${checkOpt('preferences','moguls','Moguls')}
@@ -494,8 +522,16 @@ function calcSki() {
   const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const skill = document.querySelector('input[name="skill"]:checked')?.value;
   const style = document.querySelector('input[name="style"]:checked')?.value;
+
+  const preferences = [
+    ...document.querySelectorAll('input[name="preferences"]:checked')
+  ].map(el => el.value);
+
+  console.log(preferences);
+
   const heightCm = parseInt($('skier-height')?.value);
   const weightLbs = parseInt($('skier-weight')?.value);
+
   if (!skill || !style || !heightCm || !weightLbs) {
     $('ski-result').innerHTML = `<div class="warning-box">Please fill in all fields.</div>`; return;
   }
@@ -519,32 +555,34 @@ function calcSki() {
   const types = {
     'all-mountain':{
       name:'All-Mountain Ski',
-      width:'85–95mm',
+      width:'90-100mm',
       rocker:'Slight tip rocker',
       desc:'Versatile ski for any condition.'
     },
 
     'groomer':{
-      name:'Carving / Piste Ski',
-      width:'68–82mm',
+      name:'Carving / Groomer Ski',
+      width:'80-88mm',
       rocker:'Camber dominant',
       desc:'Narrow waist for precise carving on groomers.'
     },
 
     'freeride':{
       name:'Powder / Freeride Ski',
-      width:'100–130mm',rocker:'Full early rise tip & tail',
+      width:'100–130mm',
+      rocker:'Full early rise tip & tail',
       desc:'Wide and rockered for deep snow.'
     },
 
     'park':{
       name:'Park / Twin-Tip Ski',
-      width:'85–95mm',
+      width:'88–95mm',
       rocker:'Twin-tip, slight camber',
       desc:'Symmetrical for skiing switch and park features.'
     },
 
   };
+
   const t = types[style];
   const skillBadge={beginner:'badge-blue',intermediate:'badge-green',advanced:'badge-warn'};
   const matched = (GEAR_DATA.skis || []).filter(s =>

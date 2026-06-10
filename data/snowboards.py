@@ -1,135 +1,41 @@
 import json
 
+# Format
+#    {
+#        "gender": [""],
+#        "name": "",
+#        "brand": "",
+#        "styles": ["""],
+#        "skill": [""],
+#        "shape": "",
+#        "flex": ,
+#        "lengths": [],
+#        "wide_lengths": [],
+#        "price": "",
+#        "image": "",
+#        "notes": ""
+#    },
+
 SNOWBOARDS = [
-    # No 26/27 images yet
-    # Burton
-    # As far as what we carry this is it
-    {
-        "gender": "mens",
-        "name": "Hometown Hero",
-        "brand": "Burton",
-
-        "styles": ["all-mountain"],
-
-        "skill": ["intermediate", "advanced"],
-
-        "shape": "directional",
-        "profile": "",
-        "strengths": [],
-        "weakness": [],
-        "flex": 7, 
-        "lengths": [
-            {"size": 144, "width": "regular" },
-            {"size": 148, "width": "regular"},
-            {"size": 152, "width": "regular"},
-            {"size": 156, "width": "regular"},
-            {"size": 156, "width": "wide"},
-            {"size": 160, "width": "wide"},
-            {"size": 160, "width": "wide"},
-        ],
-
-        "price": "679.95",
-        "image": "https://www.burton.com/static/product/W26/2224513E1QRG_1.png?impolicy=bglt&imwidth=943",
-        "notes": "This is a great All Mountain board, it feels stable at high speed. This pairs great with their channel system bindings"
-    },
-    {
-        "gender": "mens",
-        "name": "Good Company",
-        "brand": "Burton",
-        "styles": ["park"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 4,
-        "lengths": [135, 145, 148, 152, 155, 159],
-        "price": "449.95",
-        "image": "https://www.burton.com/static/product/W26/2359513A03RG_1.png?impolicy=bglt&imwidth=943",
-        "notes": "This is one of the best park boards on the market. Go anywhere on the park with this board."
-    },
-    {
-        "gender": "mens",
-        "name": "Custom",
-        "brand": "Burton",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 6,
-        "lengths": [150, 154, 156, 158, 162],
-        "price": "679.95",
-        "image": "https://www.burton.com/static/product/W26/106881997DRG_1.png?impolicy=bglt&imwidth=943",
-        "notes": "The custom is a great board."
-    },
-    {
-        "gender": "mens",
-        "name": "Custom X",
-        "brand": "Burton",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 8,
-        "lengths": [150, 154, 156, 158, 162],
-        "price": "899.95",
-        "image": "https://www.burton.com/static/product/W26/106891CA03RG_1.png?impolicy=bglt&imwidth=943",
-        "notes": "The custom x is a upgrade from the regular custom, the difference is stiffness. The stifness allows the board to be a hard charger with speed."
-    },
-
-    # No 26/27 images yet
-    # Nitro
-    # This is what we carry in store
-    {
-        "gender": "mens",
-        "name": "Team",
-        "brand": "Nitro",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 7,
-        "lengths": [152, 155, 157, 159, 162],
-        "price": "579.95",
-        "image": "https://www.nitrosnowboards.com/cdn/shop/files/833222-001_Team_152_Product-1.jpg?v=1755928797&width=400",
-        "notes": "Nitro Team is a great board for someone that just wants to hit all the mountain with no regret and no hezzy."
-    },
-    {
-        "gender": "mens",
-        "name": "T1",
-        "brand": "Nitro",
-        "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 7,
-        "lengths": [149, 152, 155, 158],
-        "price": "529.95",
-        "image": "https://www.nitrosnowboards.com/cdn/shop/files/833228-001_T1_149_Product-1.jpg?v=1755928801&width=800",
-        "notes": "This board is an amazing all mountain board for those blue bird days that can be taken anywhere. Its least strongest suit is in powder."
-    },
-    {
-        "gender": "mens",
-        "name": "Alternator",
-        "brand": "Nitro",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "directional",
-        "flex": 8,
-        "lengths": [154, 157, 160, 162],
-        "price": "579.95",
-        "image": "https://www.nitrosnowboards.com/cdn/shop/files/833214-001_Alternator_154_Product-1.jpg?v=1755950251&width=800",
-        "notes": "This is that all mountain board that really does all mountain. This can be taken in float, park, etc. (26/27 is the last year of the alt)"
-    },
-
-    # No 26/27 images yet
+    #
     # Bataleon
-    # What we carried 25/26
+    #
     {
-        "gender": "mens",
+        "gender": ["mens", "womens"],
         "name": "Whatever",
         "brand": "Bataleon",
         "styles": ["all-mountain"],
         "skill": ["beginner", "intermediate", "advanced"],
         "shape": "directional-twin",
         "flex": 5,
-        "lengths": [138, 144, 148, 151, 154, 157],
-        "price": "599.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100296294_144.png?v=1761849755",
-        "notes": "This is a great board that goes from groomers to steeps without hezzy."
+        "lengths": [148, 151, 154, 157],
+        "price": "579.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100309170_1.png?v=1780608050",
+        "notes": (
+            "The Bataleon Whatever Snowboard is the ultimate all-in-one quiver killer—built to handle whatever, wherever. From park laps and groomer carves to powder stashes, "
+            "this board thrives in every condition with its perfect blend of freestyle playfulness and all-mountain control. Thanks to Triple Base Technology™ and a medium flex, it’s catch-free, floaty, and ready to adapt to your every move. "
+            "If versatility is your vibe, the Whatever is your ride."
+        )
     },
     {
         "gender": "mens",
@@ -141,7 +47,7 @@ SNOWBOARDS = [
         "flex": 5,
         "lengths": [151, 154, 157, 159],
         "price": "579.95",
-        "image": "https://bataleon.com/cdn/shop/files/bataleon-2526-eviltwin-2-mens-snowboards.jpg?v=1757387976&width=493",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100309164_1.png?v=1780606727",
         "notes": "Bataleons best resort board that we carry, it has a lot of hype around the mountain from the park to steeps."
     },
     {
@@ -169,8 +75,9 @@ SNOWBOARDS = [
         "price": "699.95",
         "image": "https://bataleon.com/cdn/shop/files/bataleon-2526-goliath-plus-2-mens-snowboards_e50c0e08-eddc-470d-b54c-99092098b4b3.jpg?v=1764664626&width=360",
         "notes": "This is going to be their all mountain option that can run down the hill."
-    },   
-    # Has not released 26/27 images, but it is coming!
+    },
+
+    #
     # Capita (25/26 images)
     #
     {
@@ -182,21 +89,9 @@ SNOWBOARDS = [
         "shape": "true-twin",
         "flex": 5,
         "lengths": [152, 154, 156, 158, 160],
+        "wide_lengths": [155, 158],
         "price": "599.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303371-ONE.png?v=1779917790",
-        "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
-    },
-    {
-        "gender": "mens",
-        "name": "Resort Twin Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 6.5,
-        "lengths": [155, 158],
-        "price": "599.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303372-ONE.png?v=1779923615",
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
     },
     {
@@ -208,19 +103,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6.5,
         "lengths": [147, 150, 153, 155, 157, 159, 161],
-        "price": "699.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303367-ONE-1.png?v=1778714939",
-        "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
-    },
-    {
-        "gender": "mens",
-        "name": "Mercury Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain", "free-ride"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional",
-        "flex": 6.5,
-        "lengths": [156, 158, 160, 162],
+        "wide_lengths": [156, 158, 160, 162],
         "price": "699.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303367-ONE-1.png?v=1778714939",
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
@@ -230,7 +113,7 @@ SNOWBOARDS = [
         "name": "Mega Merc",
         "brand": "Capita",
         "styles": ["all-mountain", "freeride"],
-        "skill": ["beginner", "intermediate", "advanced"],
+        "skill": ["intermediate", "advanced"],
         "shape": "directional",
         "flex": 7,
         "lengths": [153, 155, 157, 159, 161],
@@ -247,19 +130,7 @@ SNOWBOARDS = [
         "shape": "directional-twin",
         "flex": 6.5,
         "lengths": [156, 159, 162],
-        "price": "1,199.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303355-ONE-2.png?v=1778531228",
-        "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
-    },
-    {
-        "gender": "mens",
-        "name": "Mega Death Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "directional-twin",
-        "flex": 6.5,
-        "lengths": [157, 161, 165, 169],
+        "wide_lengths": [157, 161, 165, 169],
         "price": "1,199.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303355-ONE-2.png?v=1778531228",
         "notes": "Capitas staple in my opinion, cannot go wrong with this board as it does everything great."
@@ -273,21 +144,9 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6,
         "lengths": [151, 154, 157, 160],
+        "wide_lengths": [155, 158, 161, 164],
         "price": "679.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303369-ONE-1.png?v=1779749673",
-        "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
-    },
-    {
-        "gender": "mens",
-        "name": "Kazu Kokubo Pro Wide",
-        "brand": "Capita",
-        "styles": ["freeride", "all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "directional",
-        "flex": 6,
-        "lengths": [155, 158, 161, 164],
-        "price": "679.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303370-ONE-1.png?v=1779911523",
         "notes": "Fast and Powerful. This board goes from side-country down to resort once you are done."
     },
     {
@@ -299,21 +158,9 @@ SNOWBOARDS = [
         "shape": "true-twin",
         "flex": 5.5,
         "lengths": [148, 150, 152, 154, 156, 158, 160],
+        "wide_lengths": [153, 155, 157, 159, 161],
         "price": "599.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303361-ONE-1.png?v=1778605725",
-        "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
-    },
-    {
-        "gender": "mens",
-        "name": "D.O.A. Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 5.5,
-        "lengths": [153, 155, 157, 159, 161],
-        "price": "599.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303377-ONE-1.png?v=1778607418",
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
     },
     {
@@ -321,23 +168,11 @@ SNOWBOARDS = [
         "name": "Super D.O.A.",
         "brand": "Capita",
         "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
+        "skill": ["intermediate", "advanced"],
         "shape": "true-twin",
         "flex": 5.5,
         "lengths": [152, 154, 156, 158, 160],
-        "price": "599.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303359-ONE-1.png?v=1778597250",
-        "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
-    },
-    {
-        "gender": "mens",
-        "name": "Super D.O.A. Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["beginner", "intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 5.5,
-        "lengths": [155, 157, 159, 161, 163],
+        "wide_lengths": [155, 157, 159, 161, 163],
         "price": "599.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303359-ONE-1.png?v=1778597250",
         "notes": "D.O.A stands for Destroyer of Awesomeness with this board anything can be done. Really good at going fast and really stable."
@@ -364,19 +199,7 @@ SNOWBOARDS = [
         "shape": "directional",
         "flex": 6.5,
         "lengths": [156, 159, 162],
-        "price": "749.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303363-ONE-1.png?v=1778616675",
-        "notes": ""
-    },
-    {
-        "gender": "mens",
-        "name": "Black Snowboard of Death Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 5.5,
-        "lengths": [157, 161, 165],
+        "wide_lengths": [157, 161, 165],
         "price": "749.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303363-ONE-1.png?v=1778616675",
         "notes": ""
@@ -390,29 +213,15 @@ SNOWBOARDS = [
         "shape": "true-twin",
         "flex": 5.5,
         "lengths": [155, 158, 161],
+        "wide_lengths": [157, 160],
         "price": "729.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100303365-ONE-1.png?v=1778648036",
         "notes": ""
     },
-    {
-        "gender": "mens",
-        "name": "Matriarch Wide",
-        "brand": "Capita",
-        "styles": ["all-mountain"],
-        "skill": ["intermediate", "advanced"],
-        "shape": "true-twin",
-        "flex": 5.5,
-        "lengths": [157, 160],
-        "price": "729.95",
-        "image": "https://www.sportsbasement.com/cdn/shop/files/100303365-ONE-1.png?v=1778648036",
-        "notes": ""
-    },
-
 
     #
     # United Shapes (25/26 images)
     #
-
     {
         "gender": "mens",
         "name": "Horizon",
@@ -471,7 +280,6 @@ SNOWBOARDS = [
     #
     # Lib Tech (26/27 images)
     #
-    
     {
         "gender": "mens",
         "name": "Orca",
@@ -502,7 +310,6 @@ SNOWBOARDS = [
     #
     # Salomon (26/27 images)
     #
-
     {
         "gender": "mens",
         "name": "Sleepwalker",
@@ -612,7 +419,7 @@ SNOWBOARDS = [
     # Jones (26/27 images)
     # 
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Rally Cat",
         "brand": "Jones",
         "styles": ["park", "all-mountain"],
@@ -625,7 +432,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Frontier 2.0",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -638,7 +445,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Storm Wolf",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -651,7 +458,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Storm Chaser",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -664,7 +471,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Free Carver 6000",
         "brand": "Jones",
         "styles": ["carving"],
@@ -677,7 +484,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Free Carver 9000",
         "brand": "Jones",
         "styles": ["carving"],
@@ -690,7 +497,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Howler",
         "brand": "Jones",
         "styles": ["freeride", "park"],
@@ -703,7 +510,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Mountain Twin Pro",
         "brand": "Jones",
         "styles": ["all-mountain"],
@@ -716,7 +523,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Hovercraft 2.0",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -729,7 +536,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Stratos",
         "brand": "Jones",
         "styles": ["freeride", "all-mountain"],
@@ -742,7 +549,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Flagship",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -755,7 +562,7 @@ SNOWBOARDS = [
         "notes": "."
     },
     {
-        "gender": "mens",
+        "gender": ["mens"],
         "name": "Flagship pro",
         "brand": "Jones",
         "styles": ["freeride"],
@@ -766,5 +573,99 @@ SNOWBOARDS = [
         "price": "949.95",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100308716_1.png?v=1779460684",
         "notes": "."
-    }
+    },
+    #
+    # WOMENS JONES OPTIONS
+    #
+    {
+        "gender": ["womens"],
+        "name": "Howler",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308726_1.png?v=1779488948",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Rally Cat",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional-twin",
+        "flex": 10,
+        "lengths": [139, 142, 145, 148, 151, 154],
+        "price": "499.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308730_1.png?v=1779747357",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Twin Sister",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional-twin",
+        "flex": 10,
+        "lengths": [140, 143, 146, 149, 152, 155],
+        "price": "599.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308729_1.png?v=1779748198",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Stratos",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308726_1.png?v=1779488948",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Dream Weaver 2.0",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308726_1.png?v=1779488948",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Airheart 2.0",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308726_1.png?v=1779488948",
+        "notes": "."
+    },
+    {
+        "gender": ["womens"],
+        "name": "Flagship",
+        "brand": "Jones",
+        "styles": ["freeride"],
+        "skill": ["advanced"],
+        "shape": "directional",
+        "flex": 10,
+        "lengths": [154, 158, 161, 164],
+        "price": "699.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100308726_1.png?v=1779488948",
+        "notes": "."
+    },
 ]

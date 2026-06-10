@@ -1,5 +1,15 @@
 import json
 
+# Format
+#    {
+#        "name": "Pivot 11",
+#        "brand": "Look",
+#        "widths":[95, 105, 115],
+#        "price": "279.95",
+#        "image": "https://www.sportsbasement.com/cdn/shop/files/100288955_WHBK_1.png?v=1754107554",
+#        "notes": ""
+#    },
+
 SKI_BINDINGS = [
     #
     # Pivots

@@ -1,40 +1,35 @@
-# ============================================================
-#  Skis.py is a database for Sports Basement Fitter
-# ============================================================
-# 26/27 skis, but if images are not found using 25/26 season images
-# also adding what we carried last season since im sure we are going to get
-# the same product.
-# 
-# ============================================================
- 
 import json
- 
-# ────────────────────────────────────────────────────────────
-#  SKIS
-#   Skill [Beginner, intermediate, Advanced]
-#   Style   [All Mountain, Groomer, Freeride, Park]
-#   Terrain [So-cal, Sierra Nevada, Pacific NW, Utah, Colorado, North East, Canada, Japan, Switzerland/France]
-# ────────────────────────────────────────────────────────────
 
-# TO-DO 1: Add all the skis we sell in store, if images are not found for 26/27 using 25/26 images.
-# TO-DO 2: Add terrain preference to skis, as for what they are good for.
-# TO-Do 3: Frontside instead of groomer
+# Format
+#    {
+#        "name": "",
+#        "brand": "",
+#
+#        "styles": [""],
+#        "skill": [""],
+#        "terrain": [],
+#        "preferences": [''],
+#        "waist_mm": , 
+#        "lengths": [],
+#
+#        "price": "",
+#        "image": "",
+#        "notes": "."
+#    },
 
 SKIS = [
     # Blizard (26/27 images)
     # Add Material used
     {
-        #updated
         "name": "Canvas 118",
         "brand": "Blizzard",
-
         "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
-        "terrain": [],
+        "terrain": ["mixed"],
+        "local": "",
         "preferences": ['playful', 'powder'],
         "waist_mm": 118, 
         "lengths": [172, 180, 186],
-
         "price": "649.00",
         "image": "https://www.sportsbasement.com/cdn/shop/files/100305170_WHT_1.png?crop=center&height=800&v=1779319612&width=800",
         "notes": "."
@@ -44,7 +39,8 @@ SKIS = [
         "brand": "Blizzard",
         "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
-        "terrain": [],
+        "terrain": ["mixed"],
+        "local": "",
         "preferences": [],
         "waist_mm": 108, 
         "lengths": [168, 174, 180, 186, 192],
@@ -57,7 +53,8 @@ SKIS = [
         "brand": "Blizzard",
         "styles": ["all-mountain"],
         "skill": ["intermediate", "advanced"],
-        "terrain": [],
+        "terrain": ["mixed"],
+        "local": "",
         "preferences": [],
         "waist_mm": 100, 
         "lengths": [162, 168, 174, 180, 186],
@@ -70,7 +67,8 @@ SKIS = [
         "brand": "Blizzard",
         "styles": ["freeride"],
         "skill": ["intermediate", "advanced"],
-        "terrain": [],
+        "terrain": ["mixed"],
+        "local": "",
         "preferences": ['powder', 'trees'],
         "waist_mm": 102, 
         "lengths": [168, 174, 180, 186, 192],
@@ -85,6 +83,7 @@ SKIS = [
         "styles": ["groomer", "park"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": ['playful'],
         "waist_mm": 94, 
         "lengths": [164, 171, 178, 185],
@@ -98,6 +97,7 @@ SKIS = [
         "styles": ["groomer", "freeride"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 100, 
         "lengths": [165, 172, 179, 186],
@@ -111,6 +111,7 @@ SKIS = [
         "styles": ["freeride"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 106, 
         "lengths": [164, 172, 180, 186],
@@ -125,6 +126,7 @@ SKIS = [
         "styles": ["groomer", "all-mountain"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 94,
         "lengths": [167, 173, 179, 185, 191],
@@ -138,6 +140,7 @@ SKIS = [
         "styles": ["groomer", "all-mountain"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 99,
         "lengths": [167, 173, 179, 185, 191],
@@ -152,6 +155,7 @@ SKIS = [
         "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 90,
         "lengths": [176, 184, 192],
@@ -165,6 +169,7 @@ SKIS = [
         "styles": ["all-mountain", "powder"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 100,
         "lengths": [176, 184, 192],
@@ -178,6 +183,7 @@ SKIS = [
         "styles": ["powder"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 110,
         "lengths": [176, 184, 192],
@@ -191,6 +197,7 @@ SKIS = [
         "styles": ["powder"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": ['powder', 'trees'],
         "waist_mm": 120,
         "lengths": [176, 184, 192],
@@ -203,7 +210,8 @@ SKIS = [
         "brand": "Atomic",
         "styles": ["groomer"],
         "skill": ["intermediate", "advanced"],
-        "terrain": ["so-cal", "rockies"],
+        "terrain": [""],
+        "local": "",
         "preferences": [""],
         "waist_mm": 96,
         "lengths": [165, 172, 179, 186],
@@ -218,6 +226,7 @@ SKIS = [
         "styles": ["freeride"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 100,
         "lengths": [170, 178, 184, 190],
@@ -231,6 +240,7 @@ SKIS = [
         "styles": ["freeride"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": [],
         "waist_mm": 110,
         "lengths": [168, 176, 184, 191],
@@ -246,6 +256,7 @@ SKIS = [
         "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": ['playful'],
         "waist_mm": 98,
         "lengths": [165, 171, 177],
@@ -259,6 +270,7 @@ SKIS = [
         "styles": ["park"],
         "skill": ["intermediate", "advanced"],
         "terrain": [],
+        "local": "",
         "preferences": ['playful'],
         "waist_mm": 88,
         "lengths": [164, 171, 178, 184],

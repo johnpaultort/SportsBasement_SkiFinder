@@ -1,12 +1,5 @@
 import json
 
-# ────────────────────────────────────────────────────────────
-#  SNOWBOARD BINDINGS
-#  styles options : "all-mountain" | "freeride" | "park" | "carving"
-#  shape options  : "directional" | "directional-twin" | "true-twin"
-#  flex           : 1 (softest) – 10 (stiffest)
-# ────────────────────────────────────────────────────────────
-
 # Union sizing chart 
 #
 #         "sizes": [
@@ -24,8 +17,30 @@ import json
 #            }
 #          ],
 
+
+# Format
+# {
+#   "gender": [],
+#   "name": "",
+#   "brand": "",
+#   "style": [],
+#   "skill": [],
+#   "sizes": [
+#
+#   ],
+#
+#   "flex": ,
+#   "pattern": [],
+#   "type": "",
+#   "price": "",
+#   "image": "",
+#   "notes": "."
+# },
+#
+
+
 SB_BINDINGS = [
-    #
+
     # Union Bindings
     # 25/26 images
     # Ultra and Strata no update only
@@ -59,8 +74,8 @@ SB_BINDINGS = [
     },
     {
         "gender": ["mens"],
-        "name":      "Force",
-        "brand":     "Union",
+        "name": "Force",
+        "brand": "Union",
         "style":    ["all-mountain", "park"],
         "skill":    ["beginner", "intermediate", "advanced"],
         "sizes": [
@@ -77,14 +92,13 @@ SB_BINDINGS = [
                 "boot_sizes": "10.5-13"
             }
         ],
-        "flex":      7, 
-        "pattern":  ["4x4", "4x2", "channel"],
+        "flex": 7, 
+        "pattern": ["4x4", "4x2", "channel"],
         "type": "traditional",
-        "price":     "349.95",
-        "image":     "https://www.sportsbasement.com/cdn/shop/files/100303407.Force.Black.1.png?v=1780696910",
-        "notes":      "."
+        "price": "349.95",
+        "image": "https://www.sportsbasement.com/cdn/shop/files/100303407.Force.Black.1.png?v=1780696910",
+        "notes": "The Union Force is the ultimate do-it-all binding trusted by riders worldwide. With a smooth, responsive flex and bombproof construction, it’s built to handle any terrain, any rider, any condition."
     },
-    # new image
     {
         "gender": ["mens"],
         "name":     "Falcor",
@@ -110,9 +124,8 @@ SB_BINDINGS = [
         "type": "traditional",
         "price":    "439.95",
         "image":    "https://www.sportsbasement.com/cdn/shop/files/100303402.Black.1.png?v=1780676964",
-        "notes":    "."
+        "notes":    "Precision-engineered for the demands of Travis Rice, the Union Falcor is built for riders who push the limits of big mountain snowboarding. Lightweight, responsive, and ultra-durable, it blends power and precision for aggressive freeride performance."
     },
-    # new image
     {
         "gender": ["mens"],
         "name":     "Atlas",
@@ -140,7 +153,6 @@ SB_BINDINGS = [
         "image":    "https://www.sportsbasement.com/cdn/shop/files/100303406.Atlas.Black.1.png?v=1780693194",
         "notes":    "."
     },
-    # no update
     {
         "gender": ["mens"],
         "name":     "Ultra",
@@ -168,7 +180,6 @@ SB_BINDINGS = [
         "image":    "https://unionbindingcompany.com/cdn/shop/files/UN25_ULTRA_BLACK_1024x.jpg?v=1753276418",
         "notes":    "."
     },
-    # new
     {
         "gender": ["mens"],
         "name":     "Neo",
@@ -196,7 +207,6 @@ SB_BINDINGS = [
         "image":    "https://www.sportsbasement.com/cdn/shop/files/100303403.Neo.White.1.png?v=1780680369",
         "notes":    "."
     },
-    # new
     {
         "gender": ["mens"],
         "name":     "STR",

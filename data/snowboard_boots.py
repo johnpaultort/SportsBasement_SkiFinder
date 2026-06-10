@@ -1,9 +1,19 @@
 import json
 
+# Format
+#    {
+#        "name": "",
+#        "brand": "",
+#        "styles": [""],
+#        "flex": ,
+#        "sizes": [],
+#        "lacing": [],
+#        "price": "",
+#        "image": "",
+#        "notes": ""
+#    },
+
 BOOTS = [
-    #
-    # Ride Boots (26/27)
-    # READY
     {
         "name": "Lasso",
         "brand": "Ride",
