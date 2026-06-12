@@ -730,29 +730,7 @@ function dinCalcHTML() {
   return `<div class="tool-page page">
   <h2 class="tool-title">DIN CALCULATOR</h2>
   <p class="tool-desc">Your DIN setting controls how easily your bindings release. Too low = pre-release; too high = injury risk.</p>
-  
-  <div class="form-group">
-    <label class="form-label" for="boot-size-sb">Boot Sole Length (mm)</label>
-    <select class="form-select" id="din-boot-size">
-      <option value="">Boot Sole Length</option>
-      ${['< 251mm', '251-270mm', '271-290mm', '291-310mm', '311-330mm', '> 330mm'].map(s=>`<option value="${s}">${s}</option>`).join('')}
-    </select>
-    <div class="form-hint">Places to look: Side of heel, inside arch area of shell, sole of boot.</div>
-  </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label" for="din-weight">Weight (lbs)</label>
-      <input type="number" class="form-input" id="din-weight" placeholder="e.g. 165" min="22" max="300" />
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="din-age">Age</label>
-      <input type="number" class="form-input" id="din-age" placeholder="e.g. 28" min="6" max="80" />
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="din-height">Height</label>
-    <select class="form-select" id="din-height"><option value="">Select height</option>${heightOpts()}</select>
-  </div>
+
   <div class="form-group">
     <div class="form-label">Skier Type</div>
     <div class="radio-grid">
@@ -761,6 +739,57 @@ function dinCalcHTML() {
       ${radioOpt('din-type','3','Type 3\nAdvanced / Expert')}
     </div>
   </div>
+
+  <div class="form-group">
+    <div class="form-label">Boot Sole Length (mm)</div>
+    <div class="radio-grid">
+      ${radioOpt('boot-sole','<251','< 251 mm')}
+      ${radioOpt('boot-sole','251-270','251-270 mm')}
+      ${radioOpt('boot-sole','271-290','271-290 mm')}
+      ${radioOpt('boot-sole','291-310','291-310mm')}
+      ${radioOpt('boot-sole','311-330','311-330mm')}
+      ${radioOpt('boot-sole','>330','>330 mm')}
+    </div>
+
+    <div class="form-hint">Places to look: Side of heel, inside arch area of shell, and sole of boot.
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Weight (LBS)</div>
+    <div class="radio-grid">
+    ${radioOpt('weight-din', '22-29', '22-29 lbs')}
+    ${radioOpt('weight-din', '30-38', '30-38 lbs')}
+    ${radioOpt('weight-din', '39-47', '39-47 lbs')}
+    ${radioOpt('weight-din', '48-56', '48-56 lbs')}
+    ${radioOpt('weight-din', '57-66', '57-66 lbs')}
+    ${radioOpt('weight-din', '67-78', '67-78 lbs')}
+    ${radioOpt('weight-din', '79-91', '79-91 lbs')}
+    ${radioOpt('weight-din', '92-107', '92-107 lbs')}
+    ${radioOpt('weight-din', '108-125', '108-125 lbs')}
+    ${radioOpt('weight-din', '126-147', '126-147 lbs')}
+    ${radioOpt('weight-din', '148-174', '148-174 lbs')}
+    ${radioOpt('weight-din', '175-109', '175-209 lbs')}
+    ${radioOpt('weight-din', '>210', ' > 210 lbs')}
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">Age</div>
+    <div class="radio-grid">
+      ${radioOpt('age-range', 'under-10', 'Under 10')}
+      ${radioOpt('age-range', '>50', '10-50')}
+      ${radioOpt('age-range', '<50', 'Over 50')}
+  </div>
+
+  <div class="form-group">
+    <lable class="form-label">Height</div>
+    <div class="radio-grid">
+    ${radioOpt('height-din', "<4'10", "<4'10")}
+    ${radioOpt('height-din', "4'11-5'2", "4'11-5'2")}
+    ${radioOpt('height-din', "5'6-5'10", "5'6-5'10")}
+    ${radioOpt('height-din', "5'11-6'4", "5'11-6'4")}
+    ${radioOpt('height-din', ">6'5", ">6'5")}
+  </div>
+
   <button class="btn ski" onclick="calcDIN()">Calculate My DIN →</button>
   <div id="din-result"></div>
 </div>`;

@@ -6,7 +6,7 @@
 # TODO 6: Need to add a slide show for multiple images, which then include the size charts for each of them
 # TODO 7: Find some way to add reviews from other sources
 # DONE 8: Add a limit to preferences made
-
+# TODO 9: Fix din calc since its giving the wrong information
 
 
 Final Publish
