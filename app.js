@@ -367,9 +367,7 @@ function landingHTML() {
     <polygon points="350,220 560,60 800,220" fill="#4fc3f7"/>
     <rect width="800" height="40" y="180" fill="#0a0e1a"/>
   </svg>
-  <div class="hero-tag">Your guide to excel</div>
   <h1>FIND YOUR<br><em>PERFECT FIT</em></h1>
-  <p class="hero-sub">Tell us the dimensions, and we'll match you to the right gear.</p>
   <div class="hero-notice">⚠ Please only use this tool if you're in a hurry or our associates are busy helping others. We're always happy to help you in person!</div>
   <div class="sport-cards">
     <div class="sport-card ski-card" onclick="chooseSport('ski')">
