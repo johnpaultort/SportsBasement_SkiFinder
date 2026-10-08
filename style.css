@@ -3,8 +3,8 @@
   --bg:#0a0e1a;--bg2:#111827;--bg3:#1a2236;--card:#1e2a42;
   --border:#2d3d5a;--text:#f0f4ff;--muted:#7a8aaa;
   --accent:#4fc3f7;--accent2:#81d4fa;
-  --ski:#4ade80;--snow:#a78bfa;--warn:#fbbf24;--danger:#f87171;
-  --accessories:#4ade80;--snow:#a78bfa;--warn:#fbbf24;--danger:#f87171;
+  --ski:#4ade80;--snow:#4ade80;--warn:#fbbf24;--danger:#f87171;
+  --accessories:#4ade80;--snow:#4ade80;--warn:#fbbf24;--danger:#f87171;
 }
 
 body{
@@ -33,7 +33,7 @@ nav{
 .nav-logo{
   font-family:'Bebas Neue',sans-serif;
   font-size:1.4rem;
-  color:var(--accent);
+  color:var(--ski);
   letter-spacing:.1em;
 }
 
@@ -75,18 +75,13 @@ nav{
 }
 
 .hero-bg{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(79,195,247,.07),transparent 70%);
-  pointer-events:none;
+  display:none;
 }
 
 .mountain-svg{
-  position:absolute;
-  bottom:0;left:0;
-  right:0;opacity:.18;
-  pointer-events:none;
+  display:none;
 }
+
 
 .hero-tag{
   display:inline-block;
@@ -106,7 +101,7 @@ nav{
 }
 
 .hero h1 em{
-  color:var(--accent);
+  color:var(--ski);
   font-style:normal;
 }
 
